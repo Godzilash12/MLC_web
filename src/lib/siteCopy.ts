@@ -1,0 +1,1029 @@
+import { useTranslation } from "react-i18next";
+
+export type SiteLanguage = "ru" | "uz" | "en" | "zh";
+
+const ru = {
+  nav: {
+    about: "О нас",
+    community: "Сообщество",
+    education: "Образование",
+    development: "Разработка",
+    aiMedia: "ИИ для медиа",
+    menu: "Открыть меню"
+  },
+  ticker: [
+    "3500+ участников",
+    "Сообщество",
+    "50+ мероприятий",
+    "Полезные связи",
+    "400+ выпускников",
+    "Стажировка",
+    "70% трудоустроенных",
+    "В курсе последних трендов и новостей",
+    "8+ обученных компаний",
+    "Первое и единственное AI-сообщество"
+  ],
+  footer: {
+    text: "Первое и единственное AI-сообщество в Узбекистане. Сообщество, обучение, разработка и AI-медиа.",
+    navigation: "Навигация",
+    contacts: "Контакты",
+    social: "Соцсети",
+    home: "Главная",
+    slogan: "MLC. AI начинается здесь.",
+    confidential: "Конфиденциально. Для внутреннего пользования."
+  },
+  status: {
+    loadingPage: "Загрузка страницы"
+  },
+  form: {
+    name: "Имя",
+    phone: "Номер телефона",
+    submit: "Отправить",
+    sending: "Отправка...",
+    successTitle: "Спасибо, мы скоро свяжемся с вами.",
+    successText: "Команда MLC получила вашу заявку и вернётся с ответом в ближайшее время.",
+    error: "Ошибка отправки. Напишите нам напрямую: @mlc_direct",
+    messagePrefix: "Направление",
+    options: {
+      development: "Разработка",
+      corporate: "Корпоративное обучение",
+      personal: "Персональное обучение",
+      media: "ИИ для медиа",
+      partnership: "Сотрудничество"
+    }
+  },
+  lead: {
+    eyebrow: "Оставить заявку",
+    title: "Сделайте первый шаг.",
+    text: "Оставьте имя, номер и направление. Мы поможем подобрать следующий шаг: обучение, разработку, AI для медиа или сотрудничество.",
+    communityTitle: "Сделайте первый шаг в сообщество.",
+    communityText: "Подпишитесь на соцсети MLC, следите за анонсами мероприятий и будьте ближе к AI-среде.",
+    registrationTitle: "Регистрация на мероприятия",
+    registrationText: "Анонсы и ссылки на регистрацию появляются в соцсетях MLC.",
+    registrationButton: "Смотреть анонсы"
+  },
+  home: {
+    metaTitle: "ML Community Uzbekistan",
+    metaDescription: "AI начинается здесь. Сообщество, образование, разработка и AI для медиа.",
+    heroTitle: "AI начинается здесь",
+    heroSubtitle: "Первое и единственное AI-сообщество в Узбекистане",
+    presidentQuote:
+      "«Сегодня весь мир вступил в век искусственного интеллекта... Искусственный интеллект выведет человечество на новый этап цивилизации. Побеждает тот, кто ищет и приносит результаты.»",
+    presidentSource: "- Шавкат Мирзиёев. Из выступления Президента Республики Узбекистан на совещании 21 октября 2025 года.",
+    founderQuote: "«MLC появился, чтобы сделать AI ближе, понятнее и полезнее для людей и развивать Узбекистан через AI.»",
+    founderSource: "- Шахриёр Худойбердиев, глава ML Community Uzbekistan.",
+    call: "Позвонить",
+    partnersTitle: "Сильные партнёры двигаются вместе с нами.",
+    helpTitle: "Выберите свою точку входа в AI.",
+    more: "Подробнее",
+    gallery: {
+      community: "Сообщество",
+      education: "Образование",
+      communityStats: [
+        { value: "3500+", label: "участников" },
+        { value: "6000+", label: "посещений" },
+        { value: "50+", label: "мероприятий" }
+      ],
+      educationStats: [
+        { value: "400+", label: "выпускников" },
+        { value: "70%", label: "трудоустроенных" },
+        { value: "8+", label: "обученных компаний" }
+      ]
+    },
+    services: [
+      {
+        title: "Сообщество",
+        description: "События, знакомства, практические разборы и среда, где проще войти в AI и расти быстрее."
+      },
+      {
+        title: "Образование",
+        description: "Программы для студентов, специалистов и компаний: от базового AI до прикладных корпоративных треков."
+      },
+      {
+        title: "Разработка",
+        description: "AI-боты, RAG, автоматизация процессов, внутренние кабинеты и интеграции под реальные бизнес-задачи."
+      },
+      {
+        title: "ИИ для медиа",
+        description: "Ролики, product-контент, AI-аватары, визуальные концепты и production-процесс для брендов."
+      },
+      {
+        title: "Реклама, фильм или мультфильм?",
+        description: "Создаём медиа, которое выглядит дорого и запоминается: рекламные ролики, генеративные сцены, реалистичные фильмы и stylized-мультфильмы. AI сокращает сроки и стоимость без потери вау-эффекта."
+      },
+      {
+        title: "Начните учиться ИИ сейчас",
+        description: "Переходите на платформу 01AI и входите в AI-сферу уже сегодня. Учитесь в удобном темпе, получайте доступ к актуальным материалам и практическим трекам, которые помогут вам быстрее выйти в профессию."
+      }
+    ]
+  },
+  about: {
+    metaTitle: "О нас | MLC",
+    metaDescription: "MLC развивает AI-сообщество, образование и прикладные AI-проекты в Узбекистане.",
+    title: "О MLC",
+    stats: [
+      { value: "3500+", label: "участников" },
+      { value: "50+", label: "мероприятий" },
+      { value: "4", label: "ключевых направления" }
+    ],
+    founderName: "Шахриёр Худойбердиев",
+    founderRole: "Основатель MLC",
+    founderTitle: "Слово от основателя",
+    founderText:
+      "«MLC появился, чтобы сделать AI ближе, понятнее и полезнее для людей. Мы хотим, чтобы в Узбекистане было больше специалистов, сильных команд, технологичных компаний и практических AI-проектов, которые дают реальный результат.»",
+    missionCards: [
+      { title: "Миссия", text: "Развивать Узбекистан через ИИ." },
+      { title: "Цели", text: "Вырастить сильную AI-экосистему: больше специалистов, проектов, компаний и реальных внедрений." },
+      { title: "Для Узбекистана", text: "Помочь стране быстрее входить в новую технологическую эпоху через знания, связи, продукты и практику." }
+    ],
+    focusTitle: "На чем мы фокусируемся",
+    focusAreas: [
+      { title: "Сообщество", text: "Собираем людей вокруг событий, нетворкинга, обмена опытом и живой AI-среды." },
+      { title: "Образование", text: "Помогаем людям и компаниям осваивать AI через практические программы и прикладные форматы." },
+      { title: "Разработка", text: "Запускаем прикладные AI-решения, автоматизации, ассистентов и интеграции для бизнеса." },
+      { title: "AI Media", text: "Создаем визуальные концепты, ролики, social-креативы и AI-production для брендов." }
+    ],
+    valueTitle: "Что мы даем людям и стране",
+    values: [
+      "понятный вход в AI без одиночества и хаоса",
+      "доступ к мероприятиям, экспертам, менторам и партнерам",
+      "практические навыки, которые можно применять в работе",
+      "карьерные и проектные возможности внутри AI-среды",
+      "сильное окружение людей, которые двигают AI вперед"
+    ]
+  },
+  community: {
+    metaTitle: "Сообщество | MLC",
+    metaDescription: "AI-сообщество MLC: мероприятия, знакомства, практика и рост.",
+    title: "AI Сообщество",
+    stats: [
+      { value: "3500+", label: "участников" },
+      { value: "50+", label: "мероприятий" },
+      { value: "6000+", label: "посещений" }
+    ],
+    formatsTitle: "Что происходит внутри сообщества",
+    formats: [
+      {
+        title: "Митапы и лекции",
+        text: "Встречи с практиками AI, founders, инженерами и продуктовыми командами, где разбираем реальные кейсы.",
+        items: ["AI-тренды", "прикладные кейсы", "вопросы с экспертами"]
+      },
+      {
+        title: "Нетворкинг",
+        text: "Форматы, где участники находят единомышленников, будущих коллег, партнёров, менторов и команды.",
+        items: ["знакомства", "карьерные связи", "партнёрства"]
+      },
+      {
+        title: "Практические разборы",
+        text: "Разбираем инструменты, промпты, автоматизации, портфолио, идеи проектов и реальные задачи участников.",
+        items: ["разборы задач", "AI-инструменты", "практика вместо шума"]
+      },
+      {
+        title: "Большие события",
+        text: "Конференции, вечеринки сообщества, демо-дни, публичные дискуссии и коллаборации с партнёрами.",
+        items: ["конференции", "demo day", "community party"]
+      }
+    ],
+    pastTitle: "Прошлые мероприятия",
+    pastBadge: "фото из сообщества",
+    pastEvents: [
+      { title: "AI Rewind", meta: "Конференция и обзор AI-трендов" },
+      { title: "ML Gap", meta: "Лекции и разборы кейсов" },
+      { title: "ML Party", meta: "Нетворкинг и вечер сообщества" },
+      { title: "Guest Lectures", meta: "Встречи с экспертами индустрии" },
+      { title: "Partner Meetups", meta: "События с компаниями и вузами" },
+      { title: "Community Talks", meta: "Открытые разговоры о рынке AI" }
+    ],
+    valueTitle: "Что получает участник",
+    valueFlow: ["meet", "learn", "grow"],
+    values: [
+      "понимание, что реально происходит в AI-сфере",
+      "доступ к людям, компаниям, менторам и возможностям",
+      "среда, где можно задать вопрос и быстро найти направление",
+      "мотивация учиться, запускать проекты и расти в профессии",
+      "связь между участниками, бизнесом, образованием и государственными инициативами"
+    ],
+    joinTitle: "Как присоединиться",
+    joinSteps: [
+      ["01", "Следить за анонсами", "Подписывайтесь на MLC и выбирайте события, которые подходят по теме и уровню."],
+      ["02", "Приходить на встречи", "Знакомьтесь с участниками, задавайте вопросы и включайтесь в обсуждения."],
+      ["03", "Расти внутри AI-среды", "Используйте комьюнити как точку входа в обучение, проекты, карьеру и партнёрства."]
+    ]
+  },
+  education: {
+    metaTitle: "Образование | MLC",
+    metaDescription: "AI-образование MLC: обучение, практика и карьерный рост.",
+    title: "AI Обучение",
+    stats: [
+      { value: "400+", label: "выпускников" },
+      { value: "70%", label: "трудоустроенных" },
+      { value: "8+", label: "обученных компаний" }
+    ],
+    companiesTitle: "+8 обученных компаний",
+    companiesText: "Мы помогаем командам внедрять AI в работу: от первых инструментов до практических сценариев для ежедневных задач.",
+    partnersBadge: "и другие партнёры",
+    graduatesTitle: "+400 Выпускников",
+    internshipTitle: "Стажировка",
+    formatsTitle: "Что мы даём в AI образовании",
+    formats: [
+      {
+        title: "Персональное обучение",
+        text: "Индивидуальная траектория под цель студента: разбираем текущий уровень, собираем программу, двигаемся в комфортном темпе и доводим навыки до практического результата."
+      },
+      {
+        title: "Групповое обучение студентов",
+        text: "Живые уроки, стажировки, визиты в офисы партнёров, мастер-классы, подготовка к интервью и резюме. Это не просто курс, а среда, где студент растёт быстрее."
+      },
+      {
+        title: "Корпоративное обучение",
+        text: "Кастомные AI-программы для команд: автоматизация процессов, персональная эффективность, контент, отчётность, презентации, аналитика и другие прикладные сценарии бизнеса."
+      },
+      {
+        title: "Платформа 01AI",
+        text: "Онлайн-обучение для всех, кто хочет освоить AI гибко: понятные модули, практические задания и доступ к знаниям без привязки к месту и расписанию."
+      }
+    ]
+  },
+  development: {
+    metaTitle: "Разработка | MLC",
+    metaDescription: "AI-разработка и автоматизация для бизнеса от MLC.",
+    title: "AI Разработка",
+    stats: [
+      { value: "2-4", label: "месяца на MVP" },
+      { value: "6-12", label: "месяцев на интеграцию" },
+      { value: "1-2", label: "года на AI-продукт" }
+    ],
+    directionsTitle: "Направления AI Разработки",
+    directions: [
+      {
+        title: "Бот поддержки и первичной обработки заявок",
+        text: "Telegram или web-бот, который отвечает на частые вопросы, собирает данные клиента, передает сложные обращения менеджеру и сохраняет историю.",
+        timeline: "2-4 месяца",
+        items: ["FAQ и сценарии", "интеграция с CRM", "передача оператору"]
+      },
+      {
+        title: "Поиск по документам и базе знаний",
+        text: "Внутренний AI-помощник, который ищет ответы в регламентах, договорах, инструкциях, обучающих материалах и показывает источники.",
+        timeline: "3-6 месяцев",
+        items: ["индексация документов", "цитирование источников", "контроль доступа"]
+      },
+      {
+        title: "Автоматизация операционных задач",
+        text: "Решение для повторяющихся процессов: классификация заявок, подготовка черновиков документов, уведомления, статусы и контроль дедлайнов.",
+        timeline: "4-8 месяцев",
+        items: ["заявки и статусы", "шаблоны документов", "уведомления команде"]
+      },
+      {
+        title: "OCR и обработка документов",
+        text: "Система, которая извлекает данные из счетов, актов, заявлений, паспортов или анкет и передает результат в таблицу или CRM.",
+        timeline: "3-7 месяцев",
+        items: ["распознавание полей", "проверка ошибок", "экспорт в систему"]
+      },
+      {
+        title: "Анализ звонков и качества сервиса",
+        text: "Транскрибация звонков, краткие итоги, теги, оценка соблюдения скриптов и понятная аналитика для руководителя отдела продаж или поддержки.",
+        timeline: "4-9 месяцев",
+        items: ["расшифровка звонков", "оценка скриптов", "отчеты по команде"]
+      },
+      {
+        title: "Продажи, скоринг и прогнозы",
+        text: "Модели и дашборды для оценки лидов, прогноза спроса, сегментации клиентов и раннего поиска рисков в данных.",
+        timeline: "6-12 месяцев",
+        items: ["скоринг лидов", "прогноз спроса", "сегменты клиентов"]
+      },
+      {
+        title: "Внутренний AI-кабинет для команды",
+        text: "Единое рабочее место с ролями, шаблонами промптов, историей запросов, доступом к документам и готовыми сценариями для отделов.",
+        timeline: "6-14 месяцев",
+        items: ["роли сотрудников", "шаблоны задач", "история и контроль"]
+      },
+      {
+        title: "Долгосрочная AI-интеграция в продукт",
+        text: "Постепенное внедрение AI-функций в существующий сайт, CRM, LMS, marketplace или внутреннюю платформу с поддержкой и развитием.",
+        timeline: "1-2 года",
+        items: ["дорожная карта", "API и интерфейсы", "поддержка релизов"]
+      }
+    ],
+    processTitle: "Как мы доводим AI до результата",
+    processText: "Команда получает не презентацию про AI, а работающий инструмент, который можно тестировать, измерять и развивать дальше.",
+    process: [
+      { title: "Аудит и карта возможностей", text: "Находим процессы, где AI даст быстрый эффект, оцениваем данные, риски, стоимость и приоритет запуска." },
+      { title: "Прототип за короткий цикл", text: "Собираем рабочий MVP, показываем команде реальный сценарий и быстро уточняем требования на практике." },
+      { title: "Интеграция в процессы", text: "Подключаем нужные системы, настраиваем права, сценарии, аналитику и удобный интерфейс для пользователей." },
+      { title: "Запуск и сопровождение", text: "Следим за качеством, улучшаем промпты и модели, добавляем новые функции и помогаем команде пользоваться решением." }
+    ],
+    outputTitle: "Что получает заказчик",
+    flow: ["prototype", "integration", "support"],
+    outputs: [
+      "готовый web-сервис или внутренний инструмент",
+      "бот или ассистент под конкретную роль",
+      "интеграция с CRM, базой знаний, сайтом или мессенджером",
+      "дашборд с метриками качества и использования",
+      "документация, обучение команды и план развития"
+    ]
+  },
+  aiMedia: {
+    metaTitle: "ИИ для медиа | MLC",
+    metaDescription: "Создание AI-медиа, рекламы и визуального контента с MLC.",
+    title: "ИИ для медиа",
+    stats: [
+      { value: "1-2", label: "дня на концепт" },
+      { value: "3-7", label: "дней на ролик" },
+      { value: "10+", label: "форматов контента" }
+    ],
+    directionsTitle: "Направления AI Media",
+    directions: [
+      {
+        title: "Рекламные ролики",
+        text: "Короткие video ads для продукта, сервиса или мероприятия: идея, сценарий, визуальный стиль, генерация сцен и финальная сборка.",
+        timeline: "1-2 недели",
+        items: ["15-60 секунд", "script и storyboard", "адаптации под соцсети"]
+      },
+      {
+        title: "Product-контент",
+        text: "Визуалы для карточек, баннеров, презентаций и лендингов, где нужно быстро показать продукт в разных сценах и стилях.",
+        timeline: "3-7 дней",
+        items: ["баннеры и key visual", "product shots", "варианты под кампании"]
+      },
+      {
+        title: "Reels, Shorts и social-креативы",
+        text: "Серии коротких вертикальных видео для Instagram, TikTok, YouTube Shorts и Telegram с единым визуальным направлением.",
+        timeline: "2-5 дней",
+        items: ["вертикальный формат", "серии креативов", "обложки и captions"]
+      },
+      {
+        title: "AI-аватары и объясняющие видео",
+        text: "Видео с ведущим или персонажем для обучения, промо, инструкций и внутренних коммуникаций без сложного съемочного процесса.",
+        timeline: "1-2 недели",
+        items: ["скрипт и голос", "avatar video", "локализация"]
+      },
+      {
+        title: "Визуальные концепты",
+        text: "Быстро собираем moodboard, стилистику, кадры и визуальный язык кампании перед полноценным производством.",
+        timeline: "2-4 дня",
+        items: ["moodboard", "style frames", "visual direction"]
+      },
+      {
+        title: "Storyboards и animatic",
+        text: "Помогаем увидеть будущий ролик до продакшна: кадры, последовательность, ритм, примерная динамика и структура истории.",
+        timeline: "3-7 дней",
+        items: ["раскадровка", "animatic", "структура сцен"]
+      },
+      {
+        title: "Креативные пакеты для запусков",
+        text: "Набор визуалов и коротких видео под запуск продукта, курса, мероприятия или рекламной кампании.",
+        timeline: "1-3 недели",
+        items: ["единый стиль", "несколько форматов", "быстрые итерации"]
+      },
+      {
+        title: "AI-пайплайн для контент-команды",
+        text: "Настраиваем процесс, шаблоны и правила, чтобы команда могла регулярно создавать контент быстрее и в одном стиле.",
+        timeline: "2-4 недели",
+        items: ["шаблоны промптов", "brand rules", "обучение команды"]
+      }
+    ],
+    productionTitle: "Как строится production",
+    production: [
+      { title: "Бриф и идея", text: "Уточняем продукт, аудиторию, площадки, ограничения бренда и результат, который должен дать контент." },
+      { title: "Сценарий и визуальный стиль", text: "Собираем структуру ролика, moodboard, референсы, key frames и понятное направление для утверждения." },
+      { title: "AI production", text: "Генерируем сцены, изображения, голос, motion-элементы или avatar-видео и собираем черновую версию." },
+      { title: "Финальная сборка", text: "Доводим монтаж, титры, звук, цвет, форматы и экспортируем материалы под нужные платформы." }
+    ],
+    outputTitle: "Что получает заказчик",
+    flow: ["concept", "production", "assets"],
+    outputs: [
+      "готовые видео для рекламы, соцсетей или презентации",
+      "key visual, баннеры, обложки и product shots",
+      "storyboard, moodboard и style frames для согласования",
+      "адаптации под вертикальный, квадратный и wide-формат",
+      "гайд по стилю и процессу для дальнейшего производства"
+    ]
+  },
+  detail: {
+    partner: "Партнёр",
+    partnerNotFound: "Страница партнёра не найдена",
+    partnerNotFoundText: "Похоже, этот материал ещё не добавлен. Вернитесь на главную и откройте другого партнёра.",
+    partnerSite: "Сайт партнёра",
+    back: "Назад",
+    home: "На главную",
+    openPhoto: "Открыть фото",
+    close: "Закрыть просмотр",
+    graduateNotFound: "Страница студента не найдена",
+    graduateNotFoundText: "Для этого студента страница пока не готова или ссылка изменилась.",
+    backToEducation: "Вернуться в образование",
+    studentFallbackTitle: "Студент | ML Community Uzbekistan",
+    studentFallbackDescription: "История выпускника ML Community Uzbekistan",
+    otherStories: "Другие истории"
+  }
+} as const;
+
+const uz = {
+  nav: {
+    about: "Biz haqimizda",
+    community: "Hamjamiyat",
+    education: "Ta'lim",
+    development: "Dasturlash",
+    aiMedia: "Media uchun AI",
+    menu: "Menyuni ochish"
+  },
+  ticker: [
+    "3500+ ishtirokchi",
+    "Hamjamiyat",
+    "50+ tadbir",
+    "Foydali aloqalar",
+    "400+ bitiruvchi",
+    "Stajirovka",
+    "70% ishga joylashgan",
+    "So'nggi trend va yangiliklardan xabardor",
+    "8+ o'qitilgan kompaniya",
+    "Birinchi va yagona AI hamjamiyati"
+  ],
+  footer: {
+    text: "O'zbekistondagi birinchi va yagona AI hamjamiyati. Hamjamiyat, ta'lim, dasturlash va AI media.",
+    navigation: "Navigatsiya",
+    contacts: "Kontaktlar",
+    social: "Ijtimoiy tarmoqlar",
+    home: "Asosiy",
+    slogan: "MLC. AI shu yerdan boshlanadi.",
+    confidential: "Maxfiy. Ichki foydalanish uchun."
+  },
+  status: { loadingPage: "Sahifa yuklanmoqda" },
+  form: {
+    name: "Ism",
+    phone: "Telefon raqami",
+    submit: "Yuborish",
+    sending: "Yuborilmoqda...",
+    successTitle: "Rahmat, tez orada siz bilan bog'lanamiz.",
+    successText: "MLC jamoasi arizangizni oldi va yaqin vaqt ichida javob beradi.",
+    error: "Yuborishda xatolik. Bizga to'g'ridan-to'g'ri yozing: @mlc_direct",
+    messagePrefix: "Yo'nalish",
+    options: {
+      development: "Dasturlash",
+      corporate: "Korporativ ta'lim",
+      personal: "Shaxsiy ta'lim",
+      media: "Media uchun AI",
+      partnership: "Hamkorlik"
+    }
+  },
+  lead: {
+    eyebrow: "Ariza qoldirish",
+    title: "Birinchi qadamni qiling.",
+    text: "Ism, raqam va yo'nalishni qoldiring. Biz keyingi qadamni tanlashga yordam beramiz: ta'lim, dasturlash, media uchun AI yoki hamkorlik.",
+    communityTitle: "Hamjamiyatga birinchi qadamni qiling.",
+    communityText: "MLC ijtimoiy tarmoqlariga obuna bo'ling, tadbir anonslarini kuzating va AI muhitiga yaqinroq bo'ling.",
+    registrationTitle: "Tadbirlarga ro'yxatdan o'tish",
+    registrationText: "Anonslar va ro'yxatdan o'tish havolalari MLC ijtimoiy tarmoqlarida chiqadi.",
+    registrationButton: "Anonslarni ko'rish"
+  },
+  home: {
+    metaTitle: "ML Community Uzbekistan",
+    metaDescription: "AI shu yerdan boshlanadi. Hamjamiyat, ta'lim, dasturlash va media uchun AI.",
+    heroTitle: "AI shu yerdan boshlanadi",
+    heroSubtitle: "O'zbekistondagi birinchi va yagona AI hamjamiyati",
+    presidentQuote:
+      "«Bugun butun dunyo sun'iy intellekt asriga kirdi... Sun'iy intellekt insoniyatni sivilizatsiyaning yangi bosqichiga olib chiqadi. Izlagan va natija keltirgan g'olib bo'ladi.»",
+    presidentSource: "- Shavkat Mirziyoyev. 2025-yil 21-oktabrdagi yig'ilishdagi nutqdan.",
+    founderQuote: "«MLC AI'ni odamlarga yaqinroq, tushunarliroq va foydaliroq qilish hamda O'zbekistonni AI orqali rivojlantirish uchun paydo bo'lgan.»",
+    founderSource: "- Shahriyor Xudoyberdiyev, ML Community Uzbekistan rahbari.",
+    call: "Qo'ng'iroq qilish",
+    partnersTitle: "Kuchli hamkorlar biz bilan birga harakat qiladi.",
+    helpTitle: "AI'ga kirish nuqtangizni tanlang.",
+    more: "Batafsil",
+    gallery: {
+      community: "Hamjamiyat",
+      education: "Ta'lim",
+      communityStats: [
+        { value: "3500+", label: "ishtirokchi" },
+        { value: "6000+", label: "tashrif" },
+        { value: "50+", label: "tadbir" }
+      ],
+      educationStats: [
+        { value: "400+", label: "bitiruvchi" },
+        { value: "70%", label: "ishga joylashgan" },
+        { value: "8+", label: "o'qitilgan kompaniya" }
+      ]
+    },
+    services: [
+      { title: "Hamjamiyat", description: "Tadbirlar, tanishuvlar, amaliy tahlillar va AI'ga kirish hamda tezroq o'sish uchun muhit." },
+      { title: "Ta'lim", description: "Talabalar, mutaxassislar va kompaniyalar uchun dasturlar: bazaviy AI'dan amaliy korporativ treklargacha." },
+      { title: "Dasturlash", description: "AI botlar, RAG, jarayonlarni avtomatlashtirish, ichki kabinetlar va biznes vazifalari uchun integratsiyalar." },
+      { title: "Media uchun AI", description: "Roliklar, product-kontent, AI avatarlar, vizual konseptlar va brendlar uchun production jarayoni." },
+      { title: "Reklama, film yoki multfilm?", description: "Qimmat ko'rinadigan va esda qoladigan media yaratamiz: reklama roliklar, generativ sahnalar, realistik filmlar va stylized multfilmlar. AI vaqt va xarajatni kamaytiradi, wow-effektni yo'qotmasdan." },
+      { title: "Hoziroq AI o'rganishni boshlang", description: "01AI platformasiga o'ting va bugun AI sohasiga kiring. Qulay sur'atda o'qing, dolzarb materiallarga va kasbga tezroq chiqishga yordam beradigan amaliy treklarga kirish oling." }
+    ]
+  },
+  about: {
+    metaTitle: "Biz haqimizda | MLC",
+    metaDescription: "MLC O'zbekistonda AI hamjamiyati, ta'lim va amaliy AI loyihalarini rivojlantiradi.",
+    title: "MLC haqida",
+    stats: [
+      { value: "3500+", label: "ishtirokchi" },
+      { value: "50+", label: "tadbir" },
+      { value: "4", label: "asosiy yo'nalish" }
+    ],
+    founderName: "Shahriyor Xudoyberdiyev",
+    founderRole: "MLC asoschisi",
+    founderTitle: "Asoschidan so'z",
+    founderText:
+      "«MLC AI'ni odamlarga yaqinroq, tushunarliroq va foydaliroq qilish uchun paydo bo'lgan. O'zbekistonda ko'proq mutaxassislar, kuchli jamoalar, texnologik kompaniyalar va real natija beradigan amaliy AI loyihalari bo'lishini xohlaymiz.»",
+    missionCards: [
+      { title: "Missiya", text: "O'zbekistonni AI orqali rivojlantirish." },
+      { title: "Maqsadlar", text: "Kuchli AI ekotizimini yaratish: ko'proq mutaxassislar, loyihalar, kompaniyalar va real joriy etishlar." },
+      { title: "O'zbekiston uchun", text: "Bilim, aloqalar, mahsulotlar va amaliyot orqali mamlakatning yangi texnologik davrga tezroq kirishiga yordam berish." }
+    ],
+    focusTitle: "Nimaga fokus qilamiz",
+    focusAreas: [
+      { title: "Hamjamiyat", text: "Tadbirlar, networking, tajriba almashinuvi va jonli AI muhiti atrofida odamlarni jamlaymiz." },
+      { title: "Ta'lim", text: "Odamlar va kompaniyalarga AI'ni amaliy dasturlar va formatlar orqali o'zlashtirishga yordam beramiz." },
+      { title: "Dasturlash", text: "Biznes uchun amaliy AI yechimlar, avtomatlashtirishlar, assistentlar va integratsiyalarni ishga tushiramiz." },
+      { title: "AI Media", text: "Brendlar uchun vizual konseptlar, roliklar, social-kreativlar va AI-production yaratamiz." }
+    ],
+    valueTitle: "Odamlar va mamlakatga nima beramiz",
+    values: [
+      "AI'ga yolg'izlik va tartibsizliksiz tushunarli kirish",
+      "tadbirlar, ekspertlar, mentorlar va hamkorlarga kirish",
+      "ishda qo'llash mumkin bo'lgan amaliy ko'nikmalar",
+      "AI muhitida karyera va loyiha imkoniyatlari",
+      "AI'ni oldinga siljitayotgan kuchli insonlar muhiti"
+    ]
+  },
+  community: {
+    metaTitle: "Hamjamiyat | MLC",
+    metaDescription: "MLC AI hamjamiyati: tadbirlar, tanishuvlar, amaliyot va o'sish.",
+    title: "AI Hamjamiyat",
+    stats: [
+      { value: "3500+", label: "ishtirokchi" },
+      { value: "50+", label: "tadbir" },
+      { value: "6000+", label: "tashrif" }
+    ],
+    formatsTitle: "Hamjamiyat ichida nimalar bo'ladi",
+    formats: [
+      { title: "Mitaplar va ma'ruzalar", text: "AI amaliyotchilari, founderlar, muhandislar va product jamoalar bilan real case'lar tahlili.", items: ["AI trendlari", "amaliy case'lar", "ekspertlar bilan savollar"] },
+      { title: "Networking", text: "Ishtirokchilar hamfikrlar, kelajakdagi hamkasblar, hamkorlar, mentorlar va jamoalarni topadigan formatlar.", items: ["tanishuvlar", "karyera aloqalari", "hamkorliklar"] },
+      { title: "Amaliy tahlillar", text: "Instrumentlar, promptlar, avtomatlashtirishlar, portfolio, loyiha g'oyalari va real vazifalarni ko'rib chiqamiz.", items: ["vazifalar tahlili", "AI instrumentlar", "shovqin o'rniga amaliyot"] },
+      { title: "Katta tadbirlar", text: "Konferensiyalar, hamjamiyat kechalari, demo day, ochiq muhokamalar va hamkorlar bilan kollaboratsiyalar.", items: ["konferensiyalar", "demo day", "community party"] }
+    ],
+    pastTitle: "Oldingi tadbirlar",
+    pastBadge: "hamjamiyat fotolari",
+    pastEvents: [
+      { title: "AI Rewind", meta: "Konferensiya va AI trendlar sharhi" },
+      { title: "ML Gap", meta: "Ma'ruzalar va case tahlillari" },
+      { title: "ML Party", meta: "Networking va hamjamiyat oqshomi" },
+      { title: "Guest Lectures", meta: "Sanoat ekspertlari bilan uchrashuvlar" },
+      { title: "Partner Meetups", meta: "Kompaniyalar va universitetlar bilan tadbirlar" },
+      { title: "Community Talks", meta: "AI bozori haqida ochiq suhbatlar" }
+    ],
+    valueTitle: "Ishtirokchi nima oladi",
+    valueFlow: ["meet", "learn", "grow"],
+    values: [
+      "AI sohasida real nima bo'layotganini tushunish",
+      "odamlar, kompaniyalar, mentorlar va imkoniyatlarga kirish",
+      "savol berish va yo'nalishni tez topish mumkin bo'lgan muhit",
+      "o'qish, loyiha boshlash va kasbda o'sish motivatsiyasi",
+      "ishtirokchilar, biznes, ta'lim va davlat tashabbuslari o'rtasidagi aloqa"
+    ],
+    joinTitle: "Qanday qo'shilish mumkin",
+    joinSteps: [
+      ["01", "Anonslarni kuzatish", "MLC'ga obuna bo'ling va mavzu hamda darajangizga mos tadbirlarni tanlang."],
+      ["02", "Uchrashuvlarga kelish", "Ishtirokchilar bilan tanishing, savollar bering va muhokamalarga qo'shiling."],
+      ["03", "AI muhitida o'sish", "Hamjamiyatdan ta'lim, loyihalar, karyera va hamkorlikka kirish nuqtasi sifatida foydalaning."]
+    ]
+  },
+  education: {
+    metaTitle: "Ta'lim | MLC",
+    metaDescription: "MLC AI ta'limi: o'qish, amaliyot va karyera o'sishi.",
+    title: "AI Ta'lim",
+    stats: [
+      { value: "400+", label: "bitiruvchi" },
+      { value: "70%", label: "ishga joylashgan" },
+      { value: "8+", label: "o'qitilgan kompaniya" }
+    ],
+    companiesTitle: "+8 o'qitilgan kompaniya",
+    companiesText: "Biz jamoalarga AI'ni ishga joriy etishga yordam beramiz: ilk instrumentlardan kundalik vazifalar uchun amaliy ssenariylargacha.",
+    partnersBadge: "va boshqa hamkorlar",
+    graduatesTitle: "+400 Bitiruvchi",
+    internshipTitle: "Stajirovka",
+    formatsTitle: "AI ta'limida nima beramiz",
+    formats: [
+      { title: "Shaxsiy ta'lim", text: "Talaba maqsadiga mos individual yo'l: hozirgi darajani ko'ramiz, dastur tuzamiz, qulay tempda harakat qilamiz va ko'nikmalarni amaliy natijaga olib chiqamiz." },
+      { title: "Talabalar uchun guruh ta'limi", text: "Jonli darslar, stajirovkalar, hamkor ofislariga tashriflar, master-klasslar, intervyu va rezumega tayyorgarlik. Bu shunchaki kurs emas, talaba tezroq o'sadigan muhit." },
+      { title: "Korporativ ta'lim", text: "Jamoalar uchun custom AI dasturlar: jarayonlarni avtomatlashtirish, shaxsiy samaradorlik, kontent, hisobot, prezentatsiya, analitika va biznesning boshqa amaliy ssenariylari." },
+      { title: "01AI platformasi", text: "AI'ni moslashuvchan o'rganmoqchi bo'lganlar uchun online ta'lim: tushunarli modullar, amaliy topshiriqlar va joy hamda jadvalga bog'lanmagan bilim." }
+    ]
+  },
+  development: ru.development,
+  aiMedia: ru.aiMedia,
+  detail: {
+    partner: "Hamkor",
+    partnerNotFound: "Hamkor sahifasi topilmadi",
+    partnerNotFoundText: "Bu material hali qo'shilmagan ko'rinadi. Asosiy sahifaga qaytib, boshqa hamkorni oching.",
+    partnerSite: "Hamkor sayti",
+    back: "Orqaga",
+    home: "Asosiyga",
+    openPhoto: "Fotoni ochish",
+    close: "Ko'rishni yopish",
+    graduateNotFound: "Talaba sahifasi topilmadi",
+    graduateNotFoundText: "Bu talaba sahifasi hali tayyor emas yoki havola o'zgargan.",
+    backToEducation: "Ta'limga qaytish",
+    studentFallbackTitle: "Talaba | ML Community Uzbekistan",
+    studentFallbackDescription: "ML Community Uzbekistan bitiruvchisi hikoyasi",
+    otherStories: "Boshqa hikoyalar"
+  }
+};
+
+const en = {
+  ...ru,
+  nav: { about: "About", community: "Community", education: "Education", development: "Development", aiMedia: "AI for media", menu: "Open menu" },
+  ticker: ["3500+ members", "Community", "50+ events", "Useful connections", "400+ graduates", "Internship", "70% employed", "Latest trends and news", "8+ trained companies", "The first and only AI community"],
+  footer: { text: "The first and only AI community in Uzbekistan. Community, education, development, and AI media.", navigation: "Navigation", contacts: "Contacts", social: "Social media", home: "Home", slogan: "MLC. AI starts here.", confidential: "Confidential. For internal use only." },
+  status: { loadingPage: "Loading page" },
+  form: { name: "Name", phone: "Phone number", submit: "Send", sending: "Sending...", successTitle: "Thank you, we will contact you soon.", successText: "The MLC team received your request and will get back to you shortly.", error: "Submission failed. Message us directly: @mlc_direct", messagePrefix: "Direction", options: { development: "Development", corporate: "Corporate training", personal: "Personal training", media: "AI for media", partnership: "Partnership" } },
+  lead: { eyebrow: "Submit request", title: "Take the first step.", text: "Leave your name, number, and direction. We will help choose the next step: education, development, AI for media, or partnership.", communityTitle: "Take the first step into the community.", communityText: "Follow MLC social media, watch event announcements, and stay closer to the AI environment.", registrationTitle: "Event registration", registrationText: "Announcements and registration links appear on MLC social media.", registrationButton: "View announcements" },
+  home: {
+    ...ru.home,
+    metaDescription: "AI starts here. Community, education, development, and AI for media.",
+    heroTitle: "AI starts here",
+    heroSubtitle: "The first and only AI community in Uzbekistan",
+    presidentQuote: "“Today the whole world has entered the age of artificial intelligence... Artificial intelligence will take humanity to a new stage of civilization. The one who searches and delivers results wins.”",
+    presidentSource: "- Shavkat Mirziyoyev. From the speech of the President of Uzbekistan at the meeting on October 21, 2025.",
+    founderQuote: "“MLC was created to make AI closer, clearer, and more useful for people, and to develop Uzbekistan through AI.”",
+    founderSource: "- Shakhriyor Khudoyberdiyev, head of ML Community Uzbekistan.",
+    call: "Call",
+    partnersTitle: "Strong partners move forward with us.",
+    helpTitle: "Choose your entry point into AI.",
+    more: "Learn more",
+    gallery: { community: "Community", education: "Education", communityStats: [{ value: "3500+", label: "members" }, { value: "6000+", label: "visits" }, { value: "50+", label: "events" }], educationStats: [{ value: "400+", label: "graduates" }, { value: "70%", label: "employed" }, { value: "8+", label: "trained companies" }] },
+    services: [
+      { title: "Community", description: "Events, connections, practical reviews, and an environment where it is easier to enter AI and grow faster." },
+      { title: "Education", description: "Programs for students, specialists, and companies: from basic AI to applied corporate tracks." },
+      { title: "Development", description: "AI bots, RAG, process automation, internal workspaces, and integrations for real business tasks." },
+      { title: "AI for media", description: "Videos, product content, AI avatars, visual concepts, and a production process for brands." },
+      { title: "Ad, film, or animation?", description: "We create media that looks premium and sticks: ad spots, generative scenes, realistic films, and stylized animations. AI cuts time and cost without losing the wow factor." },
+      { title: "Start learning AI now", description: "Head to the 01AI platform and enter the AI field today. Learn at your own pace, access up-to-date materials and practical tracks that help you reach the profession faster." }
+    ]
+  },
+  about: {
+    ...ru.about,
+    metaTitle: "About | MLC",
+    metaDescription: "MLC develops the AI community, education, and applied AI projects in Uzbekistan.",
+    title: "About MLC",
+    stats: [{ value: "3500+", label: "members" }, { value: "50+", label: "events" }, { value: "4", label: "key directions" }],
+    founderRole: "Founder of MLC",
+    founderTitle: "Founder’s note",
+    founderText: "“MLC was created to make AI closer, clearer, and more useful for people. We want Uzbekistan to have more specialists, strong teams, technology companies, and practical AI projects that create real results.”",
+    missionCards: [{ title: "Mission", text: "Develop Uzbekistan through AI." }, { title: "Goals", text: "Grow a strong AI ecosystem: more specialists, projects, companies, and real implementations." }, { title: "For Uzbekistan", text: "Help the country enter the new technological era faster through knowledge, connections, products, and practice." }],
+    focusTitle: "What we focus on",
+    focusAreas: [{ title: "Community", text: "We bring people together around events, networking, experience exchange, and a living AI environment." }, { title: "Education", text: "We help people and companies learn AI through practical programs and applied formats." }, { title: "Development", text: "We launch applied AI solutions, automation, assistants, and integrations for business." }, { title: "AI Media", text: "We create visual concepts, videos, social creatives, and AI production for brands." }],
+    valueTitle: "What we give people and the country",
+    values: ["a clear entry into AI without loneliness and chaos", "access to events, experts, mentors, and partners", "practical skills that can be used at work", "career and project opportunities inside the AI environment", "a strong circle of people moving AI forward"]
+  },
+  community: {
+    ...ru.community,
+    metaTitle: "Community | MLC",
+    metaDescription: "MLC AI community: events, connections, practice, and growth.",
+    title: "AI Community",
+    stats: [{ value: "3500+", label: "members" }, { value: "50+", label: "events" }, { value: "6000+", label: "visits" }],
+    formatsTitle: "What happens inside the community",
+    formats: [
+      { title: "Meetups and lectures", text: "Meetings with AI practitioners, founders, engineers, and product teams where we review real cases.", items: ["AI trends", "applied cases", "expert Q&A"] },
+      { title: "Networking", text: "Formats where participants find like-minded people, future colleagues, partners, mentors, and teams.", items: ["connections", "career links", "partnerships"] },
+      { title: "Practical reviews", text: "We review tools, prompts, automations, portfolios, project ideas, and real participant tasks.", items: ["task reviews", "AI tools", "practice over noise"] },
+      { title: "Large events", text: "Conferences, community parties, demo days, public discussions, and collaborations with partners.", items: ["conferences", "demo day", "community party"] }
+    ],
+    pastTitle: "Past events",
+    pastBadge: "community photos",
+    pastEvents: [{ title: "AI Rewind", meta: "Conference and AI trend review" }, { title: "ML Gap", meta: "Lectures and case reviews" }, { title: "ML Party", meta: "Networking and community evening" }, { title: "Guest Lectures", meta: "Meetings with industry experts" }, { title: "Partner Meetups", meta: "Events with companies and universities" }, { title: "Community Talks", meta: "Open talks about the AI market" }],
+    valueTitle: "What a member gets",
+    values: ["understanding of what is really happening in AI", "access to people, companies, mentors, and opportunities", "an environment where you can ask and quickly find direction", "motivation to learn, launch projects, and grow professionally", "connection between members, business, education, and government initiatives"],
+    joinTitle: "How to join",
+    joinSteps: [["01", "Follow announcements", "Subscribe to MLC and choose events that match your topic and level."], ["02", "Attend meetups", "Meet participants, ask questions, and join discussions."], ["03", "Grow inside the AI environment", "Use the community as an entry point into education, projects, career, and partnerships."]]
+  },
+  education: { ...ru.education, metaTitle: "Education | MLC", metaDescription: "MLC AI education: learning, practice, and career growth.", title: "AI Education", stats: [{ value: "400+", label: "graduates" }, { value: "70%", label: "employed" }, { value: "8+", label: "trained companies" }], companiesTitle: "+8 trained companies", companiesText: "We help teams bring AI into work: from first tools to practical scenarios for daily tasks.", partnersBadge: "and other partners", graduatesTitle: "+400 Graduates", internshipTitle: "Internship", formatsTitle: "What we provide in AI education", formats: [{ title: "Personal training", text: "An individual path for the student’s goal: we assess the current level, build a program, move at a comfortable pace, and bring skills to practical results." }, { title: "Group training for students", text: "Live lessons, internships, partner office visits, masterclasses, interview and CV preparation. Not just a course, but an environment where students grow faster." }, { title: "Corporate training", text: "Custom AI programs for teams: process automation, personal productivity, content, reporting, presentations, analytics, and other applied business scenarios." }, { title: "01AI platform", text: "Online learning for everyone who wants to learn AI flexibly: clear modules, practical tasks, and access to knowledge without being tied to place or schedule." }] },
+  development: ru.development,
+  aiMedia: ru.aiMedia,
+  detail: { partner: "Partner", partnerNotFound: "Partner page not found", partnerNotFoundText: "It looks like this material has not been added yet. Return to the home page and open another partner.", partnerSite: "Partner website", back: "Back", home: "Home", openPhoto: "Open photo", close: "Close preview", graduateNotFound: "Student page not found", graduateNotFoundText: "This student page is not ready yet or the link has changed.", backToEducation: "Back to education", studentFallbackTitle: "Student | ML Community Uzbekistan", studentFallbackDescription: "Graduate story of ML Community Uzbekistan", otherStories: "Other stories" }
+};
+
+const zh = {
+  ...en,
+  nav: { about: "关于我们", community: "社区", education: "教育", development: "开发", aiMedia: "AI 媒体", menu: "打开菜单" },
+  ticker: ["3500+ 成员", "社区", "50+ 活动", "有价值的连接", "400+ 毕业生", "实习", "70% 就业", "关注最新趋势与新闻", "8+ 企业培训", "第一个也是唯一的 AI 社区"],
+  footer: { text: "乌兹别克斯坦第一个也是唯一的 AI 社区。社区、教育、开发和 AI 媒体。", navigation: "导航", contacts: "联系方式", social: "社交媒体", home: "首页", slogan: "MLC。AI 从这里开始。", confidential: "机密。仅供内部使用。" },
+  status: { loadingPage: "页面加载中" },
+  form: { name: "姓名", phone: "电话号码", submit: "发送", sending: "发送中...", successTitle: "谢谢，我们会尽快联系您。", successText: "MLC 团队已收到您的申请，并会尽快回复。", error: "发送失败。请直接联系我们：@mlc_direct", messagePrefix: "方向", options: { development: "开发", corporate: "企业培训", personal: "个人培训", media: "AI 媒体", partnership: "合作" } },
+  lead: { eyebrow: "提交申请", title: "迈出第一步。", text: "留下姓名、电话和方向。我们会帮助您选择下一步：教育、开发、AI 媒体或合作。", communityTitle: "迈入社区的第一步。", communityText: "关注 MLC 社交媒体，获取活动公告，更接近 AI 环境。", registrationTitle: "活动报名", registrationText: "活动公告和报名链接会发布在 MLC 社交媒体。", registrationButton: "查看公告" },
+  home: { ...en.home, metaDescription: "AI 从这里开始。社区、教育、开发和 AI 媒体。", heroTitle: "AI 从这里开始", heroSubtitle: "乌兹别克斯坦第一个也是唯一的 AI 社区", presidentQuote: "“今天，整个世界进入了人工智能时代……人工智能将把人类带入文明的新阶段。寻找并创造结果的人会胜出。”", presidentSource: "- 沙夫卡特·米尔济约耶夫，摘自 2025 年 10 月 21 日会议讲话。", founderQuote: "“MLC 的出现，是为了让 AI 更接近人、更容易理解、更有用，并通过 AI 发展乌兹别克斯坦。”", founderSource: "- Shahriyor Khudoyberdiyev，ML Community Uzbekistan 负责人。", call: "拨打电话", partnersTitle: "强大的合作伙伴与我们一起前进。", helpTitle: "选择您进入 AI 的入口。", more: "了解更多", gallery: { community: "社区", education: "教育", communityStats: [{ value: "3500+", label: "成员" }, { value: "6000+", label: "访问" }, { value: "50+", label: "活动" }], educationStats: [{ value: "400+", label: "毕业生" }, { value: "70%", label: "就业" }, { value: "8+", label: "培训企业" }] }, services: [{ title: "社区", description: "活动、连接、实践解析，以及更容易进入 AI 并更快成长的环境。" }, { title: "教育", description: "面向学生、专业人士和企业的项目：从基础 AI 到应用型企业课程。" }, { title: "开发", description: "AI 机器人、RAG、流程自动化、内部工作台，以及面向真实业务任务的集成。" }, { title: "AI 媒体", description: "视频、产品内容、AI 虚拟人、视觉概念和品牌制作流程。" }, { title: "广告、电影还是动画？", description: "我们创作看起来高端且令人难忘的媒体内容：广告片、生成式场景、写实电影和风格化动画。AI 缩短周期和成本，同时不失震撼效果。" }, { title: "现在就开始学习 AI", description: "前往 01AI 平台，今天就进入 AI 领域。按照自己的节奏学习，获取最新材料和实践课程，帮助您更快进入职业领域。" }] },
+  about: { ...en.about, metaTitle: "关于我们 | MLC", metaDescription: "MLC 在乌兹别克斯坦发展 AI 社区、教育和应用型 AI 项目。", title: "关于 MLC", stats: [{ value: "3500+", label: "成员" }, { value: "50+", label: "活动" }, { value: "4", label: "核心方向" }], founderRole: "MLC 创始人", founderTitle: "创始人寄语", founderText: "“MLC 的出现，是为了让 AI 更接近人、更清晰、更有用。我们希望乌兹别克斯坦拥有更多专家、强大团队、科技公司，以及能够带来真实结果的 AI 项目。”", missionCards: [{ title: "使命", text: "通过 AI 发展乌兹别克斯坦。" }, { title: "目标", text: "建设强大的 AI 生态：更多专家、项目、公司和真实落地。" }, { title: "为了乌兹别克斯坦", text: "通过知识、连接、产品和实践，帮助国家更快进入新的技术时代。" }], focusTitle: "我们的关注点", focusAreas: [{ title: "社区", text: "围绕活动、社交、经验交流和真实 AI 环境连接人。" }, { title: "教育", text: "通过实践项目和应用型形式帮助个人与企业学习 AI。" }, { title: "开发", text: "为企业推出应用型 AI 解决方案、自动化、助手和集成。" }, { title: "AI 媒体", text: "为品牌创建视觉概念、视频、社交创意和 AI 制作。" }], valueTitle: "我们为人们和国家带来什么", values: ["清晰进入 AI，不再孤立和混乱", "接触活动、专家、导师和合作伙伴", "可以在工作中使用的实践技能", "AI 环境中的职业和项目机会", "推动 AI 向前发展的强大圈层"] },
+  community: { ...en.community, metaTitle: "社区 | MLC", metaDescription: "MLC AI 社区：活动、连接、实践和成长。", title: "AI 社区", stats: [{ value: "3500+", label: "成员" }, { value: "50+", label: "活动" }, { value: "6000+", label: "访问" }], formatsTitle: "社区内部发生什么", pastTitle: "过往活动", pastBadge: "社区照片", valueTitle: "成员能获得什么", joinTitle: "如何加入" },
+  education: { ...en.education, metaTitle: "教育 | MLC", metaDescription: "MLC AI 教育：学习、实践和职业成长。", title: "AI 教育", stats: [{ value: "400+", label: "毕业生" }, { value: "70%", label: "就业" }, { value: "8+", label: "培训企业" }], companiesTitle: "+8 家培训企业", companiesText: "我们帮助团队把 AI 带入工作：从最初的工具到日常任务的实践场景。", partnersBadge: "以及其他合作伙伴", graduatesTitle: "+400 毕业生", internshipTitle: "实习", formatsTitle: "我们在 AI 教育中提供什么" },
+  development: en.development,
+  aiMedia: en.aiMedia,
+  detail: { partner: "合作伙伴", partnerNotFound: "未找到合作伙伴页面", partnerNotFoundText: "该材料似乎尚未添加。请返回首页并打开其他合作伙伴。", partnerSite: "合作伙伴网站", back: "返回", home: "首页", openPhoto: "打开照片", close: "关闭预览", graduateNotFound: "未找到学生页面", graduateNotFoundText: "该学生页面尚未准备好，或链接已更改。", backToEducation: "返回教育", studentFallbackTitle: "学生 | ML Community Uzbekistan", studentFallbackDescription: "ML Community Uzbekistan 毕业生故事", otherStories: "其他故事" }
+};
+
+const uzDevelopment = {
+  ...ru.development,
+  metaTitle: "Dasturlash | MLC",
+  metaDescription: "MLC biznes uchun AI dasturlash va avtomatlashtirish yechimlarini yaratadi.",
+  title: "AI Dasturlash",
+  stats: [
+    { value: "2-4", label: "MVP uchun oy" },
+    { value: "6-12", label: "integratsiya uchun oy" },
+    { value: "1-2", label: "AI mahsulot uchun yil" }
+  ],
+  directionsTitle: "AI Dasturlash yo'nalishlari",
+  directions: [
+    {
+      ...ru.development.directions[0],
+      title: "Qo'llab-quvvatlash va arizalarni saralash boti",
+      text: "Telegram yoki web-bot tez-tez beriladigan savollarga javob beradi, mijoz ma'lumotlarini yig'adi, murakkab murojaatlarni menejerga uzatadi va tarixni saqlaydi.",
+      timeline: "2-4 oy",
+      items: ["FAQ va ssenariylar", "CRM bilan integratsiya", "operatorga uzatish"]
+    },
+    {
+      ...ru.development.directions[1],
+      title: "Hujjatlar va bilimlar bazasi bo'yicha qidiruv",
+      text: "Reglamentlar, shartnomalar, instruktsiyalar va o'quv materiallaridan javob topadigan, manbalarni ko'rsatadigan ichki AI yordamchi.",
+      timeline: "3-6 oy",
+      items: ["hujjatlarni indekslash", "manbalarni keltirish", "kirish huquqlarini nazorat qilish"]
+    },
+    {
+      ...ru.development.directions[2],
+      title: "Operatsion vazifalarni avtomatlashtirish",
+      text: "Takrorlanadigan jarayonlar uchun yechim: arizalarni tasniflash, hujjat draftlari, bildirishnomalar, statuslar va deadline nazorati.",
+      timeline: "4-8 oy",
+      items: ["ariza va statuslar", "hujjat shablonlari", "jamoaga bildirishnoma"]
+    },
+    {
+      ...ru.development.directions[3],
+      title: "OCR va hujjatlarni qayta ishlash",
+      text: "Hisob-faktura, akt, ariza, pasport yoki anketadan ma'lumot ajratib olib, natijani jadval yoki CRM'ga yuboradigan tizim.",
+      timeline: "3-7 oy",
+      items: ["maydonlarni tanish", "xatolarni tekshirish", "tizimga eksport"]
+    },
+    {
+      ...ru.development.directions[4],
+      title: "Qo'ng'iroqlar va servis sifatini tahlil qilish",
+      text: "Qo'ng'iroqlar transkripsiyasi, qisqa xulosalar, teglar, skriptlarga rioya etish bahosi va rahbar uchun tushunarli analitika.",
+      timeline: "4-9 oy",
+      items: ["qo'ng'iroqlarni yozuvga aylantirish", "skriptlarni baholash", "jamoa bo'yicha hisobotlar"]
+    },
+    {
+      ...ru.development.directions[5],
+      title: "Sotuv, scoring va prognozlar",
+      text: "Lidlarni baholash, talab prognozi, mijoz segmentatsiyasi va ma'lumotlardagi risklarni erta ko'rish uchun modellar va dashboardlar.",
+      timeline: "6-12 oy",
+      items: ["lid scoring", "talab prognozi", "mijoz segmentlari"]
+    },
+    {
+      ...ru.development.directions[6],
+      title: "Jamoa uchun ichki AI kabinet",
+      text: "Rollar, prompt shablonlari, so'rovlar tarixi, hujjatlarga kirish va bo'limlar uchun tayyor ssenariylar bilan yagona ish joyi.",
+      timeline: "6-14 oy",
+      items: ["xodim rollari", "vazifa shablonlari", "tarix va nazorat"]
+    },
+    {
+      ...ru.development.directions[7],
+      title: "Mahsulotga uzoq muddatli AI integratsiya",
+      text: "Mavjud sayt, CRM, LMS, marketplace yoki ichki platformaga AI funksiyalarini bosqichma-bosqich qo'shish, qo'llab-quvvatlash va rivojlantirish.",
+      timeline: "1-2 yil",
+      items: ["yo'l xaritasi", "API va interfeyslar", "relizlarni qo'llab-quvvatlash"]
+    }
+  ],
+  processTitle: "AI'ni natijaga qanday olib boramiz",
+  processText: "Jamoa AI haqida prezentatsiya emas, sinash, o'lchash va rivojlantirish mumkin bo'lgan ishlaydigan instrument oladi.",
+  process: [
+    { title: "Audit va imkoniyatlar xaritasi", text: "AI tez natija beradigan jarayonlarni topamiz, ma'lumotlar, risklar, qiymat va ishga tushirish ustuvorligini baholaymiz." },
+    { title: "Qisqa siklda prototip", text: "Ishlaydigan MVP yig'amiz, jamoaga real ssenariyni ko'rsatamiz va talablarni amalda tez aniqlaymiz." },
+    { title: "Jarayonlarga integratsiya", text: "Kerakli tizimlarni ulaymiz, huquqlar, ssenariylar, analitika va foydalanuvchilar uchun qulay interfeysni sozlaymiz." },
+    { title: "Ishga tushirish va qo'llab-quvvatlash", text: "Sifatni kuzatamiz, prompt va modellarni yaxshilaymiz, yangi funksiyalar qo'shamiz va jamoaga yechimdan foydalanishda yordam beramiz." }
+  ],
+  outputTitle: "Buyurtmachi nima oladi",
+  outputs: [
+    "tayyor web-servis yoki ichki instrument",
+    "aniq rol uchun bot yoki assistent",
+    "CRM, bilimlar bazasi, sayt yoki messenjer bilan integratsiya",
+    "sifat va foydalanish metrikalari bo'lgan dashboard",
+    "hujjatlar, jamoa uchun trening va rivojlanish rejasi"
+  ]
+};
+
+const enDevelopment = {
+  ...ru.development,
+  metaTitle: "Development | MLC",
+  metaDescription: "AI development and automation for business by MLC.",
+  title: "AI Development",
+  stats: [
+    { value: "2-4", label: "months for MVP" },
+    { value: "6-12", label: "months for integration" },
+    { value: "1-2", label: "years for AI product" }
+  ],
+  directionsTitle: "AI Development Directions",
+  directions: [
+    { ...ru.development.directions[0], title: "Support and lead intake bot", text: "A Telegram or web bot that answers frequent questions, collects client data, routes complex requests to a manager, and keeps the conversation history.", timeline: "2-4 months", items: ["FAQ and scripts", "CRM integration", "operator handoff"] },
+    { ...ru.development.directions[1], title: "Search across documents and knowledge bases", text: "An internal AI assistant that finds answers in policies, contracts, instructions, and training materials while showing the source.", timeline: "3-6 months", items: ["document indexing", "source citations", "access control"] },
+    { ...ru.development.directions[2], title: "Operational task automation", text: "A solution for repeated workflows: request classification, document drafts, notifications, statuses, and deadline control.", timeline: "4-8 months", items: ["requests and statuses", "document templates", "team notifications"] },
+    { ...ru.development.directions[3], title: "OCR and document processing", text: "A system that extracts fields from invoices, acts, applications, passports, or forms and sends the result to a table or CRM.", timeline: "3-7 months", items: ["field recognition", "error checks", "system export"] },
+    { ...ru.development.directions[4], title: "Call analysis and service quality", text: "Call transcription, short summaries, tags, script compliance scoring, and clear analytics for sales or support managers.", timeline: "4-9 months", items: ["call transcription", "script scoring", "team reports"] },
+    { ...ru.development.directions[5], title: "Sales, scoring, and forecasts", text: "Models and dashboards for lead scoring, demand forecasting, customer segmentation, and early risk detection in data.", timeline: "6-12 months", items: ["lead scoring", "demand forecast", "customer segments"] },
+    { ...ru.development.directions[6], title: "Internal AI workspace for teams", text: "One workspace with roles, prompt templates, request history, document access, and ready scenarios for departments.", timeline: "6-14 months", items: ["employee roles", "task templates", "history and control"] },
+    { ...ru.development.directions[7], title: "Long-term AI integration into a product", text: "Gradual AI functionality inside an existing website, CRM, LMS, marketplace, or internal platform with support and development.", timeline: "1-2 years", items: ["roadmap", "API and interfaces", "release support"] }
+  ],
+  processTitle: "How we bring AI to a working result",
+  processText: "The team receives not a presentation about AI, but a working tool that can be tested, measured, and improved.",
+  process: [
+    { title: "Audit and opportunity map", text: "We find processes where AI can create fast impact and assess data, risks, cost, and launch priority." },
+    { title: "Prototype in a short cycle", text: "We build a working MVP, show the team a real scenario, and quickly clarify requirements in practice." },
+    { title: "Integration into workflows", text: "We connect the required systems, set up permissions, scenarios, analytics, and a convenient user interface." },
+    { title: "Launch and support", text: "We monitor quality, improve prompts and models, add new features, and help the team use the solution." }
+  ],
+  outputTitle: "What the client receives",
+  outputs: [
+    "a ready web service or internal tool",
+    "a bot or assistant for a specific role",
+    "integration with CRM, knowledge base, website, or messenger",
+    "a dashboard with quality and usage metrics",
+    "documentation, team training, and a development plan"
+  ]
+};
+
+const zhDevelopment = {
+  ...enDevelopment,
+  metaTitle: "开发 | MLC",
+  metaDescription: "MLC 为企业提供 AI 开发与自动化。",
+  title: "AI 开发",
+  stats: [
+    { value: "2-4", label: "个月完成 MVP" },
+    { value: "6-12", label: "个月完成集成" },
+    { value: "1-2", label: "年打造 AI 产品" }
+  ],
+  directionsTitle: "AI 开发方向",
+  directions: [
+    { ...enDevelopment.directions[0], title: "支持与线索处理机器人", text: "Telegram 或网页机器人，回答常见问题、收集客户信息、把复杂请求转给经理，并保存沟通历史。", timeline: "2-4 个月", items: ["FAQ 与脚本", "CRM 集成", "转接人工"] },
+    { ...enDevelopment.directions[1], title: "文档与知识库搜索", text: "内部 AI 助手，可在制度、合同、说明和培训材料中查找答案，并显示来源。", timeline: "3-6 个月", items: ["文档索引", "来源引用", "权限控制"] },
+    { ...enDevelopment.directions[2], title: "运营任务自动化", text: "面向重复流程的解决方案：请求分类、文档草稿、通知、状态和截止日期控制。", timeline: "4-8 个月", items: ["请求与状态", "文档模板", "团队通知"] },
+    { ...enDevelopment.directions[3], title: "OCR 与文档处理", text: "从发票、申请、护照或表格中提取字段，并把结果发送到表格或 CRM。", timeline: "3-7 个月", items: ["字段识别", "错误检查", "导出到系统"] },
+    { ...enDevelopment.directions[4], title: "通话分析与服务质量", text: "通话转写、摘要、标签、脚本执行评分，以及给销售或客服主管的清晰分析。", timeline: "4-9 个月", items: ["通话转写", "脚本评分", "团队报告"] },
+    { ...enDevelopment.directions[5], title: "销售、评分与预测", text: "用于线索评分、需求预测、客户分群和早期风险发现的模型与仪表盘。", timeline: "6-12 个月", items: ["线索评分", "需求预测", "客户分群"] },
+    { ...enDevelopment.directions[6], title: "团队内部 AI 工作台", text: "包含角色、提示词模板、请求历史、文档访问和部门场景的统一工作空间。", timeline: "6-14 个月", items: ["员工角色", "任务模板", "历史与控制"] },
+    { ...enDevelopment.directions[7], title: "长期 AI 产品集成", text: "把 AI 功能逐步集成到网站、CRM、LMS、市场平台或内部系统中，并持续支持。", timeline: "1-2 年", items: ["路线图", "API 与界面", "版本支持"] }
+  ],
+  processTitle: "我们如何把 AI 做到结果",
+  processText: "团队获得的不是 AI 演示，而是可以测试、衡量并继续发展的工作工具。",
+  process: [
+    { title: "审计与机会地图", text: "找到 AI 能快速产生价值的流程，并评估数据、风险、成本和启动优先级。" },
+    { title: "短周期原型", text: "搭建可工作的 MVP，向团队展示真实场景，并在实践中快速明确需求。" },
+    { title: "集成到流程", text: "连接所需系统，配置权限、场景、分析和易用界面。" },
+    { title: "上线与支持", text: "监控质量，优化提示词和模型，增加功能，并帮助团队使用解决方案。" }
+  ],
+  outputTitle: "客户会得到什么",
+  outputs: ["可工作的网页服务或内部工具", "面向具体角色的机器人或助手", "与 CRM、知识库、网站或消息工具的集成", "包含质量与使用指标的仪表盘", "文档、团队培训和发展计划"]
+};
+
+const uzAiMedia = {
+  ...ru.aiMedia,
+  metaTitle: "Media uchun AI | MLC",
+  metaDescription: "MLC AI media, reklama va vizual kontent yaratadi.",
+  title: "Media uchun AI",
+  stats: [
+    { value: "1-2", label: "konsept uchun kun" },
+    { value: "3-7", label: "rolik uchun kun" },
+    { value: "10+", label: "kontent formati" }
+  ],
+  directionsTitle: "AI Media yo'nalishlari",
+  directions: [
+    { ...ru.aiMedia.directions[0], title: "Reklama roliklari", text: "Mahsulot, servis yoki tadbir uchun qisqa video ads: g'oya, ssenariy, vizual uslub, sahnalar generatsiyasi va final montaj.", timeline: "1-2 hafta", items: ["15-60 soniya", "script va storyboard", "sotsial tarmoqlar uchun adaptatsiya"] },
+    { ...ru.aiMedia.directions[1], title: "Product kontent", text: "Kartochka, banner, prezentatsiya va landinglar uchun mahsulotni turli sahna va uslublarda ko'rsatadigan vizuallar.", timeline: "3-7 kun", items: ["banner va key visual", "product shots", "kampaniya variantlari"] },
+    { ...ru.aiMedia.directions[2], title: "Reels, Shorts va social kreativlar", text: "Instagram, TikTok, YouTube Shorts va Telegram uchun yagona vizual yo'nalishdagi vertikal qisqa videolar seriyasi.", timeline: "2-5 kun", items: ["vertikal format", "kreativlar seriyasi", "muqova va captions"] },
+    { ...ru.aiMedia.directions[3], title: "AI avatarlar va tushuntiruvchi videolar", text: "Ta'lim, promo, instruktsiya va ichki kommunikatsiyalar uchun murakkab suratga olishsiz boshlovchi yoki personajli video.", timeline: "1-2 hafta", items: ["skript va ovoz", "avatar video", "lokalizatsiya"] },
+    { ...ru.aiMedia.directions[4], title: "Vizual konseptlar", text: "To'liq productiondan oldin moodboard, stilistika, kadrlar va kampaniyaning vizual tilini tez yig'amiz.", timeline: "2-4 kun", items: ["moodboard", "style frames", "visual direction"] },
+    { ...ru.aiMedia.directions[5], title: "Storyboard va animatic", text: "Rolikni productiondan oldin ko'rish uchun kadrlar, ketma-ketlik, ritm, dinamika va hikoya strukturasini tayyorlaymiz.", timeline: "3-7 kun", items: ["storyboard", "animatic", "sahna struktura"] },
+    { ...ru.aiMedia.directions[6], title: "Launch uchun kreativ paketlar", text: "Mahsulot, kurs, tadbir yoki reklama kampaniyasi starti uchun vizuallar va qisqa videolar to'plami.", timeline: "1-3 hafta", items: ["yagona uslub", "bir nechta format", "tez iteratsiyalar"] },
+    { ...ru.aiMedia.directions[7], title: "Kontent jamoasi uchun AI pipeline", text: "Jamoa kontentni tezroq va bir uslubda muntazam yaratishi uchun jarayon, shablon va qoidalarni sozlaymiz.", timeline: "2-4 hafta", items: ["prompt shablonlari", "brand rules", "jamoani o'qitish"] }
+  ],
+  productionTitle: "Production qanday quriladi",
+  production: [
+    { title: "Brif va g'oya", text: "Mahsulot, auditoriya, platformalar, brend cheklovlari va kontent berishi kerak bo'lgan natijani aniqlaymiz." },
+    { title: "Ssenariy va vizual uslub", text: "Rolik strukturasini, moodboard, referenslar, key frames va tasdiqlash uchun aniq yo'nalishni yig'amiz." },
+    { title: "AI production", text: "Sahnalar, tasvirlar, ovoz, motion elementlar yoki avatar videoni generatsiya qilib, draft versiyani yig'amiz." },
+    { title: "Final yig'ish", text: "Montaj, titr, ovoz, rang, formatlarni yakunlaymiz va materiallarni kerakli platformalar uchun eksport qilamiz." }
+  ],
+  outputTitle: "Buyurtmachi nima oladi",
+  outputs: ["reklama, sotsial tarmoq yoki prezentatsiya uchun tayyor videolar", "key visual, bannerlar, muqovalar va product shots", "kelishish uchun storyboard, moodboard va style frames", "vertikal, kvadrat va wide formatlarga adaptatsiya", "keyingi production uchun uslub va jarayon bo'yicha guide"]
+};
+
+const enAiMedia = {
+  ...ru.aiMedia,
+  metaTitle: "AI for media | MLC",
+  metaDescription: "AI media, advertising, and visual content production by MLC.",
+  title: "AI for media",
+  stats: [
+    { value: "1-2", label: "days for concept" },
+    { value: "3-7", label: "days for video" },
+    { value: "10+", label: "content formats" }
+  ],
+  directionsTitle: "AI Media Directions",
+  directions: [
+    { ...ru.aiMedia.directions[0], title: "Advertising videos", text: "Short video ads for a product, service, or event: idea, script, visual style, generated scenes, and final edit.", timeline: "1-2 weeks", items: ["15-60 seconds", "script and storyboard", "social adaptations"] },
+    { ...ru.aiMedia.directions[1], title: "Product content", text: "Visuals for cards, banners, presentations, and landing pages where a product needs to be shown quickly in different scenes and styles.", timeline: "3-7 days", items: ["banners and key visual", "product shots", "campaign variants"] },
+    { ...ru.aiMedia.directions[2], title: "Reels, Shorts, and social creatives", text: "Series of short vertical videos for Instagram, TikTok, YouTube Shorts, and Telegram with one visual direction.", timeline: "2-5 days", items: ["vertical format", "creative series", "covers and captions"] },
+    { ...ru.aiMedia.directions[3], title: "AI avatars and explainer videos", text: "Presenter or character videos for learning, promo, instructions, and internal communications without a heavy shooting process.", timeline: "1-2 weeks", items: ["script and voice", "avatar video", "localization"] },
+    { ...ru.aiMedia.directions[4], title: "Visual concepts", text: "We quickly assemble a moodboard, style, frames, and the campaign's visual language before full production.", timeline: "2-4 days", items: ["moodboard", "style frames", "visual direction"] },
+    { ...ru.aiMedia.directions[5], title: "Storyboards and animatics", text: "We help preview the future video before production: frames, sequence, rhythm, rough dynamics, and story structure.", timeline: "3-7 days", items: ["storyboard", "animatic", "scene structure"] },
+    { ...ru.aiMedia.directions[6], title: "Creative launch packages", text: "A set of visuals and short videos for launching a product, course, event, or advertising campaign.", timeline: "1-3 weeks", items: ["consistent style", "multiple formats", "fast iterations"] },
+    { ...ru.aiMedia.directions[7], title: "AI pipeline for content teams", text: "We set up the process, templates, and rules so the team can create content faster and in one style.", timeline: "2-4 weeks", items: ["prompt templates", "brand rules", "team training"] }
+  ],
+  productionTitle: "How production is built",
+  production: [
+    { title: "Brief and idea", text: "We clarify the product, audience, platforms, brand limits, and the result the content should deliver." },
+    { title: "Script and visual style", text: "We assemble the video structure, moodboard, references, key frames, and a clear direction for approval." },
+    { title: "AI production", text: "We generate scenes, images, voice, motion elements, or avatar video and assemble the draft version." },
+    { title: "Final assembly", text: "We finalize editing, titles, sound, color, formats, and export materials for the required platforms." }
+  ],
+  outputTitle: "What the client receives",
+  outputs: ["ready videos for ads, social media, or presentations", "key visual, banners, covers, and product shots", "storyboard, moodboard, and style frames for approval", "adaptations for vertical, square, and wide formats", "a style and process guide for future production"]
+};
+
+const zhAiMedia = {
+  ...enAiMedia,
+  metaTitle: "AI 媒体 | MLC",
+  metaDescription: "MLC 使用 AI 制作媒体、广告与视觉内容。",
+  title: "AI 媒体",
+  stats: [
+    { value: "1-2", label: "天完成概念" },
+    { value: "3-7", label: "天完成视频" },
+    { value: "10+", label: "内容格式" }
+  ],
+  directionsTitle: "AI 媒体方向",
+  directions: [
+    { ...enAiMedia.directions[0], title: "广告视频", text: "为产品、服务或活动制作短视频广告：创意、脚本、视觉风格、场景生成和最终剪辑。", timeline: "1-2 周", items: ["15-60 秒", "脚本与分镜", "社交平台适配"] },
+    { ...enAiMedia.directions[1], title: "产品内容", text: "用于卡片、横幅、演示和落地页的视觉内容，快速展示产品在不同场景和风格中的样子。", timeline: "3-7 天", items: ["横幅与主视觉", "产品图", "活动版本"] },
+    { ...enAiMedia.directions[2], title: "Reels、Shorts 与社交创意", text: "为 Instagram、TikTok、YouTube Shorts 和 Telegram 制作统一视觉方向的竖屏短视频系列。", timeline: "2-5 天", items: ["竖屏格式", "创意系列", "封面与字幕"] },
+    { ...enAiMedia.directions[3], title: "AI 虚拟人与讲解视频", text: "用于培训、宣传、说明和内部沟通的主持人或角色视频，无需复杂拍摄。", timeline: "1-2 周", items: ["脚本与声音", "虚拟人视频", "本地化"] },
+    { ...enAiMedia.directions[4], title: "视觉概念", text: "在完整制作前快速整理 moodboard、风格、关键画面和活动视觉语言。", timeline: "2-4 天", items: ["moodboard", "风格帧", "视觉方向"] },
+    { ...enAiMedia.directions[5], title: "分镜与 animatic", text: "在制作前预览视频：画面、顺序、节奏、粗略动态和故事结构。", timeline: "3-7 天", items: ["分镜", "animatic", "场景结构"] },
+    { ...enAiMedia.directions[6], title: "上线创意包", text: "为产品、课程、活动或广告上线准备视觉和短视频素材包。", timeline: "1-3 周", items: ["统一风格", "多种格式", "快速迭代"] },
+    { ...enAiMedia.directions[7], title: "内容团队 AI 流程", text: "搭建流程、模板和规则，让团队更快并以统一风格持续生产内容。", timeline: "2-4 周", items: ["提示词模板", "品牌规则", "团队培训"] }
+  ],
+  productionTitle: "Production 如何搭建",
+  production: [
+    { title: "简报与创意", text: "明确产品、受众、平台、品牌限制，以及内容需要带来的结果。" },
+    { title: "脚本与视觉风格", text: "整理视频结构、moodboard、参考、关键画面和可审批的清晰方向。" },
+    { title: "AI production", text: "生成场景、图像、声音、动态元素或虚拟人视频，并组装初版。" },
+    { title: "最终制作", text: "完成剪辑、字幕、声音、色彩和格式，并导出到所需平台。" }
+  ],
+  outputTitle: "客户会得到什么",
+  outputs: ["用于广告、社交媒体或演示的成品视频", "主视觉、横幅、封面和产品图", "用于确认的分镜、moodboard 和风格帧", "竖屏、方形和宽屏格式适配", "后续制作的风格与流程指南"]
+};
+
+const zhCommunity = {
+  ...zh.community,
+  formats: [
+    { title: "Meetup 与讲座", text: "与 AI 实践者、founder、工程师和产品团队见面，拆解真实案例。", items: ["AI 趋势", "应用案例", "专家问答"] },
+    { title: "Networking", text: "参与者可以找到同路人、未来同事、合作伙伴、导师和团队。", items: ["认识新伙伴", "职业连接", "合作机会"] },
+    { title: "实践拆解", text: "拆解工具、prompt、自动化、作品集、项目想法和参与者真实任务。", items: ["任务拆解", "AI 工具", "少噪音，多实践"] },
+    { title: "大型活动", text: "会议、社区聚会、demo day、公开讨论，以及与合作伙伴的联合活动。", items: ["会议", "demo day", "社区聚会"] }
+  ],
+  pastEvents: [
+    { title: "AI Rewind", meta: "AI 趋势会议与回顾" },
+    { title: "ML Gap", meta: "讲座与案例拆解" },
+    { title: "ML Party", meta: "Networking 与社区夜晚" },
+    { title: "Guest Lectures", meta: "与行业专家见面" },
+    { title: "Partner Meetups", meta: "与企业和大学的活动" },
+    { title: "Community Talks", meta: "关于 AI 市场的开放讨论" }
+  ],
+  valueFlow: ["meet", "learn", "grow"],
+  values: ["理解 AI 领域真实发生的事情", "接触人、公司、导师和机会", "可以提问并快速找到方向的环境", "学习、启动项目并职业成长的动力", "连接参与者、企业、教育和政府倡议"],
+  joinSteps: [
+    ["01", "关注公告", "订阅 MLC，并选择适合主题和水平的活动。"],
+    ["02", "参加见面会", "认识参与者、提出问题并加入讨论。"],
+    ["03", "在 AI 环境中成长", "把社区作为进入学习、项目、职业和合作的入口。"]
+  ]
+};
+
+const zhEducation = {
+  ...zh.education,
+  formats: [
+    { title: "个人学习", text: "根据学生目标制定个人路径：评估当前水平、搭建项目、按舒适节奏推进，并把技能带到实践结果。" },
+    { title: "学生小组学习", text: "现场课程、实习、合作伙伴办公室访问、masterclass、面试和简历准备。这不只是课程，而是让学生更快成长的环境。" },
+    { title: "企业培训", text: "为团队定制 AI 项目：流程自动化、个人效率、内容、报告、演示、分析和其他业务场景。" },
+    { title: "01AI 平台", text: "面向所有想灵活学习 AI 的人：清晰模块、实践任务，以及不受地点和时间限制的知识访问。" }
+  ]
+};
+
+export const siteCopy = {
+  ru,
+  uz: { ...uz, development: uzDevelopment, aiMedia: uzAiMedia },
+  en: { ...en, development: enDevelopment, aiMedia: enAiMedia },
+  zh: { ...zh, community: zhCommunity, education: zhEducation, development: zhDevelopment, aiMedia: zhAiMedia }
+} as const;
+
+export function getSiteLanguage(language: string | undefined): SiteLanguage {
+  const normalized = language?.split("-")[0] as SiteLanguage | undefined;
+  return normalized && normalized in siteCopy ? normalized : "ru";
+}
+
+export function useSiteCopy() {
+  const { i18n } = useTranslation();
+  return siteCopy[getSiteLanguage(i18n.language ?? i18n.resolvedLanguage)];
+}

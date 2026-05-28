@@ -1,0 +1,231 @@
+[
+  {
+    "id": 18,
+    "name": "IMPACT.T",
+    "logo": "image_2026-04-07_16-30-55-1775561640195.png",
+    "description": "Ba'zi joylar shunchaki to'rt devor — ba'zilari esa harakatning markaziga aylanib ketadi. IMPACT.T ikkinchisi.\n\n",
+    "website": "https://impactthub.uz/",
+    "blocks": [
+      {
+        "type": "image_group",
+        "order": 1,
+        "images": [
+          "photo_2026-04-09_12-40-41-1776166198467.jpg",
+          "photo_2026-04-14_16-28-48-1776166198484.jpg",
+          "photo_2026-04-14_16-29-21-1776166198461.jpg",
+          "photo_2026-04-09_12-37-54-1776764510415.jpg"
+        ]
+      },
+      {
+        "type": "text",
+        "order": 2,
+        "value": "ML Community tarixidagi birinchi ML Party aynan shu yerda yondi: 200 dan ortiq odam, 10 nafar spiker, va zalda o'tirgan odamlar orasida — MyTaxi, Workly va boshqa yirik loyihalar ortida turgan serial tadbirkor Akmal Paiziev. O'sha kechani hech kim \"birinchi tadbir\" sifatida rejalashtirmagan edi — lekin u tarix bo'lib qoldi. Va bu tarixning sahifasi IMPACT.T da ochildi.\n\nO'shandan beri ko'p narsalar o'zgardi. Soni o'sdi, formatlar kengaydi, g'oyalar murakkablashdi. Lekin IMPACT.T o'sha-o'sha qoldi: ishonchli, ochiq va doim tayyor. Har qanday tashabbusimizda ularning qo'llovi bor — ba'zan makon sifatida, ba'zan ruhiy tayanch sifatida.\n\nDavnie partnyori — bu rus iborasi. O'zbek tilida buning ma'nosi: yonida bo'lgan, yonida qolgan.\n"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "IT-Park Uzbekistan",
+    "logo": "it-park-1772014405223.png",
+    "description": "Birinchi qadam eng qiyin bo'ladi, deyishadi. Bizning birinchi qadamimizda IT-Park bor edi — va bu hamma narsani osonlashtirdi.",
+    "website": "https://www.it-park.uz/",
+    "blocks": [
+      {
+        "type": "text",
+        "order": 1,
+        "value": "Birinchi tadbirimizdan boshlab hozirgi kungacha, IT-Park Uzbekistan MLC ning eng doimiy hamkorlaridan biri bo'lib kelmoqda. So'zsiz ishonch va uzluksiz qo'llov — boshqa izoh kerak emas."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "C-Space Coworking",
+    "logo": "c-space-1772014413624.png",
+    "description": "Oddiy hamkorlik emas — amaliy qo'llov.",
+    "website": "https://cspace.uz/",
+    "blocks": [
+      {
+        "type": "text",
+        "order": 1,
+        "value": "ML Gap — bu faqat o'qish emas, bu fikrlash, muhokama qilish, kashf etish jarayoni. Buning uchun to'g'ri muhit kerak. C-Space o'sha muhitni bepul taqdim etadi: qulay kovorking makon, ochiq eshik, va nol to'siq."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "TBC Uzbekistan",
+    "logo": "tbc-bank-1772014422922.png",
+    "description": "Bilim olish bir narsa. Uni real hayotda qo'llash — butunlay boshqa narsa. TBC Uzbekistan shu ikki olamni bog'lab turadi.",
+    "website": "https://tbcbank.uz/",
+    "blocks": [
+      {
+        "type": "image_group",
+        "order": 1,
+        "images": [
+          "photo_2026-04-14_16-31-26-1776764644882.jpg",
+          "photo_2024-03-06_17-59-40-1776166401067.jpg",
+          "photo_2026-04-09_12-34-04-1776166432877.jpg",
+          "photo_2026-04-09_12-33-58-1776764645095.jpg"
+        ]
+      },
+      {
+        "type": "text",
+        "order": 2,
+        "value": "Data Analytics kurslarini birgalikda tashkil etamiz. Kurs tugagach esa, bitiruvchilar uchun eshik yopilmaydi — aksincha, TBC ichida stajiovka imkoniyati ochildi. Ofisga ekskursiyalar, jonli muhit bilan tanishuv, real jamoada ishlash tajribasi — bularning barchasi MLC va TBC hamkorligining mahsuli.\n\nUlar faqat kurs homiysi emas. Ular — o'sishga sherik."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Alif Bank Uzbekistan",
+    "logo": "alif-bank-1772014432800.png",
+    "description": "\"Texnologiya odamlar uchun\" degan gap ko'p aytiladi. Alif buni isbotlaydi — va MLC bilan birgalikda yanada kuchliroq isbotlaydi.",
+    "website": "https://www.alif.uz/en/",
+    "blocks": [
+      {
+        "type": "image_group",
+        "order": 1,
+        "images": [
+          "photo_2026-04-09_12-32-23-1776166688146.jpg",
+          "img_6416-1776167748363.jpg",
+          "img_6456-1776167748817.jpg",
+          "dsc00184-1776167747934.jpg",
+          "dsc00150-1776167747948.jpg",
+          "2k2a9632-1776167924170.jpg"
+        ]
+      },
+      {
+        "type": "text",
+        "order": 2,
+        "value": "Machine Learning Engineer yo'nalishi bo'yicha kurslar birgalikda tashkil etiladi. Bitiruvchilar uchun stajiovka imkoniyati — Alif ichida, real loyihalar bilan. Ofisda masterklasslar, amaliyotchilar bilan jonli suhbatlar, sohaning \"oshxonasini\" ko'rish imkoniyati.\n\nAlif bilan har bir tanlov — faqat sertifikat emas, kelajak uchun qo'yilgan poydevor.\n\n"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Ministry of Digital Technologies of the Republic of Uzbekistan",
+    "logo": "ministry-of-digital-technologies-of-the-republic-of-uzbekistan-1772014442259.png",
+    "description": "Bu shunchaki memorandum emas. Bu — miqyos o'zgardi, degani.",
+    "website": "https://gov.uz/en/digital",
+    "blocks": [
+      {
+        "type": "image_group",
+        "order": 1,
+        "images": [
+          "605948478_18049513121692817_47727238636618674_n-1776764792436.jpg",
+          "607168746_18049513112692817_2714286543222924460_n-1776764792411.jpg",
+          "606977662_18049513022692817_1801504401788720172_n-1776764910187.jpg",
+          "607758744_18049513031692817_8219825078348734693_n-1776764909431.jpg"
+        ]
+      },
+      {
+        "type": "text",
+        "order": 2,
+        "value": "O'zbekiston Respublikasi Raqamli texnologiyalar vazirligi huzuridagi Sun'iy Intellekt Markazi bilan rasmiy hamkorlik o'rnatildi. Endi MLC ishtirokchilari AI Markazida stajiovka o'tash imkoniyatiga ega — davlat darajasidagi loyihalar ichida, real vazifalar bilan.\n\nBundan tashqari, AI ni davlat organlarida joriy etish, kadrlarni tayyorlash, o'qitish tizimlarini shakllantirish — bu yo'nalishlarda qo'shma ishlar allaqachon boshlandi. Sun'iy Intellekt Markazi 2024-yil oktyabrda Prezident qarori asosida tashkil etilgan bo'lib, o'z faoliyatini rasman 2025-yil oktyabrda boshlagan.\n\nMLC uchun bu — jamoatchilik harakatidan tizimli o'zgarishga o'tish nuqtasi. O'zbekistonda AI kelajagi qurilmoqda. Va biz bu qurilishda ishtirok etmoqdamiz.\n"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "IMAN",
+    "logo": "imanum-1-1772291470545.png",
+    "description": "Fintech va AI — bu ikki soha uzoq vaqt parallel yashadi. MLC va Imanum hamkorligi ular orasidagi devorni oldi.",
+    "website": "https://imanum.app/",
+    "blocks": [
+      {
+        "type": "image_group",
+        "order": 1,
+        "images": [
+          "photo_2026-04-09_12-32-41-1776765079788.jpg",
+          "photo_2024-03-19_11-54-40-1776765080167.jpg",
+          "photo_2026-03-18_15-56-06-1776166899495.jpg",
+          "photo_2026-04-09_12-32-54-1776166899503.jpg"
+        ]
+      },
+      {
+        "type": "text",
+        "order": 2,
+        "value": "Hamkorlik memorandumi imzolangach, MLC bitiruvchilari uchun Iman Invest da stajiovka imkoniyati rasman ochildi. Bu — oddiy amaliyot emas. Bu, real fintech muhitida, jonli jamoa ichida, haqiqiy mas'uliyat bilan ishlash imkoniyati.\n\nPul faqat bank hisobida emas — texnologiya orqali ham harakatlanadi. Imanum buni yaxshi biladi. Endi bu bilimni MLC bitiruvchilari ham o'z ko'zlari bilan ko'rishi mumkin.\n"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Global Move",
+    "logo": "global-move-1772014453019.png",
+    "description": "Sun'iy intellekt — bu faqat model qurish emas, uni real biznesga tatbiq etish. Global Move aynan shu nuqtada turadi.",
+    "website": "https://globalmove.uz/",
+    "blocks": [
+      {
+        "type": "image_group",
+        "order": 1,
+        "images": [
+          "photo_2025-02-07_11-45-38-1776765409888.jpg"
+        ]
+      },
+      {
+        "type": "text",
+        "order": 2,
+        "value": "MLC va Global Move o'rtasida rasmiy hamkorlik o'rnatildi. Endi MLC talabalari Global Move ichida stajiovka o'tash imkoniyatiga ega — real loyihalar, real mas'uliyat, real natija. AI ko'nikmalarini amalda sinab ko'rish uchun to'g'ri joy."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Central Asian Association for AI",
+    "logo": "aica-4-1772291677250.png",
+    "description": "Ba'zi hamkorliklar qog'ozda qoladi. AICA bilan biznikisi — sahnada ko'rinadi.",
+    "website": "https://aica.uz/",
+    "blocks": [
+      {
+        "type": "text",
+        "order": 1,
+        "value": "National AI Hackathon 2025: Samarkand, AICA Awards 2025 — bu tadbirlarning ortida birgalikdagi mehnat, umumiy maqsad va bir xil yo'nalish bor. AICA Markaziy Osiyo miqyosida AI ekotizimini shakllantirishga intiladi. MLC esa bu ekotizimning eng faol a'zolaridan biri bo'lib qolmoqda.\n\nMintaqa darajasida fikrlash — bu bizni birlashtirgan narsa."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "UzbekVoice.ai",
+    "logo": "uzbekvoiceai-1772014474809.png",
+    "description": "Ba'zi odamlar sherik bo'ladi. Ba'zi odamlar do'st bo'lib qoladi. UzbekVoice.ai — ikkalasi.",
+    "website": "https://uzbekvoice.ai/",
+    "blocks": [
+      {
+        "type": "image_group",
+        "order": 1,
+        "images": [
+          "photo_2026-04-09_12-36-34-1776168310084.jpg",
+          "photo_2026-04-09_12-36-30-1776168309259.jpg"
+        ]
+      },
+      {
+        "type": "text",
+        "order": 2,
+        "value": "Hamkorligimiz uzoqqa ketadi: ML Rewind 2022, qo'shma loyihalar, va MLC ishtirokida tashkil etilgan UzbekVoice Camp. Asoschi Bahtiyor Hasanov MLC uchun shunchaki hamkor emas — u shu yo'lning bir qismi.\n\nRasmiy memorandum imzolangach esa shu do'stlik yangi shakl oldi: MLC talabalari UzbekVoice.ai da stajiovka o'tash imkoniyatiga ega bo'ldi. Nutq texnologiyalari va NLP sohasida real tajriba — O'zbekistonda AI mutaxassislarini tayyorlashning eng amaliy yo'llaridan biri.\n\nTilni tushunuvchi texnologiya. Tilni tushunuvchi jamoa. Ular bir-birini topdi."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Yoshlar Ishlari Agentligi",
+    "logo": "yoshlar-ishlari-agentligi-1772014485158.png",
+    "description": "wefqwefqwefqwefqw",
+    "website": "https://yoshlar.gov.uz/uz",
+    "blocks": []
+  },
+  {
+    "id": 6,
+    "name": "INHA University In Tashkent",
+    "logo": "iut-3-1772019575589.png",
+    "description": "Har bir narsaning vatani bor. MLC ning vatani — INHA.",
+    "website": "https://inha.uz/",
+    "blocks": [
+      {
+        "type": "text",
+        "order": 1,
+        "value": "Hamma narsa shu yerda boshlandi. Birinchi Python darslaridan, birinchi xatoliklardan, birinchi \"bu nima umuman?\" degan savollardan. Tajribasiz, ammo qiziquvchan, kichik ammo o'z ishiga ishongan odamlar guruhi — MLC ning barcha asoschilari shu devorlarda o'qigan, shu muhitda shakllangan.\n\nINHA University nafaqat o'quv maskani — u Machine Learning Club ning tug'ilgan joyi. Va universitet bu g'oyani boshidanoq qo'llab-quvvatladi, so'ramasdan, kutmasdan.\n"
+      }
+    ]
+  }
+]

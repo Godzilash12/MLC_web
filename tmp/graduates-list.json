@@ -1,0 +1,86 @@
+﻿[
+    {
+        "id":  15,
+        "fullname":  "Ahrorbek",
+        "photo":  "photo_2026-03-17_17-08-03-1773749356797.jpg",
+        "company":  "UzInfocom",
+        "position":  "Data Scientist"
+    },
+    {
+        "id":  14,
+        "fullname":  "Nurullayev Samandar",
+        "photo":  "photo_2_2026-03-17_16-47-39-1773749267060.jpg",
+        "company":  "IMANUM",
+        "position":  "Data Analyst"
+    },
+    {
+        "id":  13,
+        "fullname":  "Sitora Baxronova",
+        "photo":  "photo_2026-03-17_17-03-29-1773749165104.jpg",
+        "company":  "ML Community",
+        "position":  "Data Scientist"
+    },
+    {
+        "id":  12,
+        "fullname":  "Temurmalik Makhsumov",
+        "photo":  "photo_2026-03-17_16-48-53-1773748929830.jpg",
+        "company":  "EPAM Systems",
+        "position":  "Senior Software Engineer"
+    },
+    {
+        "id":  11,
+        "fullname":  "Ilhomjon Ibragimov",
+        "photo":  "photo_2026-03-04_01-12-04-1772568750635.jpg",
+        "company":  "IpotekaBank OTP Group",
+        "position":  "BigData Engineer"
+    },
+    {
+        "id":  10,
+        "fullname":  "Batirniyaz Muratbaev",
+        "photo":  "photo_1_2026-03-17_16-47-39-1773748353235.jpg",
+        "company":  "AKS Labs",
+        "position":  "Computer Vision Engineer"
+    },
+    {
+        "id":  9,
+        "fullname":  "Aziz Latipov",
+        "photo":  "photo_2026-03-18_15-10-24-1773828876348.jpg",
+        "company":  "Uzum Technologies",
+        "position":  "ML-Engineer"
+    },
+    {
+        "id":  8,
+        "fullname":  "Nurmukhammed ",
+        "photo":  "photo_7_2026-03-17_16-47-39-1773748374357.jpg",
+        "company":  "Alif Bank",
+        "position":  "ML Engineer"
+    },
+    {
+        "id":  7,
+        "fullname":  "Abror Shopulatov",
+        "photo":  "photo_3_2026-03-17_16-47-39-1773748396876.jpg",
+        "company":  "Timloch.ai",
+        "position":  "ML Engineer"
+    },
+    {
+        "id":  6,
+        "fullname":  "Kobiljon Kosimov",
+        "photo":  "photo_5_2026-03-17_16-47-39-1773748418488.jpg",
+        "company":  "RepliUz",
+        "position":  "COO"
+    },
+    {
+        "id":  5,
+        "fullname":  "Aziza Shokambarova",
+        "photo":  "photo_2026-03-17_18-14-44-1773753340019.jpg",
+        "company":  "BRB-Tech",
+        "position":  "Product manager"
+    },
+    {
+        "id":  4,
+        "fullname":  "Abdulaziz Zakirov",
+        "photo":  "photo_2026-03-17_16-58-49-1773748792180.jpg",
+        "company":  "TBC Bank",
+        "position":  "Dasturchi"
+    }
+]

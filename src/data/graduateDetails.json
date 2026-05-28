@@ -1,0 +1,297 @@
+﻿[
+    {
+        "id":  15,
+        "fullname":  "Ahrorbek",
+        "company":  "UzInfocom",
+        "position":  "Data Scientist",
+        "title":  "Muhandislikdan Data Scientist’gacha",
+        "subtitle":  "Ta’limdan real ishgacha bo‘lgan yo‘l",
+        "photo":  "photo_2026-03-17_17-08-03-1773749356797.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch1\u003e\u003cstrong\u003eMen MLC ga kelganida muhandis edim. Yaxshi muhandis. Lekin ichimda doim bir savol bor edi:\u003c/strong\u003e ma’lumotlar qachon o’zi fikrlay boshlaydi? Qachon tizim mustaqil qaror qabul qiladi?\u003c/h1\u003e\u003ch1\u003eAynan shu savol meni MLC ga olib keldi.\u003c/h1\u003e\u003ch1\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/h1\u003e\u003ch1\u003eBu yerda menga faqat darslar emas, falsafa berildi: amaliyot orqali o‘rganish. Chiziqli regressiyadan boshlab reinforcement learning gacha - barchasini o‘z qo‘lim bilan yozdim, sinab ko‘rdim, sindirib, qayta qurib ko‘rdim. Har bir model - faqat topshiriq emas, Data Scientist kabi fikrlashga o‘rgatgan amaliy maktab edi.\u003c/h1\u003e\u003ch1\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/h1\u003e\u003ch1\u003e\u003cem\u003e“Shubhalarim bor edi. Ko’p shubhalarim. MLC ularni yo’qotmadi - kuchli motivatsiyaga aylantirdi.”\u003c/em\u003e\u003c/h1\u003e"
+                       },
+                       {
+                           "type":  "image_group",
+                           "order":  2,
+                           "images":  [
+                                          "image_2026-03-18_21-33-39-1773851974972.png",
+                                          "image_2026-03-18_21-36-47-1773851986226.png",
+                                          "image_2026-03-18_21-37-17-1773851994375.png",
+                                          "photo_2026-03-18_21-41-14-1773852100274.jpg"
+                                      ]
+                       },
+                       {
+                           "type":  "text",
+                           "order":  3,
+                           "value":  "\u003ch1\u003e\u003cstrong\u003eBugun men Uzinfocom da Data Scientist sifatida ishlayapman.\u003c/strong\u003e O‘rganganlarim bilan emas - o‘rganish usulimsiz emas, balki shu bilimlarni real loyihalarda qo‘llayapman. Agar siz ham o‘zgarishdan qo‘rqmasangiz, vaqt aynan hozir.\u003c/h1\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-03-17T12:09:17.931Z"
+    },
+    {
+        "id":  14,
+        "fullname":  "Nurullayev Samandar",
+        "company":  "IMANUM",
+        "position":  "Data Analyst",
+        "title":  "Ta’limdan real ishgacha bo‘lgan yo‘l",
+        "subtitle":  "Studentimiz bilan MLC tajribasi haqida suhbat",
+        "photo":  "photo_2_2026-03-17_16-47-39-1773749267060.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003e\u003cstrong\u003eMLC:\u0026nbsp;Samandar, kursni tamomlagandan soʻng ish jarayoniga kirishingiz qanday kechdi?\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eSamandar:\u0026nbsp;\u003c/strong\u003eOʼqishni tugatishim bilan darhol amaliyot taklifi keldi. Men uchun bu nazariy bilimlarni real muhitda sinaydigan toʼgʼri vaqt edi. Mentorlar har qadamda yonimda boʼlib, yoʼl koʼrsatdi. Amaliyot tugagach, IMANUM jamoasida Data Analyst sifatida qolishimga taklif berildi.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eMLC:\u0026nbsp;Hozirda qanday loyihalar ustida ishlayapsiz va MLC bilimlari qanchalik foydali?\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eSamandar:\u0026nbsp;\u003c/strong\u003eSunʼiy intellekt sohasidagi bir necha yirik loyihalar bilan bandman. MLC da olgan bilimlar - bu yoʼldagi mustahkam poydevor. Lekin eng qimmatli narsa faqat bilim emas edi: bu yerda jamoaning haqiqiy qoʼllovi, kimdir \"bu normal\" deb aytadigan muhit bor edi. Bu katta farq qiladi.\u003c/h3\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-03-17T12:07:48.703Z"
+    },
+    {
+        "id":  13,
+        "fullname":  "Sitora Baxronova",
+        "company":  "ML Community",
+        "position":  "Data Scientist",
+        "title":  "Sun’iy intellekt va Data Science yo‘lidagi ilk qadamlarim",
+        "subtitle":  "O‘quvchimizning rivojlanish tarixi",
+        "photo":  "photo_2026-03-17_17-03-29-1773749165104.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003e- Sitoraning MLC’dagi yo‘li shunchaki o‘qish emas, balki ma’lumotlar ortidagi \"jonli hikoyalarni\" kashf etishdan boshlandi. Dastur davomida u quruq raqamlar qanday qilib aniq xulosalarga aylanishini va tahliliy fikrlash insonning dunyoqarashini qanchalik kengaytirishini amalda his qildi.\u003c/h3\u003e"
+                       },
+                       {
+                           "type":  "text",
+                           "order":  3,
+                           "value":  "\u003ch3\u003eBoshida shunchaki qiziqish bilan kelgan Sitora, jamoaning doimiy qo‘llab-quvvatlashi va mentorlar yordamida bosqichma-bosqich o‘ziga bo‘lgan ishonchni mustahkamlab bordi. Kurs davomida u nafaqat nazariy bilim oldi, balki bir nechta real AI loyihalarida ishtirok etib, o‘zining professional portfelini yaratishga muvaffaq bo‘ldi. Bu portfel uning uchun yangi texnologik imkoniyatlar eshigini ochgan kalitga aylandi.\u003c/h3\u003e"
+                       },
+                       {
+                           "type":  "image_group",
+                           "order":  4,
+                           "images":  [
+                                          "photo_1_2026-03-18_21-58-17-1773853411660.jpg",
+                                          "photo_4_2026-03-18_21-58-17-1773853410390.jpg",
+                                          "photo_3_2026-03-18_21-58-17-1773853410781.jpg",
+                                          "photo_2026-03-18_22-12-54-1773854001604.jpg"
+                                      ]
+                       },
+                       {
+                           "type":  "text",
+                           "order":  5,
+                           "value":  "\u003cp\u003e\u003cstrong\u003e\u003cem\u003e\"Bu yerda men kelajakdagi o‘sishim uchun mustahkam poydevor yaratdim,\"\u003c/em\u003e\u003c/strong\u003e\u003cem\u003e \u003c/em\u003e- deydi Sitora o‘z tajribasi bilan o‘rtoqlashib. Bugungi kunda u Data Science olamini o‘rganishda davom etmoqda va olingan bilimlar nafaqat uning kasbiy mahoratini, balki dunyoga bo‘lgan nazarini ham butunlay o‘zgartirdi. Biz Sitoraning muvaffaqiyatlari bilan faxrlanamiz va uning katta loyihalardagi ishtirokini kuzatishda davom etamiz.\u003c/p\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-03-17T12:06:06.274Z"
+    },
+    {
+        "id":  12,
+        "fullname":  "Temurmalik Makhsumov",
+        "company":  "EPAM Systems",
+        "position":  "Senior Software Engineer",
+        "title":  "Seek the truth",
+        "subtitle":  "Seek the truth",
+        "photo":  "photo_2026-03-17_16-48-53-1773748929830.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003cp\u003e\u003cstrong\u003e✓\u0026nbsp;MLC\u003c/strong\u003e  boshlangʼich nuqta.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003e→\u0026nbsp;EPAM Systems\u003c/strong\u003e hozirgi stansiya.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003e↑\u0026nbsp;Senior muhandis darajasi\u003c/strong\u003e natija.\u003c/p\u003e\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003cp\u003eBaʼzi hikoyalar uzoq soʼzga muhtoj emas. Temurmalik oʼzidek: tiniq maqsad, izchil mehnat, toʼgʼri muhit. MLC shu muhitni berdi.\u003c/p\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-03-17T12:02:11.094Z"
+    },
+    {
+        "id":  11,
+        "fullname":  "Ilhomjon Ibragimov",
+        "company":  "IpotekaBank OTP Group",
+        "position":  "BigData Engineer",
+        "title":  "MLC texnologiyalar olamida o‘z yo‘limni topishga yordam berdi",
+        "subtitle":  "Ta’limdan real ishgacha bo‘lgan yo‘l",
+        "photo":  "photo_2026-03-04_01-12-04-1772568750635.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003eAgar siz bu satrlarni oʼqiyotgan boʼlsangiz va oʼzingizga “Men ham shunday boʼla olamanmi?” deb savol beryotgan boʼl sang - men bir paytlar aynan shu joyda edim.\u003c/h3\u003e\u003ch3\u003e\u0026nbsp;\u003c/h3\u003e\u003ch3\u003eMaʼlumotlar dunyosida yoʼl qidirayotgan vaqtimda MLC menga aniq yoʼnalish berdi. Murakkab Machine Learning tushunchalari shu qadar tushunarli tarzda oʼrgatildiki, men nafaqat nazariyani, balki ularni amaliyotda qanday qoʼllashni ham oʼzlashtirib oldim.\u003c/h3\u003e\u003ch3\u003e\u0026nbsp;\u003c/h3\u003e\u003ch3\u003e\u003cem\u003e“Bu bilimlar mening Data sohasidagi professional karyeram uchun eng muhim va ajralmas poydevorga aylandi.”\u003c/em\u003e\u003c/h3\u003e"
+                       },
+                       {
+                           "type":  "text",
+                           "order":  2,
+                           "value":  "\u003ch3\u003e\u003cstrong\u003eBugun men Ipoteka-Bank (OTP Group) da Big Data Engineer sifatida katta hajmdagi maʼlu mot lar bilan ishlayman.\u003c/strong\u003e Oldimda katta loyihalar, katta masʼul iyat, va yanada katta imkoniyatlar turibdi.\u003c/h3\u003e\u003ch3\u003eFaqat olgʼga intiling.\u003c/h3\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-03-03T20:12:31.364Z"
+    },
+    {
+        "id":  10,
+        "fullname":  "Batirniyaz Muratbaev",
+        "company":  "AKS Labs",
+        "position":  "Computer Vision Engineer",
+        "title":  "Noldan amaliyotgacha bo‘lgan qo‘llab-quvvatlash",
+        "subtitle":  "Studentimizdan MLC da bo‘lgan tajribasidan intervyu",
+        "photo":  "photo_1_2026-03-17_16-47-39-1773748353235.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003cp\u003e\u003cstrong\u003e\u003cem\u003e- MLC:\u003c/em\u003e\u003c/strong\u003e\u003cem\u003e Batirniyaz, kursni tugatganingizdan so‘ng ish topish jarayoni qanday kechdi? \u003c/em\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cblockquote\u003e\u003cstrong\u003e- Batirniyaz:\u003c/strong\u003e Kursning eng yaxshi jihati — doimiy qo‘llab-quvvatlash bo‘ldi. O‘qishni bitirganimizdan so‘ng biz uchun rezyume tuzish bo‘yicha maxsus master-klass o‘tkazildi. Mentorlar loyihalarimizni mukammallashtirishga yordam berishdi. Eng katta turtki esa MLC rezyumelarimizni hamkor kompaniyalarga yuborgani bo‘ldi — aynan shu orqali men birinchi amaliyotimni topdim!\u003c/blockquote\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003cstrong\u003e\u003cem\u003e- MLC:\u003c/em\u003e\u003c/strong\u003e\u003cem\u003e Hozirda \u003c/em\u003e\u003cstrong\u003e\u003cem\u003eAKS Labs\u003c/em\u003e\u003c/strong\u003e\u003cem\u003e kompaniyasida Computer Vision Engineer (kompyuter ko‘rishi bo‘yicha muhandis) sifatida ishlayapsiz. Bu yo‘lda MLC sizga nima berdi? \u003c/em\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cblockquote\u003e\u003cstrong\u003e- Batirniyaz:\u003c/strong\u003e Men nafaqat texnik ko‘nikmalarni, balki real ish bozori uchun tayyorgarlik ko‘rishni ham o‘rgandim. Mentorlarning darslar tugaganidan keyin ham har bir talabaning yonida bo‘lib, yo‘l-yo‘riq ko‘rsatgani juda qimmatli bo‘ldi. Hozirda ish faoliyatimda MLC’da shakllangan muntazamlik va qiziquvchanlik tamoyillariga tayanaman.\u003c/blockquote\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cp\u003e\u003cstrong\u003e\u003cem\u003e- MLC:\u003c/em\u003e\u003c/strong\u003e\u003cem\u003e Yangi boshlovchilarga o‘z tajribangizdan kelib chiqib qanday maslahat berasiz? \u003c/em\u003e\u003c/p\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003cblockquote\u003e\u003cstrong\u003e- Batirniyaz:\u003c/strong\u003e Mustaqil o‘qishni unutmang. Faqat dars bilan cheklanib qolmasdan, o‘rganganlaringizni doim qayta takrorlang. Ba’zi mavzular boshida qiyin ko‘rinishi mumkin, lekin haqiqiy tushuncha aynan tinimsiz mehnat va takrorlash orqali keladi.\u003c/blockquote\u003e"
+                       },
+                       {
+                           "type":  "image_group",
+                           "order":  2,
+                           "images":  [
+                                          "statistics_2-1773854546124.jpg"
+                                      ]
+                       }
+                   ],
+        "createdAt":  "2026-01-31T06:22:06.866Z"
+    },
+    {
+        "id":  9,
+        "fullname":  "Aziz Latipov",
+        "company":  "Uzum Technologies",
+        "position":  "ML-Engineer",
+        "title":  "Startap ruhiyati va IT kengliklarida doimiy izlanuvchi",
+        "subtitle":  "O‘quvchimizning rivojlanish tarixi",
+        "photo":  "photo_2026-03-18_15-10-24-1773828876348.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003e\u003cstrong\u003eAziz Latipovning Sun’iy intellekt olamidagi sayohati MLC’da qo‘yilgan ilk dadil qadamlardan boshlandi.\u003c/strong\u003e U o‘zining startapchilarga xos bo‘lgan g‘ayrati va IT sohasidagi keng qiziqishlarini aynan Machine Learning yo‘nalishi bilan birlashtira oldi. Bizning kursimizda olgan bilimlari unga nafaqat nazariy poydevor, balki mehnat bozorida o‘z o‘rnini topish uchun zarur bo‘lgan amaliy ko‘nikmalarni ham taqdim etdi.\u003c/h3\u003e\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\u003ch3\u003eNatija uzoq kutilmadi - Aziz o‘zining ilk professional ML-muhandisi sifatidagi faoliyatini \u003cstrong\u003eBellissimo Pizza\u003c/strong\u003e kompaniyasida boshladi. Aynan o‘sha yerdagi tajriba va MLC’da shakllangan muammolarga kreativ yechim topish qobiliyati uning karyerasida yangi ufqlarni ochdi.\u003c/h3\u003e"
+                       },
+                       {
+                           "type":  "image_group",
+                           "order":  2,
+                           "images":  [
+                                          "photo_2_2026-03-19_22-44-34-1773942443889.jpg",
+                                          "photo_4_2026-03-19_22-44-34-1773942444000.jpg",
+                                          "photo_3_2026-03-19_22-44-34-1773942443710.jpg",
+                                          "photo_1_2026-03-19_22-44-34-1773942522512.jpg"
+                                      ]
+                       },
+                       {
+                           "type":  "text",
+                           "order":  3,
+                           "value":  "\u003cp\u003eBugungi kunda Aziz mamlakatimizning eng yirik texnologik ekotizimlaridan biri - \u003cstrong\u003eUzum Technologies\u003c/strong\u003e jamoasida ML-Engineer sifatida murakkab algoritmlar va ma’lumotlar ustida ishlamoqda. Uning hikoyasi - to‘g‘ri tanlangan ta’lim va tinimsiz intilish qanday qilib qisqa vaqt ichida katta muvaffaqiyatlarga yetaklashi mumkinligiga yorqin misoldir. Biz Azizning yutuqlari bilan faxrlanamiz!\u003c/p\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-01-31T06:21:02.170Z"
+    },
+    {
+        "id":  8,
+        "fullname":  "Nurmukhammed ",
+        "company":  "Alif Bank",
+        "position":  "ML Engineer",
+        "title":  "Web-dasturlashdan Machine Learning’gacha",
+        "subtitle":  "Ta’limdan real ishgacha bo‘lgan yo‘l",
+        "photo":  "photo_7_2026-03-17_16-47-39-1773748374357.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003e\u003cstrong\u003e- Kursga qadar men WordPress dasturchisi sifatida faoliyat yuritardim,\u003c/strong\u003e ammo vaqt o‘tishi bilan yo‘nalishimni tubdan o‘zgartirish va sun’iy intellekt olamiga kirishni xohlayotganimni angladim. Universitetdagi ML Community e’lonini ko‘rganimda, bu mening imkoniyatim ekanini tushundim.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e- \u003cstrong\u003eBoshida shubhalar bo‘lgani rost: bunday murakkab sohani egallay olamanmi?\u003c/strong\u003e Biroq mentorlarning nazariya va amaliyotni uyg‘unlashtirgan yondashuvi barcha qo‘rquvlarimni tarqatib yubordi. Ayniqsa, har shanba kuni savollarimizga javob olish, tinimsiz mashqlar va Kaggle musobaqalaridagi hayajonli ishtirokimiz bilimlarimni yangi bosqichga olib chiqdi.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003e- Yakuniy loyihalarimiz nafaqat bilimimizni sinadi, balki rezyumemizdagi kuchli portfelga aylandi.\u003c/strong\u003e Aynan shu tajriba va MLC ko‘magi bilan men birinchi amaliyotimni va ketidan ilk ish taklifimni oldim. Bugun men \u003cstrong\u003e\u003cem\u003eAlif Bank\u003c/em\u003e\u003c/strong\u003e jamoasida Machine Learning muhandisi sifatida ishlayapman. Agar siz ham o‘z yo‘lingizni qidirayotgan bo‘lsangiz, \u003cstrong\u003e\u003cem\u003eMLC - bu o‘sish uchun eng to‘g‘ri joy!\"\u003c/em\u003e\u003c/strong\u003e\u003c/h3\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-01-31T06:19:15.169Z"
+    },
+    {
+        "id":  7,
+        "fullname":  "Abror Shopulatov",
+        "company":  "Timloch.ai",
+        "position":  "ML Engineer",
+        "title":  "MLC birinchi amaliyotimni topishda katta turtki bo‘ldi",
+        "subtitle":  "Studentimizdan MLC da bo‘lgan tajribasidan intervyu",
+        "photo":  "photo_3_2026-03-17_16-47-39-1773748396876.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003e\u003cstrong\u003eMLC:\u0026nbsp;MLC bilan qanday tanishib qolgansiz?\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eAbror:\u0026nbsp;\u003c/strong\u003eML ni mustaqil oʼr ganayotgan kezlarimda MLC ga duch keldim. Nafaqat bilim olish, balki bir xil maqsaddagi odamlar bilan gʼoya almashish imkoniyati — bu menga kerak boʼl gan narsa aynan edi. Kurs doimiy loyihalar va tadbirlar bilan boyitilgan edi. Monoton emas, jonli.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eMLC:\u0026nbsp;Networking, yaʼni tadbirlar orqali tanishuvlar qanchalik muhim rol oʼynadi?\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eAbror:\u0026nbsp;\u003c/strong\u003eJudayam katta! Aynan MLC tomonidan tashkil etilgan tadbirlarning birida men “Tahrirchi” startapi asoschilari bilan tanishib qoldim — u paytda hali juda kichik edi. Keyinchalik bu loyihaning mamlakatdagi eng yaxshi startaplardan biriga aylanishini kuzatish va uning bir qismi boʼl ish — bu shunchaki tajriba emas, bu hayajon.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eMLC:\u0026nbsp;Hozirda qayerda ishlayapsiz va MLC sizga nima berdi?\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eAbror:\u0026nbsp;\u003c/strong\u003eTimloch.ai da ML-muhandisi sifatida ishlayapman. MLC menga birinchi amaliyotimni topishda va professional muhitga kirib borishimda eng katta boost boʼl di. Bu yerda orttirgan doʼst larim va bilimlarim — bugungi yutuqlarimning asosi.\u003c/h3\u003e"
+                       },
+                       {
+                           "type":  "image_group",
+                           "order":  2,
+                           "images":  [
+                                          "photo_1_2026-03-19_22-57-50-1773943124717.jpg",
+                                          "photo_2_2026-03-19_22-57-50-1773943124832.jpg"
+                                      ]
+                       }
+                   ],
+        "createdAt":  "2026-01-31T06:17:40.509Z"
+    },
+    {
+        "id":  6,
+        "fullname":  "Kobiljon Kosimov",
+        "company":  "RepliUz",
+        "position":  "COO",
+        "title":  "Bir qaror butun yo‘limni o‘zgartirdi",
+        "subtitle":  "O‘quvchimizning rivojlanish tarixi",
+        "photo":  "photo_5_2026-03-17_16-47-39-1773748418488.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003e\u003cstrong\u003e2022-yilda Kobiljon Kosimov MLC ga oddiy talaba sifatida kirdi.\u003c/strong\u003e U bundan koʼra koʼp narsani orzu qilardi - lekin qanday qilib erishishni hali bilmasdi.\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eMLC uchun har bir tadbir - yangi bilim, har bir tanishuv - strategik imkoniyat boʼldi.\u003c/strong\u003e Nazariyani real loyihalar bilan mustahkamlab, u qisqa muddatda professional transformatsiyaga erishdi.\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eKursni muvaffaqiyatli yakunlagach, Global Move kompaniyasida amaliyot oʼtadi.\u003c/strong\u003e Aynan oʼsha bosqich - burilish nuqtasi boʼldi. Mentorlar koʼmagi va amaliy tajriba unga oʼziga boʼlgan cheksiz ishonch berdi.\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cem\u003e“MLC sizga yoʼlni koʼrsatadi - qolganini esa oʼzyingiz qurishingiz kerak.”\u003c/em\u003e\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eNatija:\u003c/strong\u003e San-Fransiskodagi xalqaro kompaniyadan masofaviy AI Developer lavozimi uchun taklif. Bugun esa Kobiljon RepliUz da COO sifatida xalqaro jamoalarni boshqarib, murakkab texnologik yechimlar ustida ishlaydi.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003eMahalliy talabadan xalqaro rahbariyatgacha - bu intizom va oʼz ustida ishlash nima qila olishining jonli isboti.\u003c/h3\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-01-31T06:16:24.041Z"
+    },
+    {
+        "id":  5,
+        "fullname":  "Aziza Shokambarova",
+        "company":  "BRB-Tech",
+        "position":  "Product manager",
+        "title":  "Bilimni chuqurlashtirish meni yangi bosqichga olib chiqdi",
+        "subtitle":  "Ta’limdan real ishgacha bo‘lgan yo‘l",
+        "photo":  "photo_2026-03-17_18-14-44-1773753340019.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003e-\u003cstrong\u003e MLC ga qo‘shilganimda men allaqachon AIsha AI startapida loyiha menejeri bo‘lib ishlardim.\u003c/strong\u003e Ammo maqsadim aniq edi - sun’iy intellekt sohasidagi bilimlarimni shunchaki yuzaki emas, balki fundamental darajada chuqurlashtirish va professional faoliyatimda yanada yuqori cho‘qqilarni zabt etish.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e- \u003cstrong\u003eMLC’dagi ta’lim jarayoni menga nafaqat nazariyani, balki murakkab algoritmlarni real loyihalarda qanday qo‘llashni o‘rgatdi.\u003c/strong\u003e Kurs mazmuni har tomonlama puxta ishlab chiqilgan bo‘lib, u bizni doimiy izlanishga undadi. Bugungi kunda men \u003cstrong\u003eBRB-Tech\u003c/strong\u003e fintech kompaniyasida Product Manager sifatida faoliyat yuritish bilan birga, o‘z jamoam bilan sun’iy intellektga asoslangan shaxsiy startapimni ham rivojlantiryapman.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003e- Ishonchim komilki, bugungi kunda IT sohasidagi har bir mutaxassis AI va Machine Learning yo‘nalishlarini o‘rganishi shart.\u003c/strong\u003e Bu bilimlar nafaqat karyerangizda yangi ufqlarni ochadi, balki o‘z startapingizni yo‘lga qo‘yish uchun ham cheksiz imkoniyatlar beradi. O‘z ustingizda ishlashdan to‘xtamang - kelajak texnologiyalar qo‘lida!\u003c/h3\u003e"
+                       },
+                       {
+                           "type":  "image_group",
+                           "order":  2,
+                           "images":  [
+                                          "photo_2026-03-19_23-10-29-1773943873355.jpg",
+                                          "photo_2026-03-19_23-10-38-1773943873157.jpg"
+                                      ]
+                       }
+                   ],
+        "createdAt":  "2026-01-31T06:05:56.011Z"
+    },
+    {
+        "id":  4,
+        "fullname":  "Abdulaziz Zakirov",
+        "company":  "TBC Bank",
+        "position":  "Dasturchi",
+        "title":  "Izlagan imkon topadi",
+        "subtitle":  "Studentimizdan MLC tajribasi haqida qisqa intervyu",
+        "photo":  "photo_2026-03-17_16-58-49-1773748792180.jpg",
+        "courseId":  21,
+        "blocks":  [
+                       {
+                           "type":  "text",
+                           "order":  1,
+                           "value":  "\u003ch3\u003e\u003cstrong\u003e\u003cem\u003e- MLC: Abdulaziz, Machine Learning Community haqida gap ketganda birinchi navbatda nimani ta’kidlagan bo‘lardingiz? \u003c/em\u003e\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eAbdulaziz:\u003c/strong\u003e Bu shunchaki kurs emas, balki ajoyib hamjamiyat! Bu yerda doim siz bilan bir xil maqsad va qiziqishlarga ega insonlarni topasiz. Hamjamiyat yangi tanishuvlar va startap g‘oyalari bilan yonib yashaydigan mutaxassislar uchun hamisha ochiq.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003e\u003cem\u003e- MLC: Hamjamiyatning bir qismi bo‘lish sizga nima berdi?\u003c/em\u003e\u003c/strong\u003e\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eAbdulaziz:\u003c/strong\u003e Bu yerda shakllangan muhit professional o‘sishimda katta rol o‘ynadi. Men MLC tarixining bir qismi ekanligimdan faxrlanaman. Hozirda \u003cstrong\u003eTBC Bank\u003c/strong\u003e jamoasida dasturchi sifatida faoliyat yuritib, orttirgan tajribalarimni qo‘llayapman.\u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003e\u003cem\u003e- MLC: Yangi kelganlarga eng asosiy maslahatingiz?\u003c/em\u003e\u003c/strong\u003e \u003c/h3\u003e\u003ch3\u003e\u003cbr\u003e\u003c/h3\u003e\u003ch3\u003e\u003cstrong\u003eAbdulaziz:\u003c/strong\u003e Izlagan albatta topadi! Faol bo‘ling va networking imkoniyatlaridan maksimal foydalaning.\u003c/h3\u003e"
+                       }
+                   ],
+        "createdAt":  "2026-01-31T06:00:45.224Z"
+    }
+]
+

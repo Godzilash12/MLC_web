@@ -1,0 +1,393 @@
+[2m7:18:23 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:18:23 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+[2m7:18:47 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:18:50 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:20:24 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:21:59 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:22:08 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:22:17 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:22:21 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:22:39 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:22:49 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:22:55 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:25:05 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:25:08 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:26:03 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:26:25 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:26:26 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:26:27 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:326:1]
+ 323 |     zh: {
+ 324 |       description: "有些地方只是四面墙。而有些地方会成为一场运动的中心。IMPACT.T 就是这样的地方。",
+ 325 |       blocks: {
+ 326 |         2: "ML Community 历史上的第一场 ML Party 就在这里举办：超过 200 名参与者、10 位演讲者，现场还有 MyTaxi、Workly 等强大项目背后的人，包括连续创业者 Akmal Payziyev。那个晚上没有人把它规划为"第一次大型活动"，但它成了历史。这段历史从 IMPACT.T 开始。\n\n此后，许多事情发生了变化：规模增长，形式扩展，想法变得更加复杂。但 IMPACT.T 始终如一——可靠、开放，随时准备支持。在我们的各项倡议中，他们的参与感觉既是空间，也是支撑。\n\n这不只是一个老合作伙伴。这是一个始终在场的伙伴。"
+     :                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+ 327 |       }
+ 328 |     }
+ 329 |   },
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:27:30 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:404:1]
+ 401 |       }
+ 402 |     },
+ 403 |     zh: {
+ 404 |       description: ""技术为人服务"这句话常被提及。Alif 用行动证明了它——而与 MLC 的合作让这一证明更加有力。",
+     :                      ^^^^^^^^^^^^
+ 405 |       blocks: {
+ 406 |         2: "我们共同开展 Machine Learning Engineer 培训。课程结束后，毕业生可以在 Alif 内部实习——参与真实任务和在线项目。办公室还设有 masterclass、与实践者的线下见面以及深入了解行业运作方式的机会。\n\n选择 Alif，每个决定不只是一张证书——而是下一个职业阶段的基础。"
+ 407 |       }
+     `----
+
+
+Caused by:
+    Syntax Error
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+[2m7:27:30 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:404:1]
+ 401 |       }
+ 402 |     },
+ 403 |     zh: {
+ 404 |       description: ""技术为人服务"这句话常被提及。Alif 用行动证明了它——而与 MLC 的合作让这一证明更加有力。",
+     :                      ^^^^^^^^^^^^
+ 405 |       blocks: {
+ 406 |         2: "我们共同开展 Machine Learning Engineer 培训。课程结束后，毕业生可以在 Alif 内部实习——参与真实任务和在线项目。办公室还设有 masterclass、与实践者的线下见面以及深入了解行业运作方式的机会。\n\n选择 Alif，每个决定不只是一张证书——而是下一个职业阶段的基础。"
+ 407 |       }
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
+[2m7:27:35 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:531:1]
+ 528 |     zh: {
+ 529 |       description: "万物皆有根。MLC 的根在 INHA。",
+ 530 |       blocks: {
+ 531 |         1: "一切都从这里开始：第一堂 Python 课、第一次犯错、第一个"这究竟是什么？"的问题。一小群没有太多经验却对自己的事业充满信念的好奇者——所有 MLC 创始人都在这些墙壁内学习，并在这个环境中成长。\n\nINHA University 不只是一所大学。它是 Machine Learning Club 的诞生地。而这所大学从一开始就支持了这个想法——没有期望，没有多余的条件。"
+     :                                                                    ^^^^^^^^^^^^
+ 532 |       }
+ 533 |     }
+ 534 |   }
+     `----
+
+
+Caused by:
+    Syntax Error
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+[2m7:27:35 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected ',', got 'ident'
+     ,-[C:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts:531:1]
+ 528 |     zh: {
+ 529 |       description: "万物皆有根。MLC 的根在 INHA。",
+ 530 |       blocks: {
+ 531 |         1: "一切都从这里开始：第一堂 Python 课、第一次犯错、第一个"这究竟是什么？"的问题。一小群没有太多经验却对自己的事业充满信念的好奇者——所有 MLC 创始人都在这些墙壁内学习，并在这个环境中成长。\n\nINHA University 不只是一所大学。它是 Machine Learning Club 的诞生地。而这所大学从一开始就支持了这个想法——没有期望，没有多余的条件。"
+     :                                                                    ^^^^^^^^^^^^
+ 532 |       }
+ 533 |     }
+ 534 |   }
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/khudo/Desktop/mlcommunity-uz/src/data/partnerContent.ts[39m
+  
