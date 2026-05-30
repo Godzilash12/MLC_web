@@ -10,7 +10,11 @@ import {
   Target,
   Users
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { MlcTimeline } from "@/components/MlcTimeline";
 import { SectionReveal } from "@/components/SectionReveal";
+import { TeamGrid } from "@/components/TeamGrid";
+import { coreTeamByLocale } from "@/data/fallbackContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteCopy } from "@/lib/siteCopy";
 
@@ -74,7 +78,11 @@ const valueForPeople = [
 ];
 
 export function AboutPage() {
-  const copy = useSiteCopy().about;
+  const { i18n } = useTranslation();
+  const siteCopy = useSiteCopy();
+  const copy = siteCopy.about;
+  const locale = i18n.resolvedLanguage?.split("-")[0] ?? "ru";
+  const localizedTeam = coreTeamByLocale[locale] ?? coreTeamByLocale.ru;
   usePageMeta(copy.metaTitle, copy.metaDescription);
 
   return (
@@ -200,6 +208,26 @@ export function AboutPage() {
               </div>
             </div>
           </SectionReveal>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <h2 className="section-title mb-10">{copy.teamTitle ?? "Core Team"}</h2>
+          </SectionReveal>
+          <SectionReveal>
+            <TeamGrid members={localizedTeam} dataSection="about-team" />
+          </SectionReveal>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <h2 className="section-title mb-10">{siteCopy.timeline.sectionTitle}</h2>
+          </SectionReveal>
+          <MlcTimeline />
         </div>
       </section>
     </>

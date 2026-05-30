@@ -1,4 +1,5 @@
-﻿import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -8,12 +9,14 @@ const navItemClass = ({ isActive }: { isActive: boolean }) => `nav-link ${isActi
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
   const copy = useSiteCopy();
   const navLinks = [
     { to: "/about", label: copy.nav.about },
     { to: "/community", label: copy.nav.community },
     { to: "/education", label: copy.nav.education },
+    { to: "/b2b", label: copy.nav.b2b },
     { to: "/development", label: copy.nav.development },
     { to: "/ai-media", label: copy.nav.aiMedia }
   ];
@@ -47,14 +50,113 @@ export function Navbar() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-5 xl:flex">
-            {navLinks.map((link) => (
-              <NavLink key={link.to} to={link.to} className={navItemClass}>
-                {link.label}
-              </NavLink>
-            ))}
-            <a href="https://01ai.uz" target="_blank" rel="noreferrer" className="nav-link">
+          <nav className="hidden items-center gap-3 xl:flex">
+            <NavLink to="/about" className={navItemClass}>
+              {copy.nav.about}
+            </NavLink>
+
+            <NavLink to="/community" className={navItemClass}>
+              {copy.nav.community}
+            </NavLink>
+
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown("education")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button
+                type="button"
+                className={`nav-link flex items-center gap-1 ${
+                  openDropdown === "education" ? "nav-link--active" : ""
+                }`}
+              >
+                {copy.nav.educationGroup}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${
+                    openDropdown === "education" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {openDropdown === "education" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute left-0 top-full z-50 mt-2 min-w-[180px] rounded-[1.2rem] border border-white/10 bg-[#1a1430] p-2 shadow-[0_16px_48px_rgba(0,0,0,0.4)] backdrop-blur-xl"
+                  >
+                    <NavLink
+                      to="/education"
+                      className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {copy.nav.education}
+                    </NavLink>
+                    <NavLink
+                      to="/b2b"
+                      className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {copy.nav.b2b}
+                    </NavLink>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown("products")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button
+                type="button"
+                className={`nav-link flex items-center gap-1 ${openDropdown === "products" ? "nav-link--active" : ""}`}
+              >
+                {copy.nav.productsGroup}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${openDropdown === "products" ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {openDropdown === "products" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute left-0 top-full z-50 mt-2 min-w-[180px] rounded-[1.2rem] border border-white/10 bg-[#1a1430] p-2 shadow-[0_16px_48px_rgba(0,0,0,0.4)] backdrop-blur-xl"
+                  >
+                    <NavLink
+                      to="/development"
+                      className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {copy.nav.development}
+                    </NavLink>
+                    <NavLink
+                      to="/ai-media"
+                      className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {copy.nav.aiMedia}
+                    </NavLink>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <NavLink to="/01ai" className={navItemClass}>
               01AI
+            </NavLink>
+
+            <a href="https://01ai.uz" target="_blank" rel="noreferrer" className="button-primary py-2 text-sm">
+              {copy.nav.platform} ↗
             </a>
             <LanguageSwitcher />
           </nav>
@@ -82,8 +184,14 @@ export function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-            <a href="https://01ai.uz" target="_blank" rel="noreferrer" className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-base font-semibold text-white">
+            <NavLink
+              to="/01ai"
+              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-base font-semibold text-white"
+            >
               01AI
+            </NavLink>
+            <a href="https://01ai.uz" target="_blank" rel="noreferrer" className="button-primary py-2 text-sm">
+              {copy.nav.platform} ↗
             </a>
             <LanguageSwitcher />
           </div>

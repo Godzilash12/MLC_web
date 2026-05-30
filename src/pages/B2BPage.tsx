@@ -4,7 +4,7 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { LeadForm } from "@/components/LeadForm";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
-import { b2bCasesFallback, b2bMentors } from "@/data/fallbackContent";
+import { b2bCasesFallback, b2bMentors, b2bTotalTrained } from "@/data/fallbackContent";
 import { useB2bCases } from "@/hooks/useCMS";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
@@ -203,6 +203,52 @@ export function B2BPage() {
                 <footer className="mt-6 text-sm uppercase tracking-[0.2em] text-white/70">{(cases[0] ?? fallbackQuote).quote_author}</footer>
               </blockquote>
             </SectionReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Фотографии с тренингов ── */}
+      <section className="section-divider bg-surface">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <div className="mb-10 flex flex-wrap items-end gap-6">
+              <div>
+                <p className="eyebrow">{page.gallery?.eyebrow ?? "Фотографии"}</p>
+                <h2 className="section-title">{page.gallery?.title ?? "Обучение в действии"}</h2>
+              </div>
+              <div className="rounded-2xl bg-primary px-6 py-4 text-white">
+                <p className="font-mono text-4xl font-bold">{b2bTotalTrained}+</p>
+                <p className="mt-1 text-sm text-white/70">
+                  {page.gallery?.trained ?? "обученных сотрудников"}
+                </p>
+              </div>
+            </div>
+          </SectionReveal>
+
+          <div className="columns-2 gap-3 md:columns-3 xl:columns-4" style={{ columnGap: "12px" }}>
+            {[
+              // TODO [IMAGE]: заменить на реальные фото с B2B тренингов
+              // Пока используем education-avif фото как заглушки
+              "/education-avif/Frame 2.avif",
+              "/education-avif/Frame 3.avif",
+              "/education-avif/Frame 4.avif",
+              "/education-avif/Frame 5.avif",
+              "/education-avif/Frame 6.avif",
+              "/education-avif/Frame 7.avif",
+              "/education-avif/Frame 2-1.avif",
+              "/education-avif/Frame 3-2.avif",
+            ].map((src, i) => (
+              <SectionReveal key={src}>
+                <div className="mb-3 overflow-hidden rounded-[1.2rem]" style={{ breakInside: "avoid" }}>
+                  <img
+                    src={src}
+                    alt={`B2B training photo ${i + 1}`}
+                    className="w-full object-cover transition duration-500 hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
+              </SectionReveal>
+            ))}
           </div>
         </div>
       </section>

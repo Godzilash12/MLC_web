@@ -72,6 +72,7 @@ export const stats = [
   { value: 400, suffix: "+", label: "выпускников" }
 ];
 
+
 export const teamFallback: TeamMember[] = [
   {
     id: "1",
@@ -125,29 +126,69 @@ export const teamFallback: TeamMember[] = [
 
 export const b2bMentors: TeamMember[] = [
   {
-    id: "m1",
-    name: "Алишер Ю.",
+    id: "b2b-m01",
+    name: "Шахриёр Худойбердиев",
+    role_mlc: "Руководитель B2B направления",
+    role_external: "Директор · MLC Academy | Аналитик · UzVC",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: "https://linkedin.com/in/shakhriyor-kh",
+  },
+  {
+    id: "b2b-m02",
+    name: "Имя Фамилия",
     role_mlc: "AI Strategy Mentor",
-    role_external: "10+ лет опыта, ex-TBC",
-    photo_url: "https://placehold.co/400x400/F6F3FE/2D1B69?text=Alisher",
-    linkedin_url: "https://linkedin.com/company/mlcommunity-uz"
+    role_external: "Должность · Компания",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
   },
   {
-    id: "m2",
-    name: "Гузаль Т.",
+    id: "b2b-m03",
+    name: "Имя Фамилия",
     role_mlc: "Data Analytics Mentor",
-    role_external: "BI, SQL, dashboards",
-    photo_url: "https://placehold.co/400x400/F6F3FE/2D1B69?text=Guzal",
-    linkedin_url: "https://linkedin.com/company/mlcommunity-uz"
+    role_external: "Должность · Компания",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
   },
   {
-    id: "m3",
-    name: "Жавохир Н.",
-    role_mlc: "Automation Mentor",
-    role_external: "LLM systems, integrations",
-    photo_url: "https://placehold.co/400x400/F6F3FE/2D1B69?text=Javokhir",
-    linkedin_url: "https://linkedin.com/company/mlcommunity-uz"
-  }
+    id: "b2b-m04",
+    name: "Имя Фамилия",
+    role_mlc: "ML Engineering Mentor",
+    role_external: "Должность · Компания",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "b2b-m05",
+    name: "Имя Фамилия",
+    role_mlc: "AI Automation Mentor",
+    role_external: "Должность · Компания",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "b2b-m06",
+    name: "Имя Фамилия",
+    role_mlc: "Prompt Engineering Mentor",
+    role_external: "Должность · Компания",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "b2b-m07",
+    name: "Имя Фамилия",
+    role_mlc: "B2B Coordinator",
+    role_external: "Должность · Компания",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "b2b-m08",
+    name: "Имя Фамилия",
+    role_mlc: "Corporate Trainer",
+    role_external: "Должность · Компания",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
 ];
 
 export const aiCreatorTeam: TeamMember[] = [
@@ -256,26 +297,61 @@ export const coursesFallback: Course[] = [
   }
 ];
 
-export const b2bCasesFallback: B2BCase[] = [
+export const b2bCasesFallback = [
   {
-    id: "b1",
-    company_name: "Ucell",
-    logo_url: "https://placehold.co/220x90/FFFFFF/2D1B69?text=Ucell",
-    quote_text:
-      "Команда получила практическое понимание AI-инструментов и быстро перенесла их в ежедневные процессы.",
-    quote_author: "HR Team, Ucell"
+    id: "case-01",
+    company_name: "Ucell / COSCOM",
+    logo_url: "",
+    employees_trained: 45,
+    quote_text: "Команда получила практическое понимание AI-инструментов и быстро перенесла их в ежедневные процессы.",
+    quote_author: "HR Team, Ucell",
   },
   {
-    id: "b2",
-    company_name: "TBC Bank",
-    logo_url: "https://placehold.co/220x90/FFFFFF/2D1B69?text=TBC+Bank"
+    id: "case-02",
+    company_name: "Webster University",
+    logo_url: "/trained-companies/webster.png",
+    employees_trained: 30,
+    quote_text: "Практический семинар по AI-компетенциям. Участники сразу начали применять инструменты в работе.",
+    quote_author: "Webster University Tashkent",
   },
   {
-    id: "b3",
-    company_name: "Alif",
-    logo_url: "https://placehold.co/220x90/FFFFFF/2D1B69?text=Alif"
-  }
+    id: "case-03",
+    company_name: "UzEnergoInspektsiya",
+    logo_url: "",
+    employees_trained: 25,
+    quote_text: "AI-обучение для специалистов энергетического сектора. Фокус на автоматизации отчётности.",
+    quote_author: "UzEnergoInspektsiya",
+  },
+  {
+    id: "case-04",
+    company_name: "Компания",
+    logo_url: "",
+    employees_trained: 0,
+    quote_text: "TODO: добавить отзыв.",
+    quote_author: "TODO",
+  },
+  {
+    id: "case-05",
+    company_name: "Компания",
+    logo_url: "",
+    employees_trained: 0,
+    quote_text: "TODO: добавить отзыв.",
+    quote_author: "TODO",
+  },
+  {
+    id: "case-06",
+    company_name: "Компания",
+    logo_url: "",
+    employees_trained: 0,
+    quote_text: "TODO: добавить отзыв.",
+    quote_author: "TODO",
+  },
 ];
+
+export const b2bTotalTrained = b2bCasesFallback.reduce(
+  (sum, c) => sum + c.employees_trained,
+  0
+);
 
 export const aiSolutionsFallback: AiSolution[] = [
   {
@@ -476,4 +552,261 @@ export const homeEventFormats = [
     title: "Guest Lectures",
     description: "Встречи с командами компаний, банков и стартапов."
   }
+];
+export const coreTeam: TeamMember[] = [
+  {
+    id: 'core-01',
+    name: 'Шахриёр Худойбердиев',
+    role_mlc: 'Основатель & CEO',
+    role_external: 'Аналитик · UzVC | Директор · MLC Academy',
+    photo_url: '/shakhriyor.avif',
+    linkedin_url: 'https://linkedin.com/in/shakhriyor-kh',
+  },
+  {
+    id: 'core-02',
+    name: 'Бехруз Аъзам',
+    role_mlc: 'ML Instructor',
+    role_external: 'ML Engineer · AlgoFrog',
+    photo_url: '/team/behruz.webp',
+    linkedin_url: 'https://uz.linkedin.com/in/behruz-azam',
+  },
+  {
+    id: 'core-03',
+    name: 'Азимбек Исматуллаев',
+    role_mlc: 'Education Manager',
+    role_external: 'Project Manager · Ipak Yuli Bank',
+    photo_url: '/team/azimbek.webp',
+    linkedin_url: 'https://www.linkedin.com/in/azimbek-ismatullaev-b24088207/',
+  },
+  {
+    id: 'core-04',
+    name: 'Адам Саидов',
+    role_mlc: 'Core Team',
+    role_external: 'Growth Product Manager · BirBir',
+    photo_url: '/team/adam.webp',
+    linkedin_url: 'https://www.linkedin.com/in/adam-saidov/',
+  },
+  {
+    id: 'core-05',
+    name: 'Жасурбек Мамуров',
+    role_mlc: 'Core Team',
+    role_external: 'INHA University in Tashkent',
+    photo_url: '/team/jasurbek.webp',
+    linkedin_url: 'https://www.linkedin.com/in/jmamurov/',
+  },
+  {
+    id: 'core-06',
+    name: 'Кобилжон Косимов',
+    role_mlc: 'Head of ML Club NewUU',
+    role_external: 'COO · RepliUz',
+    photo_url: '/team/kobiljon.webp',
+    linkedin_url: 'https://uz.linkedin.com/in/kobiljon',
+  },
+  {
+    id: 'core-07',
+    name: 'Амир Каримов',
+    role_mlc: 'COO ML Course',
+    role_external: 'Product Manager · LexoraAI',
+    photo_url: '/team/amir.webp',
+    linkedin_url: 'https://www.linkedin.com/in/amir-karimov-5ba2732a0/',
+  },
+  {
+    id: 'core-08',
+    name: 'Исламбек Каримов',
+    role_mlc: 'Core Team',
+    role_external: 'UzVC',
+    photo_url: '/team/islambek.webp',
+    linkedin_url: 'https://www.linkedin.com/in/islambek-kadyrov-0461a4254/',
+  },
+  {
+    id: 'core-09',
+    name: 'Камилла Жураева',
+    role_mlc: 'Core Team',
+    role_external: 'Data Scientist · Ucell',
+    photo_url: '/team/kamilla.webp',
+    linkedin_url: 'https://www.linkedin.com/in/kamilla-juraeva-data-scientist/',
+  },
+  {
+    id: 'core-10',
+    name: 'Малика Рустамова',
+    role_mlc: 'Core Team',
+    role_external: 'Product Manager · Uzum',
+    photo_url: '/team/malika.webp',
+    linkedin_url: 'https://www.linkedin.com/in/malika-rustamova-a213bb1a9/',
+  },
+  {
+    id: 'core-11',
+    name: 'Нодира Ибрагимова',
+    role_mlc: 'Core Team',
+    role_external: 'Director of Launch Lab · School 21',
+    photo_url: '/team/nodira.webp',
+    linkedin_url: 'https://www.linkedin.com/in/nodira-ibrogimova/',
+  },
+  {
+    id: 'core-12',
+    name: 'Назокатхон Шерматова',
+    role_mlc: 'Core Team',
+    role_external: 'Product Manager · KDB Bank Uzbekistan',
+    photo_url: '/team/nazokatkhon.webp',
+    linkedin_url: 'https://www.linkedin.com/in/algonazokat/',
+  },
+  {
+    id: 'core-13',
+    name: 'Убайдуллох Пулат',
+    role_mlc: 'Core Team',
+    role_external: 'BDC · C-Space',
+    photo_url: '/team/ubaydulloh.webp',
+    linkedin_url: 'https://www.linkedin.com/in/ubaydullohpulat/',
+  },
+];
+
+export const coreTeamByLocale: Record<string, typeof coreTeam> = {
+  ru: coreTeam,
+  uz: [
+    { id: 'core-01', name: 'Shahriyor Xudoyberdiyev', role_mlc: "Asoschisi & CEO", role_external: "Tahlilchi · UzVC | Direktor · MLC Academy", photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
+    { id: 'core-02', name: "Behruz A'zam", role_mlc: "ML O'qituvchisi", role_external: "ML Engineer · AlgoFrog", photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+    { id: 'core-03', name: 'Azimbek Ismatullayev', role_mlc: "Ta'lim menejeri", role_external: "Loyiha menejeri · Ipak Yuli Bank", photo_url: '/team/azimbek.webp', linkedin_url: 'https://www.linkedin.com/in/azimbek-ismatullaev-b24088207/' },
+    { id: 'core-04', name: 'Adam Saidov', role_mlc: 'Core Team', role_external: "O'sish mahsulot menejeri · BirBir", photo_url: '/team/adam.webp', linkedin_url: 'https://www.linkedin.com/in/adam-saidov/' },
+    { id: 'core-05', name: 'Jasurbek Mamurov', role_mlc: 'Core Team', role_external: "INHA University in Tashkent", photo_url: '/team/jasurbek.webp', linkedin_url: 'https://www.linkedin.com/in/jmamurov/' },
+    { id: 'core-06', name: 'Kobiljon Qosimov', role_mlc: 'ML Club NewUU rahbari', role_external: "COO · RepliUz", photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
+    { id: 'core-07', name: 'Amir Karimov', role_mlc: 'ML Course COO', role_external: "Mahsulot menejeri · LexoraAI", photo_url: '/team/amir.webp', linkedin_url: 'https://www.linkedin.com/in/amir-karimov-5ba2732a0/' },
+    { id: 'core-08', name: 'Islambek Karimov', role_mlc: 'Core Team', role_external: "UzVC", photo_url: '/team/islambek.webp', linkedin_url: 'https://www.linkedin.com/in/islambek-kadyrov-0461a4254/' },
+    { id: 'core-09', name: 'Kamilla Juraeva', role_mlc: 'Core Team', role_external: "Data Scientist · Ucell", photo_url: '/team/kamilla.webp', linkedin_url: 'https://www.linkedin.com/in/kamilla-juraeva-data-scientist/' },
+    { id: 'core-10', name: 'Malika Rustamova', role_mlc: 'Core Team', role_external: "Mahsulot menejeri · Uzum", photo_url: '/team/malika.webp', linkedin_url: 'https://www.linkedin.com/in/malika-rustamova-a213bb1a9/' },
+    { id: 'core-11', name: 'Nodira Ibragimova', role_mlc: 'Core Team', role_external: "Launch Lab direktori · School 21", photo_url: '/team/nodira.webp', linkedin_url: 'https://www.linkedin.com/in/nodira-ibrogimova/' },
+    { id: 'core-12', name: "Nazokatxon Shermatova", role_mlc: 'Core Team', role_external: "Mahsulot menejeri · KDB Bank Uzbekistan", photo_url: '/team/nazokatkhon.webp', linkedin_url: 'https://www.linkedin.com/in/algonazokat/' },
+    { id: 'core-13', name: 'Ubaydulloh Pulat', role_mlc: 'Core Team', role_external: "BDC · C-Space", photo_url: '/team/ubaydulloh.webp', linkedin_url: 'https://www.linkedin.com/in/ubaydullohpulat/' },
+  ],
+  en: [
+    { id: 'core-01', name: 'Shakhriyor Khudoyberdiyev', role_mlc: "Founder & CEO", role_external: "Analyst · UzVC | Director · MLC Academy", photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
+    { id: 'core-02', name: 'Behruz Azam', role_mlc: "ML Instructor", role_external: "ML Engineer · AlgoFrog", photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+    { id: 'core-03', name: 'Azimbek Ismatullayev', role_mlc: "Education Manager", role_external: "Project Manager · Ipak Yuli Bank", photo_url: '/team/azimbek.webp', linkedin_url: 'https://www.linkedin.com/in/azimbek-ismatullaev-b24088207/' },
+    { id: 'core-04', name: 'Adam Saidov', role_mlc: 'Core Team', role_external: "Growth Product Manager · BirBir", photo_url: '/team/adam.webp', linkedin_url: 'https://www.linkedin.com/in/adam-saidov/' },
+    { id: 'core-05', name: 'Jasurbek Mamurov', role_mlc: 'Core Team', role_external: "INHA University in Tashkent", photo_url: '/team/jasurbek.webp', linkedin_url: 'https://www.linkedin.com/in/jmamurov/' },
+    { id: 'core-06', name: 'Kobiljon Kosimov', role_mlc: 'Head of ML Club NewUU', role_external: "COO · RepliUz", photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
+    { id: 'core-07', name: 'Amir Karimov', role_mlc: 'COO ML Course', role_external: "Product Manager · LexoraAI", photo_url: '/team/amir.webp', linkedin_url: 'https://www.linkedin.com/in/amir-karimov-5ba2732a0/' },
+    { id: 'core-08', name: 'Islambek Karimov', role_mlc: 'Core Team', role_external: "UzVC", photo_url: '/team/islambek.webp', linkedin_url: 'https://www.linkedin.com/in/islambek-kadyrov-0461a4254/' },
+    { id: 'core-09', name: 'Kamilla Juraeva', role_mlc: 'Core Team', role_external: "Data Scientist · Ucell", photo_url: '/team/kamilla.webp', linkedin_url: 'https://www.linkedin.com/in/kamilla-juraeva-data-scientist/' },
+    { id: 'core-10', name: 'Malika Rustamova', role_mlc: 'Core Team', role_external: "Product Manager · Uzum", photo_url: '/team/malika.webp', linkedin_url: 'https://www.linkedin.com/in/malika-rustamova-a213bb1a9/' },
+    { id: 'core-11', name: 'Nodira Ibragimova', role_mlc: 'Core Team', role_external: "Director of Launch Lab · School 21", photo_url: '/team/nodira.webp', linkedin_url: 'https://www.linkedin.com/in/nodira-ibrogimova/' },
+    { id: 'core-12', name: 'Nazokatkhon Shermatova', role_mlc: 'Core Team', role_external: "Product Manager · KDB Bank Uzbekistan", photo_url: '/team/nazokatkhon.webp', linkedin_url: 'https://www.linkedin.com/in/algonazokat/' },
+    { id: 'core-13', name: 'Ubaydulloh Pulat', role_mlc: 'Core Team', role_external: "BDC · C-Space", photo_url: '/team/ubaydulloh.webp', linkedin_url: 'https://www.linkedin.com/in/ubaydullohpulat/' },
+  ],
+  zh: [
+    { id: 'core-01', name: 'Shakhriyor Khudoyberdiyev', role_mlc: "创始人 & CEO", role_external: "分析师 · UzVC | 总监 · MLC学院", photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
+    { id: 'core-02', name: 'Behruz Azam', role_mlc: "ML讲师", role_external: "ML工程师 · AlgoFrog", photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+    { id: 'core-03', name: 'Azimbek Ismatullayev', role_mlc: "教育经理", role_external: "项目经理 · Ipak Yuli银行", photo_url: '/team/azimbek.webp', linkedin_url: 'https://www.linkedin.com/in/azimbek-ismatullaev-b24088207/' },
+    { id: 'core-04', name: 'Adam Saidov', role_mlc: '核心团队', role_external: "增长产品经理 · BirBir", photo_url: '/team/adam.webp', linkedin_url: 'https://www.linkedin.com/in/adam-saidov/' },
+    { id: 'core-05', name: 'Jasurbek Mamurov', role_mlc: '核心团队', role_external: "塔什干INHA大学", photo_url: '/team/jasurbek.webp', linkedin_url: 'https://www.linkedin.com/in/jmamurov/' },
+    { id: 'core-06', name: 'Kobiljon Kosimov', role_mlc: 'NewUU ML俱乐部负责人', role_external: "COO · RepliUz", photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
+    { id: 'core-07', name: 'Amir Karimov', role_mlc: 'ML课程COO', role_external: "产品经理 · LexoraAI", photo_url: '/team/amir.webp', linkedin_url: 'https://www.linkedin.com/in/amir-karimov-5ba2732a0/' },
+    { id: 'core-08', name: 'Islambek Karimov', role_mlc: '核心团队', role_external: "UzVC", photo_url: '/team/islambek.webp', linkedin_url: 'https://www.linkedin.com/in/islambek-kadyrov-0461a4254/' },
+    { id: 'core-09', name: 'Kamilla Juraeva', role_mlc: '核心团队', role_external: "数据科学家 · Ucell", photo_url: '/team/kamilla.webp', linkedin_url: 'https://www.linkedin.com/in/kamilla-juraeva-data-scientist/' },
+    { id: 'core-10', name: 'Malika Rustamova', role_mlc: '核心团队', role_external: "产品经理 · Uzum", photo_url: '/team/malika.webp', linkedin_url: 'https://www.linkedin.com/in/malika-rustamova-a213bb1a9/' },
+    { id: 'core-11', name: 'Nodira Ibragimova', role_mlc: '核心团队', role_external: "Launch Lab总监 · School 21", photo_url: '/team/nodira.webp', linkedin_url: 'https://www.linkedin.com/in/nodira-ibrogimova/' },
+    { id: 'core-12', name: 'Nazokatkhon Shermatova', role_mlc: '核心团队', role_external: "产品经理 · KDB银行乌兹别克斯坦", photo_url: '/team/nazokatkhon.webp', linkedin_url: 'https://www.linkedin.com/in/algonazokat/' },
+    { id: 'core-13', name: 'Ubaydulloh Pulat', role_mlc: '核心团队', role_external: "BDC · C-Space", photo_url: '/team/ubaydulloh.webp', linkedin_url: 'https://www.linkedin.com/in/ubaydullohpulat/' },
+  ],
+};
+export const zeroOneAiTeam: TeamMember[] = [
+  {
+    id: "ai-t01",
+    name: "Шахриёр Худойбердиев",
+    role_mlc: "Основатель & CEO",
+    role_external: "Директор · MLC Academy",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: "https://linkedin.com/in/shakhriyor-kh",
+  },
+  {
+    id: "ai-t02",
+    name: "Имя Фамилия",
+    role_mlc: "Co-founder",
+    role_external: "Должность · Компания",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "ai-t03",
+    name: "Имя Фамилия",
+    role_mlc: "Lead Instructor · ML",
+    role_external: "Снимается в видео-уроках",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "ai-t04",
+    name: "Имя Фамилия",
+    role_mlc: "Instructor · Data Analysis",
+    role_external: "Снимается в видео-уроках",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "ai-t05",
+    name: "Имя Фамилия",
+    role_mlc: "Frontend Developer",
+    role_external: "Разработка платформы 01ai.uz",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "ai-t06",
+    name: "Имя Фамилия",
+    role_mlc: "Video Editor & Coordinator",
+    role_external: "Монтаж и координация потоков",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+  {
+    id: "ai-t07",
+    name: "Имя Фамилия",
+    role_mlc: "Student Coordinator",
+    role_external: "Поддержка студентов",
+    photo_url: "/shakhriyor.avif",
+    linkedin_url: undefined,
+  },
+];
+
+export interface AiCohort {
+  id: string;
+  name: string;
+  track: string;
+  year: number;
+  month: string;
+  graduates: number;
+  employed: number;
+  photo: string;
+}
+
+export const zeroOneAiCohorts: AiCohort[] = [
+  {
+    id: "cohort-01",
+    name: "ML-01",
+    track: "Machine Learning",
+    year: 2024,
+    month: "Май 2024",
+    graduates: 25,
+    employed: 70,
+    photo: "/shakhriyor.avif",
+  },
+  {
+    id: "cohort-02",
+    name: "DA-01",
+    track: "Data Analysis",
+    year: 2025,
+    month: "TODO",
+    graduates: 0,
+    employed: 0,
+    photo: "/shakhriyor.avif",
+  },
+  {
+    id: "cohort-03",
+    name: "ML-02",
+    track: "Machine Learning",
+    year: 2025,
+    month: "TODO",
+    graduates: 0,
+    employed: 0,
+    photo: "/shakhriyor.avif",
+  },
 ];

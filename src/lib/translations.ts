@@ -177,6 +177,11 @@ export const resources = {
           eyebrow: "Кейсы",
           title: "Уже обучали"
         },
+        gallery: {
+          eyebrow: "Наши клиенты",
+          title: "Обучение в действии",
+          trained: "обученных сотрудников"
+        },
         process: {
           eyebrow: "Процесс",
           title: "Как мы работаем"
@@ -435,6 +440,7 @@ export const resources = {
         programs: { eyebrow: "Dasturlar", title: "Nimani o'rgatamiz" },
         mentors: { eyebrow: "Mentorlar", title: "Kim o'qitadi" },
         cases: { eyebrow: "Case'lar", title: "Allaqachon o'qitganmiz" },
+        gallery: { eyebrow: "Наши клиенты", title: "Обучение в действии", trained: "обученных сотрудников" },
         process: { eyebrow: "Jarayon", title: "Qanday ishlaymiz" },
         form: { eyebrow: "So'rov", title: "Kompaniyangiz uchun dastur hisoblab beramiz" },
         faq: { eyebrow: "FAQ", title: "Ko'p so'raladigan savollar" }
@@ -663,6 +669,7 @@ export const resources = {
         programs: { eyebrow: "Programs", title: "What we teach" },
         mentors: { eyebrow: "Mentors", title: "Who will teach" },
         cases: { eyebrow: "Cases", title: "Already trained" },
+        gallery: { eyebrow: "Наши клиенты", title: "Обучение в действии", trained: "обученных сотрудников" },
         process: { eyebrow: "Process", title: "How we work" },
         form: { eyebrow: "Request", title: "We’ll calculate a program for your company" },
         faq: { eyebrow: "FAQ", title: "Frequently asked questions" }

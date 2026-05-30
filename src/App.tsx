@@ -6,9 +6,12 @@ import { useSiteCopy } from "@/lib/siteCopy";
 const HomePage = lazy(() => import("@/pages/HomePage").then((module) => ({ default: module.HomePage })));
 const AboutPage = lazy(() => import("@/pages/AboutPage").then((module) => ({ default: module.AboutPage })));
 const CommunityPage = lazy(() => import("@/pages/CommunityPage").then((module) => ({ default: module.CommunityPage })));
+const EventCategoryPage = lazy(() => import("@/pages/EventCategoryPage").then((module) => ({ default: module.EventCategoryPage })));
 const EducationPage = lazy(() => import("@/pages/EducationPage").then((module) => ({ default: module.EducationPage })));
+const B2BPage = lazy(() => import("@/pages/B2BPage").then((module) => ({ default: module.B2BPage })));
 const DevelopmentPage = lazy(() => import("@/pages/DevelopmentPage").then((module) => ({ default: module.DevelopmentPage })));
 const AiMediaPage = lazy(() => import("@/pages/AiMediaPage").then((module) => ({ default: module.AiMediaPage })));
+const ZeroOneAiPage = lazy(() => import("@/pages/ZeroOneAiPage").then((module) => ({ default: module.ZeroOneAiPage })));
 const PartnerPage = lazy(() => import("@/pages/PartnerPage").then((module) => ({ default: module.PartnerPage })));
 const GraduatePage = lazy(() => import("@/pages/GraduatePage").then((module) => ({ default: module.GraduatePage })));
 
@@ -51,10 +54,26 @@ export default function App() {
           }
         />
         <Route
+          path="/community/events/:categoryId"
+          element={
+            <Suspense fallback={<RouteSkeleton />}>
+              <EventCategoryPage />
+            </Suspense>
+          }
+        />
+        <Route
           path="/education"
           element={
             <Suspense fallback={<RouteSkeleton />}>
               <EducationPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/b2b"
+          element={
+            <Suspense fallback={<RouteSkeleton />}>
+              <B2BPage />
             </Suspense>
           }
         />
@@ -71,6 +90,14 @@ export default function App() {
           element={
             <Suspense fallback={<RouteSkeleton />}>
               <AiMediaPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/01ai"
+          element={
+            <Suspense fallback={<RouteSkeleton />}>
+              <ZeroOneAiPage />
             </Suspense>
           }
         />

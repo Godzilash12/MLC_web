@@ -8,7 +8,9 @@ import {
   MessageCircle,
   Users
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { SectionReveal } from "@/components/SectionReveal";
+import { EVENT_CATEGORIES } from "@/data/eventsData";
 import { useCountUpWhenActive } from "@/hooks/useCountUpWhenActive";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -118,9 +120,14 @@ function AnimatedStatValue({ value, active }: { value: string; active: boolean }
 }
 
 export function CommunityPage() {
+  const navigate = useNavigate();
   const copy = useSiteCopy().community;
   const statsReveal = useInViewOnce<HTMLDivElement>({ threshold: 0.45 });
   usePageMeta(copy.metaTitle, copy.metaDescription);
+  const pastEventsWithId = pastEvents.map((event) => ({
+    ...event,
+    categoryId: EVENT_CATEGORIES.find((c) => c.title === event.title)?.id ?? null,
+  }));
 
   return (
     <>
@@ -191,10 +198,17 @@ export function CommunityPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {copy.pastEvents.map((event, index) => {
               const image = pastEvents[index]?.image ?? pastEvents[0].image;
+              const categoryId = pastEventsWithId[index]?.categoryId;
 
               return (
               <SectionReveal key={event.title}>
-                <article className="group relative min-h-[24rem] overflow-hidden rounded-[2rem] bg-[#15101f] transition duration-300 hover:-translate-y-1">
+                <article
+                  onClick={categoryId ? () => navigate(`/community/events/${categoryId}`) : undefined}
+                  className={[
+                    "group relative min-h-[24rem] overflow-hidden rounded-[2rem] bg-[#15101f] transition duration-300 hover:-translate-y-1",
+                    categoryId ? "cursor-pointer" : "",
+                  ].join(" ")}
+                >
                   <img
                     src={image}
                     alt={event.title}
