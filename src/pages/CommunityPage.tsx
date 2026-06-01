@@ -10,86 +10,44 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { SectionReveal } from "@/components/SectionReveal";
-import { EVENT_CATEGORIES } from "@/data/eventsData";
 import { useCountUpWhenActive } from "@/hooks/useCountUpWhenActive";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteCopy } from "@/lib/siteCopy";
-
-const communityStats = [
-  { value: "3500+", label: "участников" },
-  { value: "50+", label: "мероприятий" },
-  { value: "6000+", label: "посещений" }
-];
-
-const communityFormats = [
-  {
-    icon: CalendarDays,
-    title: "Митапы и лекции",
-    text: "Встречи с практиками AI, founders, инженерами и продуктовыми командами, где разбираем реальные кейсы.",
-    items: ["AI-тренды", "прикладные кейсы", "вопросы с экспертами"]
-  },
-  {
-    icon: MessageCircle,
-    title: "Нетворкинг",
-    text: "Форматы, где участники находят единомышленников, будущих коллег, партнёров, менторов и команды.",
-    items: ["знакомства", "карьерные связи", "партнёрства"]
-  },
-  {
-    icon: Lightbulb,
-    title: "Практические разборы",
-    text: "Разбираем инструменты, промпты, автоматизации, портфолио, идеи проектов и реальные задачи участников.",
-    items: ["разборы задач", "AI-инструменты", "практика вместо шума"]
-  },
-  {
-    icon: Megaphone,
-    title: "Большие события",
-    text: "Конференции, вечеринки сообщества, демо-дни, публичные дискуссии и коллаборации с партнёрами.",
-    items: ["конференции", "demo day", "community party"]
-  }
-];
 
 const communityFormatIcons = [CalendarDays, MessageCircle, Lightbulb, Megaphone];
 
 const pastEvents = [
   {
     title: "AI Rewind",
-    meta: "Конференция и обзор AI-трендов",
-    image: "/community-avif/Frame 1.avif"
+    categoryId: "ai-rewind",
+    image: "/events/rewind-2023/photo-1.webp"
   },
   {
     title: "ML Gap",
-    meta: "Лекции и разборы кейсов",
-    image: "/community-avif/Frame 10.avif"
+    categoryId: "ml-gap",
+    image: "/events/gap-2024-09/photo-1.webp"
   },
   {
     title: "ML Party",
-    meta: "Нетворкинг и вечер сообщества",
-    image: "/community-avif/Frame 11.avif"
-  },
-  {
-    title: "Guest Lectures",
-    meta: "Встречи с экспертами индустрии",
-    image: "/community-avif/Frame 13-1.avif"
+    categoryId: "ml-party",
+    image: "/events/party-2022/photo-1.webp"
   },
   {
     title: "Partner Meetups",
-    meta: "События с компаниями и вузами",
-    image: "/community-avif/Frame 4.avif"
+    categoryId: "office-visits",
+    image: "/events/meetup-2026-05/image104.webp"
   },
   {
-    title: "Community Talks",
-    meta: "Открытые разговоры о рынке AI",
-    image: "/community-avif/photo-2026-04-23-11-17-54.avif"
+    title: "AI Hackathon",
+    categoryId: "ai-hackathon",
+    image: "/events/hackathon-2024/photo-info.webp"
+  },
+  {
+    title: "ML Contest",
+    categoryId: "ml-contest",
+    image: "/events/contest-2026/image156.webp"
   }
-];
-
-const communityValue = [
-  "понимание, что реально происходит в AI-сфере",
-  "доступ к людям, компаниям, менторам и возможностям",
-  "среда, где можно задать вопрос и быстро найти направление",
-  "мотивация учиться, запускать проекты и расти в профессии",
-  "связь между участниками, бизнесом, образованием и государственными инициативами"
 ];
 
 function digitCount(value: string) {
@@ -124,10 +82,6 @@ export function CommunityPage() {
   const copy = useSiteCopy().community;
   const statsReveal = useInViewOnce<HTMLDivElement>({ threshold: 0.45 });
   usePageMeta(copy.metaTitle, copy.metaDescription);
-  const pastEventsWithId = pastEvents.map((event) => ({
-    ...event,
-    categoryId: EVENT_CATEGORIES.find((c) => c.title === event.title)?.id ?? null,
-  }));
 
   return (
     <>
@@ -198,7 +152,7 @@ export function CommunityPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {copy.pastEvents.map((event, index) => {
               const image = pastEvents[index]?.image ?? pastEvents[0].image;
-              const categoryId = pastEventsWithId[index]?.categoryId;
+              const categoryId = pastEvents[index]?.categoryId;
 
               return (
               <SectionReveal key={event.title}>

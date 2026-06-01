@@ -2,7 +2,92 @@ import { useTranslation } from "react-i18next";
 
 export type SiteLanguage = "ru" | "uz" | "en" | "zh";
 
+const ruEvents = {
+  event_rewind_2023: "Крупнейший AI-ивент Узбекистана. 700+ участников, 13 спикеров. Партнёры: Alif Tech, NewUU, Digital Generation.",
+  event_gap_2022_12: "Первый ML Gap. Студенты ИНХА, IT Park, Iman Invest. Живые разборы и нетворкинг.",
+  event_gap_2023_04: "Второй ML Gap в C-Space Coworking. Неформальная конференция с международными спикерами.",
+  event_gap_2023_11: "Практический воркшоп: snacks & coding, разбор резюме участников, нетворкинг.",
+  event_gap_2024_01: "MLC & PC GAP - совместный ивент. Участники повысили знания и завели связи с профессионалами.",
+  event_gap_2024_09: "Невероятный вечер с Александром Крайновым - погружение в современный AI. Атмосфера инноваций.",
+  event_gap_2024_12: "Вдохновляющая встреча с яркими спикерами. Живые истории из индустрии и нетворкинг.",
+  event_party_2022: "Первый ML Party собрал 300+ участников. Среди гостей - основатель myTaxi и Express24. Начало традиции.",
+  event_party_2023: "130+ участников - профессионалы и новички. Живые дискуссии и нетворкинг.",
+  event_party_2024: "Вечер для AI, Data и Startup-энтузиастов. Живая музыка, нетворкинг и содержательные дискуссии.",
+  event_party_2025: "Вечер идей, вдохновения и настоящей ML-энергии.",
+  event_meetup_tbc: "Студенты MLC в TBC Bank: AI-департамент, HR-культура банка, Product Data Analytics. Экскурсия по офису.",
+  event_meetup_2026_03: "Студенты MLC в IMAN: трудоустройство, разбор реальных проблем, Data Analytics и ML-тренды.",
+  event_meetup_2026_04: "Студенты MLC в Alif. Muslima Sabirova и Kamilla Veyskerber поделились экспертизой.",
+  event_meetup_2026_05: "Студенты MLC в Click: составление резюме, подготовка к интервью, требования компаний.",
+  event_hackathon_2024: "Первый AI Hackathon MLC. Три дня разработки, 100 млн сум призовой фонд. 🥇 Shifo AI  🥈 Data Dreamers  🥉 ICEMEDAI.",
+  event_contest_2023: "Команды до 3 человек решали задачи Kaggle за 5 часов. Онлайн-участие доступно.",
+  event_contest_2026: "Machine Learning Challenge совместно с ML Club NewUU в НУУ. Командное Kaggle-соревнование.",
+} as const;
+
+const uzEvents = {
+  event_rewind_2023: "O'zbekistondagi eng yirik AI tadbiri. 700+ ishtirokchi, 13 spiker. Hamkorlar: Alif Tech, NewUU, Digital Generation.",
+  event_gap_2022_12: "Birinchi ML Gap. INHA talabalari, IT Park, Iman Invest a'zolari. Jonli tahlillar va networking.",
+  event_gap_2023_04: "C-Space Coworking'da ikkinchi ML Gap. Xalqaro spikerlari bilan norasmiy konferensiya.",
+  event_gap_2023_11: "Amaliy seminar: snacks & coding, ishtirokchilar rezyumesini tahlil qilish, networking.",
+  event_gap_2024_01: "MLC & PC GAP - hamkorlikdagi tadbir. Ishtirokchilar bilimlarini oshirdi va mutaxassislar bilan tanishdi.",
+  event_gap_2024_09: "Aleksandr Krainov bilan ajoyib kecha - zamonaviy AI'ga chuqur kirib borish. Innovatsion muhit.",
+  event_gap_2024_12: "Yorqin spikerlari bilan ilhomlantiruvchi uchrashuv. Sanoatdan jonli hikoyalar va networking.",
+  event_party_2022: "Birinchi ML Party 300+ ishtirokchini to'pladi. Mehmonlar orasida myTaxi va Express24 asoschisi. An'ananing boshlanishi.",
+  event_party_2023: "130+ ishtirokchi - mutaxassislar va yangi boshlovchilar. Jonli muhokamalar va networking.",
+  event_party_2024: "AI, Data va Startup ixlosmandlari uchun kecha. Jonli musiqa, networking va mazmunli suhbatlar.",
+  event_party_2025: "G'oyalar, ilhom va haqiqiy ML energiyasi kechasi.",
+  event_meetup_tbc: "MLC talabalari TBC Bankda: AI departamenti, HR madaniyati, Product Data Analytics. Ofis ekskursiyasi.",
+  event_meetup_2026_03: "MLC talabalari IMAN'da: ish topish, real muammolar tahlili, Data Analytics va ML trendlari.",
+  event_meetup_2026_04: "MLC talabalari Alif'da. Muslima Sabirova va Kamilla Veyskerber tajribalarini ulashdi.",
+  event_meetup_2026_05: "MLC talabalari Click'da: rezyume tuzish, intervyuga tayyorgarlik, kompaniyalar talablari.",
+  event_hackathon_2024: "MLC'ning birinchi AI Hackathon'i. Uch kunlik ishlanma, 100 mln so'm mukofot. 🥇 Shifo AI  🥈 Data Dreamers  🥉 ICEMEDAI.",
+  event_contest_2023: "3 kishigacha jamoalar 5 soat davomida Kaggle vazifalarini hal qildi. Online ishtirok mumkin.",
+  event_contest_2026: "NewUU ML Club bilan birgalikda NUU'da Machine Learning Challenge. Jamoa Kaggle musobaqasi.",
+} as const;
+
+const enEvents = {
+  event_rewind_2023: "The largest AI event in Uzbekistan. 700+ attendees, 13 speakers. Partners: Alif Tech, NewUU, Digital Generation.",
+  event_gap_2022_12: "The first ML Gap. Students from INHA, IT Park, and Iman Invest. Live case reviews and networking.",
+  event_gap_2023_04: "The second ML Gap at C-Space Coworking. An informal conference with international speakers.",
+  event_gap_2023_11: "A practical workshop: snacks & coding, participant resume reviews, and networking.",
+  event_gap_2024_01: "MLC & PC GAP - a joint event where participants gained knowledge and connected with industry professionals.",
+  event_gap_2024_09: "An incredible evening with Alexander Krainov - a deep dive into modern AI. An atmosphere of innovation.",
+  event_gap_2024_12: "An inspiring meetup with brilliant speakers. Live stories from the industry and networking.",
+  event_party_2022: "The first ML Party brought together 300+ people. Guests included the founder of myTaxi and Express24. The start of a tradition.",
+  event_party_2023: "130+ attendees - professionals and newcomers. Live discussions and networking.",
+  event_party_2024: "An evening for AI, Data and Startup enthusiasts. Live music, networking and meaningful conversations.",
+  event_party_2025: "An evening of ideas, inspiration and real ML energy.",
+  event_meetup_tbc: "MLC students at TBC Bank: AI department, HR culture, Product Data Analytics. Office tour.",
+  event_meetup_2026_03: "MLC students at IMAN: career opportunities, real problem reviews, Data Analytics and ML trends.",
+  event_meetup_2026_04: "MLC students at Alif. Muslima Sabirova and Kamilla Veyskerber shared their expertise.",
+  event_meetup_2026_05: "MLC students at Click: resume writing, interview prep, and real company requirements.",
+  event_hackathon_2024: "The first MLC AI Hackathon. Three days of building, 100M UZS prize pool. 🥇 Shifo AI  🥈 Data Dreamers  🥉 ICEMEDAI.",
+  event_contest_2023: "Teams of up to 3 solved Kaggle tasks in 5 hours. Online participation available.",
+  event_contest_2026: "Machine Learning Challenge with ML Club NewUU at NUU. A team-based Kaggle competition.",
+} as const;
+
+const zhEvents = {
+  event_rewind_2023: "乌兹别克斯坦规模最大的 AI 活动。700+ 参与者，13 位演讲者。合作伙伴：Alif Tech、NewUU、Digital Generation。",
+  event_gap_2022_12: "首届 ML Gap。INHA 学生、IT Park 与 Iman Invest 成员参与。现场案例解析与社交。",
+  event_gap_2023_04: "在 C-Space Coworking 举办的第二届 ML Gap。与国际演讲者一起的非正式会议。",
+  event_gap_2023_11: "实践工作坊：snacks & coding、参与者简历点评与社交。",
+  event_gap_2024_01: "MLC & PC GAP 联合活动。参与者提升知识，并与行业专业人士建立联系。",
+  event_gap_2024_09: "与 Alexander Krainov 共度的精彩夜晚，深入现代 AI，充满创新氛围。",
+  event_gap_2024_12: "与优秀演讲者的启发性聚会。来自行业的真实故事与社交。",
+  event_party_2022: "首届 ML Party 汇聚 300+ 人。嘉宾包括 myTaxi 和 Express24 创始人，传统由此开始。",
+  event_party_2023: "130+ 参与者，包括专业人士与新手。现场讨论与社交。",
+  event_party_2024: "面向 AI、数据与创业爱好者的夜晚。现场音乐、社交与有深度的对话。",
+  event_party_2025: "充满想法、灵感和真实 ML 能量的夜晚。",
+  event_meetup_tbc: "MLC 学生走进 TBC Bank：AI 部门、HR 文化、产品数据分析与办公室参观。",
+  event_meetup_2026_03: "MLC 学生走进 IMAN：职业机会、真实问题解析、数据分析与 ML 趋势。",
+  event_meetup_2026_04: "MLC 学生走进 Alif。Muslima Sabirova 和 Kamilla Veyskerber 分享专业经验。",
+  event_meetup_2026_05: "MLC 学生走进 Click：简历撰写、面试准备和真实公司要求。",
+  event_hackathon_2024: "首届 MLC AI Hackathon。三天开发，1 亿苏姆奖金池。🥇 Shifo AI  🥈 Data Dreamers  🥉 ICEMEDAI。",
+  event_contest_2023: "最多 3 人的团队在 5 小时内解决 Kaggle 任务，支持线上参与。",
+  event_contest_2026: "与 NewUU ML Club 在 NUU 联合举办的 Machine Learning Challenge，团队 Kaggle 竞赛。",
+} as const;
+
 const ru = {
+  events: ruEvents,
   nav: {
     about: "О нас",
     community: "Сообщество",
@@ -195,9 +280,9 @@ const ru = {
       { title: "AI Rewind", meta: "Конференция и обзор AI-трендов" },
       { title: "ML Gap", meta: "Лекции и разборы кейсов" },
       { title: "ML Party", meta: "Нетворкинг и вечер сообщества" },
-      { title: "Guest Lectures", meta: "Встречи с экспертами индустрии" },
-      { title: "Partner Meetups", meta: "События с компаниями и вузами" },
-      { title: "Community Talks", meta: "Открытые разговоры о рынке AI" }
+      { title: "Partner Meetups", meta: "Офис-визиты и мастер-классы" },
+      { title: "AI Hackathon", meta: "Команды и реальные AI-продукты" },
+      { title: "ML Contest", meta: "Kaggle-челленджи и соревнования" }
     ],
     valueTitle: "Что получает участник",
     valueFlow: ["meet", "learn", "grow"],
@@ -474,6 +559,7 @@ const ru = {
 } as const;
 
 const uz = {
+  events: uzEvents,
   nav: {
     about: "Biz haqimizda",
     community: "Hamjamiyat",
@@ -630,9 +716,9 @@ const uz = {
       { title: "AI Rewind", meta: "Konferensiya va AI trendlar sharhi" },
       { title: "ML Gap", meta: "Ma'ruzalar va case tahlillari" },
       { title: "ML Party", meta: "Networking va hamjamiyat oqshomi" },
-      { title: "Guest Lectures", meta: "Sanoat ekspertlari bilan uchrashuvlar" },
-      { title: "Partner Meetups", meta: "Kompaniyalar va universitetlar bilan tadbirlar" },
-      { title: "Community Talks", meta: "AI bozori haqida ochiq suhbatlar" }
+      { title: "Partner Meetups", meta: "Ofis tashriflari va master-klasslar" },
+      { title: "AI Hackathon", meta: "Jamoalar va real AI mahsulotlar" },
+      { title: "ML Contest", meta: "Kaggle challenge va musobaqalar" }
     ],
     valueTitle: "Ishtirokchi nima oladi",
     valueFlow: ["meet", "learn", "grow"],
@@ -745,6 +831,7 @@ const uz = {
 
 const en = {
   ...ru,
+  events: enEvents,
   nav: { about: "About", community: "Community", educationGroup: "Education", productsGroup: "Products", education: "Education", b2b: "B2B", development: "Development", aiMedia: "AI for media", platform: "Platform", menu: "Open menu" },
   ticker: ["3500+ members", "Community", "50+ events", "Useful connections", "400+ graduates", "Internship", "70% employed", "Latest trends and news", "8+ trained companies", "The first and only AI community"],
   footer: { text: "The first and only AI community in Uzbekistan. Community, education, development, and AI media.", navigation: "Navigation", contacts: "Contacts", social: "Social media", home: "Home", slogan: "MLC. AI starts here.", confidential: "Confidential. For internal use only." },
@@ -805,7 +892,7 @@ const en = {
     ],
     pastTitle: "Past events",
     pastBadge: "community photos",
-    pastEvents: [{ title: "AI Rewind", meta: "Conference and AI trend review" }, { title: "ML Gap", meta: "Lectures and case reviews" }, { title: "ML Party", meta: "Networking and community evening" }, { title: "Guest Lectures", meta: "Meetings with industry experts" }, { title: "Partner Meetups", meta: "Events with companies and universities" }, { title: "Community Talks", meta: "Open talks about the AI market" }],
+    pastEvents: [{ title: "AI Rewind", meta: "Conference and AI trend review" }, { title: "ML Gap", meta: "Lectures and case reviews" }, { title: "ML Party", meta: "Networking and community evening" }, { title: "Partner Meetups", meta: "Office visits and masterclasses" }, { title: "AI Hackathon", meta: "Teams and real AI products" }, { title: "ML Contest", meta: "Kaggle challenges and competitions" }],
     valueTitle: "What a member gets",
     values: ["understanding of what is really happening in AI", "access to people, companies, mentors, and opportunities", "an environment where you can ask and quickly find direction", "motivation to learn, launch projects, and grow professionally", "connection between members, business, education, and government initiatives"],
     joinTitle: "How to join",
@@ -870,6 +957,7 @@ const en = {
 
 const zh = {
   ...en,
+  events: zhEvents,
   nav: { about: "关于我们", community: "社区", educationGroup: "教育", productsGroup: "产品", education: "教育", b2b: "B2B", development: "开发", aiMedia: "AI 媒体", platform: "平台", menu: "打开菜单" },
   ticker: ["3500+ 成员", "社区", "50+ 活动", "有价值的连接", "400+ 毕业生", "实习", "70% 就业", "关注最新趋势与新闻", "8+ 企业培训", "第一个也是唯一的 AI 社区"],
   footer: { text: "乌兹别克斯坦第一个也是唯一的 AI 社区。社区、教育、开发和 AI 媒体。", navigation: "导航", contacts: "联系方式", social: "社交媒体", home: "首页", slogan: "MLC。AI 从这里开始。", confidential: "机密。仅供内部使用。" },
@@ -1203,9 +1291,9 @@ const zhCommunity = {
     { title: "AI Rewind", meta: "AI 趋势会议与回顾" },
     { title: "ML Gap", meta: "讲座与案例拆解" },
     { title: "ML Party", meta: "Networking 与社区夜晚" },
-    { title: "Guest Lectures", meta: "与行业专家见面" },
-    { title: "Partner Meetups", meta: "与企业和大学的活动" },
-    { title: "Community Talks", meta: "关于 AI 市场的开放讨论" }
+    { title: "Partner Meetups", meta: "企业与大学活动" },
+    { title: "AI Hackathon", meta: "团队与真实 AI 产品" },
+    { title: "ML Contest", meta: "Kaggle 挑战与竞赛" }
   ],
   valueFlow: ["meet", "learn", "grow"],
   values: ["理解 AI 领域真实发生的事情", "接触人、公司、导师和机会", "可以提问并快速找到方向的环境", "学习、启动项目并职业成长的动力", "连接参与者、企业、教育和政府倡议"],
