@@ -143,6 +143,26 @@ export function AboutPage() {
 
       <section className="section-divider">
         <div className="section-shell section-space">
+          <SectionReveal>
+            <h2 className="section-title mb-10">{copy.teamTitle ?? "Core Team"}</h2>
+          </SectionReveal>
+          <SectionReveal>
+            <TeamGrid members={localizedTeam} dataSection="about-team" />
+          </SectionReveal>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <h2 className="section-title mb-10">{siteCopy.timeline.sectionTitle}</h2>
+          </SectionReveal>
+          <MlcTimeline />
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
           <div className="grid gap-5 lg:grid-cols-3">
             {copy.missionCards.map((item, index) => {
               const Icon = missionCardIcons[index] ?? Compass;
@@ -208,26 +228,6 @@ export function AboutPage() {
               </div>
             </div>
           </SectionReveal>
-        </div>
-      </section>
-
-      <section className="section-divider">
-        <div className="section-shell section-space">
-          <SectionReveal>
-            <h2 className="section-title mb-10">{copy.teamTitle ?? "Core Team"}</h2>
-          </SectionReveal>
-          <SectionReveal>
-            <TeamGrid members={localizedTeam} dataSection="about-team" />
-          </SectionReveal>
-        </div>
-      </section>
-
-      <section className="section-divider">
-        <div className="section-shell section-space">
-          <SectionReveal>
-            <h2 className="section-title mb-10">{siteCopy.timeline.sectionTitle}</h2>
-          </SectionReveal>
-          <MlcTimeline />
         </div>
       </section>
     </>

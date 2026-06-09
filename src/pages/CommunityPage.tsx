@@ -107,40 +107,6 @@ export function CommunityPage() {
       <section className="section-divider">
         <div className="section-shell section-space">
           <SectionReveal>
-            <h2 className="section-title">{copy.formatsTitle}</h2>
-          </SectionReveal>
-
-          <div className="mt-10 grid auto-rows-fr gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {copy.formats.map((item, index) => {
-              const Icon = communityFormatIcons[index] ?? CalendarDays;
-
-              return (
-                <SectionReveal key={item.title}>
-                  <article className="glass-panel group flex h-full min-h-[22rem] flex-col rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] transition duration-300 group-hover:bg-white/15">
-                      <Icon size={28} strokeWidth={1.8} />
-                    </div>
-                    <h3 className="mt-6 text-2xl font-semibold tracking-[-0.035em] text-white">{item.title}</h3>
-                    <p className="mt-4 text-base leading-7 text-text-secondary">{item.text}</p>
-                    <div className="mt-auto pt-6">
-                      {item.items.map((feature) => (
-                        <div key={feature} className="mt-2 flex items-center gap-2 text-sm text-text-muted">
-                          <CheckCircle2 className="shrink-0 text-[#ff7ad9]" size={16} />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </article>
-                </SectionReveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-divider">
-        <div className="section-shell section-space">
-          <SectionReveal>
             <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
               <h2 className="section-title max-w-4xl">{copy.pastTitle}</h2>
               <span className="w-fit rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-text-secondary">
@@ -179,6 +145,40 @@ export function CommunityPage() {
                   </div>
                 </article>
               </SectionReveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <h2 className="section-title">{copy.formatsTitle}</h2>
+          </SectionReveal>
+
+          <div className="mt-10 grid auto-rows-fr gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {copy.formats.map((item, index) => {
+              const Icon = communityFormatIcons[index] ?? CalendarDays;
+
+              return (
+                <SectionReveal key={item.title}>
+                  <article className="glass-panel group flex h-full min-h-[22rem] flex-col rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] transition duration-300 group-hover:bg-white/15">
+                      <Icon size={28} strokeWidth={1.8} />
+                    </div>
+                    <h3 className="mt-6 text-2xl font-semibold tracking-[-0.035em] text-white">{item.title}</h3>
+                    <p className="mt-4 text-base leading-7 text-text-secondary">{item.text}</p>
+                    <div className="mt-auto pt-6">
+                      {item.items.map((feature) => (
+                        <div key={feature} className="mt-2 flex items-center gap-2 text-sm text-text-muted">
+                          <CheckCircle2 className="shrink-0 text-[#ff7ad9]" size={16} />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </article>
+                </SectionReveal>
               );
             })}
           </div>

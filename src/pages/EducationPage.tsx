@@ -2,6 +2,7 @@ import { ArrowUpRight, BriefcaseBusiness, MonitorPlay, User, Users } from "lucid
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { SectionReveal } from "@/components/SectionReveal";
+import { zeroOneAiCohorts } from "@/data/fallbackContent";
 import { getGraduateStoriesLocalized } from "@/data/graduateContent";
 import { getPartnerStoryById } from "@/data/partnerContent";
 import { useCountUpWhenActive } from "@/hooks/useCountUpWhenActive";
@@ -339,6 +340,73 @@ export function EducationPage() {
                 </SectionReveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <h2 className="section-title">{copy.cohortsTitle ?? "Прошлые потоки"}</h2>
+          </SectionReveal>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {zeroOneAiCohorts.map((cohort) => (
+              <SectionReveal key={cohort.id}>
+                <article className="card-surface overflow-hidden">
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={cohort.photo}
+                      alt={cohort.name}
+                      className="h-full w-full object-cover transition duration-500 hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-bold text-text">{cohort.name}</h3>
+                      <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-accent">
+                        {cohort.track}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm text-text-secondary">{cohort.month}</p>
+                    {cohort.graduates > 0 && (
+                      <div className="mt-4 flex gap-4">
+                        <div>
+                          <p className="font-mono text-2xl font-bold text-text">{cohort.graduates}</p>
+                          <p className="text-xs text-text-secondary">{copy.cohortsGraduates ?? "выпускников"}</p>
+                        </div>
+                        <div>
+                          <p className="font-mono text-2xl font-bold text-accent">{cohort.employed}%</p>
+                          <p className="text-xs text-text-secondary">{copy.cohortsEmployed ?? "трудоустроены"}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </article>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider bg-surface">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <h2 className="section-title">{copy.galleryTitle ?? "Фотографии с уроков"}</h2>
+          </SectionReveal>
+          <div className="mt-10 columns-2 gap-3 md:columns-3 xl:columns-4">
+            {Array.from({ length: 12 }, (_, i) => i + 1).map((n) => (
+              <SectionReveal key={n}>
+                <div className="mb-3 overflow-hidden rounded-[1.2rem]" style={{ breakInside: "avoid" }}>
+                  <img
+                    src={`/01ai/gallery/photo-${n}.webp`}
+                    alt={`Lesson photo ${n}`}
+                    className="w-full object-cover transition duration-500 hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
+              </SectionReveal>
+            ))}
           </div>
         </div>
       </section>

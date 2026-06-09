@@ -93,14 +93,14 @@ export function Navbar() {
                       className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
                       onClick={() => setOpenDropdown(null)}
                     >
-                      {copy.nav.education}
+                      {copy.nav.individualEdu}
                     </NavLink>
                     <NavLink
                       to="/b2b"
                       className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
                       onClick={() => setOpenDropdown(null)}
                     >
-                      {copy.nav.b2b}
+                      {copy.nav.corporateEdu}
                     </NavLink>
                   </motion.div>
                 )}

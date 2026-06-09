@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+﻿import { useTranslation } from "react-i18next";
 
 export type SiteLanguage = "ru" | "uz" | "en" | "zh";
 
@@ -253,9 +253,11 @@ const ru = {
   nav: {
     about: "О нас",
     community: "Сообщество",
-    educationGroup: "Обучение",
+    educationGroup: "Образование",
     productsGroup: "Продукты",
     education: "Образование",
+    individualEdu: "Индивидуальное",
+    corporateEdu: "Корпоративное",
     b2b: "B2B",
     development: "Разработка",
     aiMedia: "ИИ для медиа",
@@ -380,7 +382,7 @@ const ru = {
     ],
     founderName: "Шахриёр Худойбердиев",
     founderRole: "Основатель MLC",
-    founderTitle: "Слово от основателя",
+    founderTitle: "От основателя",
     founderText:
       "«MLC появился, чтобы сделать AI ближе, понятнее и полезнее для людей. Мы хотим, чтобы в Узбекистане было больше специалистов, сильных команд, технологичных компаний и практических AI-проектов, которые дают реальный результат.»",
     missionCards: [
@@ -477,6 +479,10 @@ const ru = {
     graduatesTitle: "+400 Выпускников",
     internshipTitle: "Стажировка",
     formatsTitle: "Что мы даём в AI образовании",
+    cohortsTitle: "Прошлые потоки",
+    cohortsGraduates: "выпускников",
+    cohortsEmployed: "трудоустроены",
+    galleryTitle: "Фотографии с уроков",
     formats: [
       {
         title: "Персональное обучение",
@@ -730,6 +736,8 @@ const uz = {
     educationGroup: "Ta'lim",
     productsGroup: "Mahsulotlar",
     education: "Ta'lim",
+    individualEdu: "Individual",
+    corporateEdu: "Korporativ",
     b2b: "B2B",
     development: "Dasturlash",
     aiMedia: "Media uchun AI",
@@ -834,7 +842,7 @@ const uz = {
     ],
     founderName: "Shahriyor Xudoyberdiyev",
     founderRole: "MLC asoschisi",
-    founderTitle: "Asoschidan so'z",
+    founderTitle: "Asoschi so'zidan",
     founderText:
       "«MLC AI'ni odamlarga yaqinroq, tushunarliroq va foydaliroq qilish uchun paydo bo'lgan. O'zbekistonda ko'proq mutaxassislar, kuchli jamoalar, texnologik kompaniyalar va real natija beradigan amaliy AI loyihalari bo'lishini xohlaymiz.»",
     missionCards: [
@@ -915,6 +923,10 @@ const uz = {
     graduatesTitle: "+400 Bitiruvchi",
     internshipTitle: "Stajirovka",
     formatsTitle: "AI ta'limida nima beramiz",
+    cohortsTitle: "O'tgan potoklar",
+    cohortsGraduates: "bitiruvchi",
+    cohortsEmployed: "ishga joylashgan",
+    galleryTitle: "Darslardan suratlar",
     formats: [
       { title: "Shaxsiy ta'lim", text: "Talaba maqsadiga mos individual yo'l: hozirgi darajani ko'ramiz, dastur tuzamiz, qulay tempda harakat qilamiz va ko'nikmalarni amaliy natijaga olib chiqamiz." },
       { title: "Talabalar uchun guruh ta'limi", text: "Jonli darslar, stajirovkalar, hamkor ofislariga tashriflar, master-klasslar, intervyu va rezumega tayyorgarlik. Bu shunchaki kurs emas, talaba tezroq o'sadigan muhit." },
@@ -998,7 +1010,7 @@ const en = {
   eventCategories: enEventCategories,
   events: enEvents,
   zeroOneAi: enZeroOneAi,
-  nav: { about: "About", community: "Community", educationGroup: "Education", productsGroup: "Products", education: "Education", b2b: "B2B", development: "Development", aiMedia: "AI for media", platform: "Platform", menu: "Open menu" },
+  nav: { about: "About", community: "Community", educationGroup: "Education", productsGroup: "Products", education: "Education", individualEdu: "Individual", corporateEdu: "Corporate", b2b: "B2B", development: "Development", aiMedia: "AI for media", platform: "Platform", menu: "Open menu" },
   ticker: ["3500+ members", "Community", "50+ events", "Useful connections", "400+ graduates", "Internship", "70% employed", "Latest trends and news", "8+ trained companies", "The first and only AI community"],
   footer: { text: "The first and only AI community in Uzbekistan. Community, education, development, and AI media.", navigation: "Navigation", contacts: "Contacts", social: "Social media", home: "Home", slogan: "MLC. AI starts here.", confidential: "Confidential. For internal use only." },
   status: { loadingPage: "Loading page" },
@@ -1035,7 +1047,7 @@ const en = {
     teamTitle: "MLC Team",
     stats: [{ value: "3500+", label: "members" }, { value: "50+", label: "events" }, { value: "4", label: "key directions" }],
     founderRole: "Founder of MLC",
-    founderTitle: "Founder’s note",
+    founderTitle: "From the founder",
     founderText: "“MLC was created to make AI closer, clearer, and more useful for people. We want Uzbekistan to have more specialists, strong teams, technology companies, and practical AI projects that create real results.”",
     missionCards: [{ title: "Mission", text: "Develop Uzbekistan through AI." }, { title: "Goals", text: "Grow a strong AI ecosystem: more specialists, projects, companies, and real implementations." }, { title: "For Uzbekistan", text: "Help the country enter the new technological era faster through knowledge, connections, products, and practice." }],
     focusTitle: "What we focus on",
@@ -1064,7 +1076,7 @@ const en = {
     joinTitle: "How to join",
     joinSteps: [["01", "Follow announcements", "Subscribe to MLC and choose events that match your topic and level."], ["02", "Attend meetups", "Meet participants, ask questions, and join discussions."], ["03", "Grow inside the AI environment", "Use the community as an entry point into education, projects, career, and partnerships."]]
   },
-  education: { ...ru.education, metaTitle: "Education | MLC", metaDescription: "MLC AI education: learning, practice, and career growth.", title: "AI Education", stats: [{ value: "400+", label: "graduates" }, { value: "70%", label: "employed" }, { value: "8+", label: "trained companies" }], companiesTitle: "+8 trained companies", companiesText: "We help teams bring AI into work: from first tools to practical scenarios for daily tasks.", partnersBadge: "and other partners", graduatesTitle: "+400 Graduates", internshipTitle: "Internship", formatsTitle: "What we provide in AI education", formats: [{ title: "Personal training", text: "An individual path for the student’s goal: we assess the current level, build a program, move at a comfortable pace, and bring skills to practical results." }, { title: "Group training for students", text: "Live lessons, internships, partner office visits, masterclasses, interview and CV preparation. Not just a course, but an environment where students grow faster." }, { title: "Corporate training", text: "Custom AI programs for teams: process automation, personal productivity, content, reporting, presentations, analytics, and other applied business scenarios." }, { title: "01AI platform", text: "Online learning for everyone who wants to learn AI flexibly: clear modules, practical tasks, and access to knowledge without being tied to place or schedule." }] },
+  education: { ...ru.education, metaTitle: "Education | MLC", metaDescription: "MLC AI education: learning, practice, and career growth.", title: "AI Education", stats: [{ value: "400+", label: "graduates" }, { value: "70%", label: "employed" }, { value: "8+", label: "trained companies" }], companiesTitle: "+8 trained companies", companiesText: "We help teams bring AI into work: from first tools to practical scenarios for daily tasks.", partnersBadge: "and other partners", graduatesTitle: "+400 Graduates", internshipTitle: "Internship", formatsTitle: "What we provide in AI education", cohortsTitle: "Past cohorts", cohortsGraduates: "graduates", cohortsEmployed: "employed", galleryTitle: "Photos from classes", formats: [{ title: "Personal training", text: "An individual path for the student’s goal: we assess the current level, build a program, move at a comfortable pace, and bring skills to practical results." }, { title: "Group training for students", text: "Live lessons, internships, partner office visits, masterclasses, interview and CV preparation. Not just a course, but an environment where students grow faster." }, { title: "Corporate training", text: "Custom AI programs for teams: process automation, personal productivity, content, reporting, presentations, analytics, and other applied business scenarios." }, { title: "01AI platform", text: "Online learning for everyone who wants to learn AI flexibly: clear modules, practical tasks, and access to knowledge without being tied to place or schedule." }] },
   development: ru.development,
   aiMedia: ru.aiMedia,
   timeline: {
@@ -1126,16 +1138,16 @@ const zh = {
   eventCategories: zhEventCategories,
   events: zhEvents,
   zeroOneAi: zhZeroOneAi,
-  nav: { about: "关于我们", community: "社区", educationGroup: "教育", productsGroup: "产品", education: "教育", b2b: "B2B", development: "开发", aiMedia: "AI 媒体", platform: "平台", menu: "打开菜单" },
+  nav: { about: "关于我们", community: "社区", educationGroup: "教育", productsGroup: "产品", education: "教育", individualEdu: "个人课程", corporateEdu: "企业课程", b2b: "B2B", development: "开发", aiMedia: "AI 媒体", platform: "平台", menu: "打开菜单" },
   ticker: ["3500+ 成员", "社区", "50+ 活动", "有价值的连接", "400+ 毕业生", "实习", "70% 就业", "关注最新趋势与新闻", "8+ 企业培训", "第一个也是唯一的 AI 社区"],
   footer: { text: "乌兹别克斯坦第一个也是唯一的 AI 社区。社区、教育、开发和 AI 媒体。", navigation: "导航", contacts: "联系方式", social: "社交媒体", home: "首页", slogan: "MLC。AI 从这里开始。", confidential: "机密。仅供内部使用。" },
   status: { loadingPage: "页面加载中" },
   form: { name: "姓名", phone: "电话号码", submit: "发送", sending: "发送中...", successTitle: "谢谢，我们会尽快联系您。", successText: "MLC 团队已收到您的申请，并会尽快回复。", error: "发送失败。请直接联系我们：@mlc_direct", messagePrefix: "方向", options: { development: "开发", corporate: "企业培训", personal: "个人培训", media: "AI 媒体", partnership: "合作" } },
   lead: { eyebrow: "提交申请", title: "迈出第一步。", text: "留下姓名、电话和方向。我们会帮助您选择下一步：教育、开发、AI 媒体或合作。", communityTitle: "迈入社区的第一步。", communityText: "关注 MLC 社交媒体，获取活动公告，更接近 AI 环境。", registrationTitle: "活动报名", registrationText: "活动公告和报名链接会发布在 MLC 社交媒体。", registrationButton: "查看公告" },
   home: { ...en.home, metaDescription: "AI 从这里开始。社区、教育、开发和 AI 媒体。", heroTitle: "AI 从这里开始", heroSubtitle: "乌兹别克斯坦第一个也是唯一的 AI 社区", presidentQuote: "“今天，整个世界进入了人工智能时代……人工智能将把人类带入文明的新阶段。寻找并创造结果的人会胜出。”", presidentSource: "- 沙夫卡特·米尔济约耶夫，摘自 2025 年 10 月 21 日会议讲话。", founderQuote: "“MLC 的出现，是为了让 AI 更接近人、更容易理解、更有用，并通过 AI 发展乌兹别克斯坦。”", founderSource: "- Shahriyor Khudoyberdiyev，ML Community Uzbekistan 负责人。", call: "拨打电话", partnersTitle: "强大的合作伙伴与我们一起前进。", helpTitle: "选择您进入 AI 的入口。", more: "了解更多", gallery: { community: "社区", education: "教育", communityStats: [{ value: "3500+", label: "成员" }, { value: "6000+", label: "访问" }, { value: "50+", label: "活动" }], educationStats: [{ value: "400+", label: "毕业生" }, { value: "70%", label: "就业" }, { value: "8+", label: "培训企业" }] }, services: [{ title: "社区", description: "活动、连接、实践解析，以及更容易进入 AI 并更快成长的环境。" }, { title: "教育", description: "面向学生、专业人士和企业的项目：从基础 AI 到应用型企业课程。" }, { title: "开发", description: "AI 机器人、RAG、流程自动化、内部工作台，以及面向真实业务任务的集成。" }, { title: "AI 媒体", description: "视频、产品内容、AI 虚拟人、视觉概念和品牌制作流程。" }, { title: "广告、电影还是动画？", description: "我们创作看起来高端且令人难忘的媒体内容：广告片、生成式场景、写实电影和风格化动画。AI 缩短周期和成本，同时不失震撼效果。" }, { title: "现在就开始学习 AI", description: "前往 01AI 平台，今天就进入 AI 领域。按照自己的节奏学习，获取最新材料和实践课程，帮助您更快进入职业领域。" }] },
-  about: { ...en.about, metaTitle: "关于我们 | MLC", metaDescription: "MLC 在乌兹别克斯坦发展 AI 社区、教育和应用型 AI 项目。", title: "关于 MLC", teamTitle: "MLC 团队", stats: [{ value: "3500+", label: "成员" }, { value: "50+", label: "活动" }, { value: "4", label: "核心方向" }], founderRole: "MLC 创始人", founderTitle: "创始人寄语", founderText: "“MLC 的出现，是为了让 AI 更接近人、更清晰、更有用。我们希望乌兹别克斯坦拥有更多专家、强大团队、科技公司，以及能够带来真实结果的 AI 项目。”", missionCards: [{ title: "使命", text: "通过 AI 发展乌兹别克斯坦。" }, { title: "目标", text: "建设强大的 AI 生态：更多专家、项目、公司和真实落地。" }, { title: "为了乌兹别克斯坦", text: "通过知识、连接、产品和实践，帮助国家更快进入新的技术时代。" }], focusTitle: "我们的关注点", focusAreas: [{ title: "社区", text: "围绕活动、社交、经验交流和真实 AI 环境连接人。" }, { title: "教育", text: "通过实践项目和应用型形式帮助个人与企业学习 AI。" }, { title: "开发", text: "为企业推出应用型 AI 解决方案、自动化、助手和集成。" }, { title: "AI 媒体", text: "为品牌创建视觉概念、视频、社交创意和 AI 制作。" }], valueTitle: "我们为人们和国家带来什么", values: ["清晰进入 AI，不再孤立和混乱", "接触活动、专家、导师和合作伙伴", "可以在工作中使用的实践技能", "AI 环境中的职业和项目机会", "推动 AI 向前发展的强大圈层"] },
+  about: { ...en.about, metaTitle: "关于我们 | MLC", metaDescription: "MLC 在乌兹别克斯坦发展 AI 社区、教育和应用型 AI 项目。", title: "关于 MLC", teamTitle: "MLC 团队", stats: [{ value: "3500+", label: "成员" }, { value: "50+", label: "活动" }, { value: "4", label: "核心方向" }], founderRole: "MLC 创始人", founderTitle: "创始人说", founderText: "“MLC 的出现，是为了让 AI 更接近人、更清晰、更有用。我们希望乌兹别克斯坦拥有更多专家、强大团队、科技公司，以及能够带来真实结果的 AI 项目。”", missionCards: [{ title: "使命", text: "通过 AI 发展乌兹别克斯坦。" }, { title: "目标", text: "建设强大的 AI 生态：更多专家、项目、公司和真实落地。" }, { title: "为了乌兹别克斯坦", text: "通过知识、连接、产品和实践，帮助国家更快进入新的技术时代。" }], focusTitle: "我们的关注点", focusAreas: [{ title: "社区", text: "围绕活动、社交、经验交流和真实 AI 环境连接人。" }, { title: "教育", text: "通过实践项目和应用型形式帮助个人与企业学习 AI。" }, { title: "开发", text: "为企业推出应用型 AI 解决方案、自动化、助手和集成。" }, { title: "AI 媒体", text: "为品牌创建视觉概念、视频、社交创意和 AI 制作。" }], valueTitle: "我们为人们和国家带来什么", values: ["清晰进入 AI，不再孤立和混乱", "接触活动、专家、导师和合作伙伴", "可以在工作中使用的实践技能", "AI 环境中的职业和项目机会", "推动 AI 向前发展的强大圈层"] },
   community: { ...en.community, metaTitle: "社区 | MLC", metaDescription: "MLC AI 社区：活动、连接、实践和成长。", title: "AI 社区", stats: [{ value: "3500+", label: "成员" }, { value: "50+", label: "活动" }, { value: "6000+", label: "访问" }], formatsTitle: "社区内部发生什么", pastTitle: "过往活动", pastBadge: "社区照片", valueTitle: "成员能获得什么", joinTitle: "如何加入" },
-  education: { ...en.education, metaTitle: "教育 | MLC", metaDescription: "MLC AI 教育：学习、实践和职业成长。", title: "AI 教育", stats: [{ value: "400+", label: "毕业生" }, { value: "70%", label: "就业" }, { value: "8+", label: "培训企业" }], companiesTitle: "+8 家培训企业", companiesText: "我们帮助团队把 AI 带入工作：从最初的工具到日常任务的实践场景。", partnersBadge: "以及其他合作伙伴", graduatesTitle: "+400 毕业生", internshipTitle: "实习", formatsTitle: "我们在 AI 教育中提供什么" },
+  education: { ...en.education, metaTitle: "教育 | MLC", metaDescription: "MLC AI 教育：学习、实践和职业成长。", title: "AI 教育", stats: [{ value: "400+", label: "毕业生" }, { value: "70%", label: "就业" }, { value: "8+", label: "培训企业" }], companiesTitle: "+8 家培训企业", companiesText: "我们帮助团队把 AI 带入工作：从最初的工具到日常任务的实践场景。", partnersBadge: "以及其他合作伙伴", graduatesTitle: "+400 毕业生", internshipTitle: "实习", formatsTitle: "我们在 AI 教育中提供什么", cohortsTitle: "往期班级", cohortsGraduates: "名毕业生", cohortsEmployed: "已就业", galleryTitle: "课堂照片" },
   development: en.development,
   aiMedia: en.aiMedia,
   timeline: {
