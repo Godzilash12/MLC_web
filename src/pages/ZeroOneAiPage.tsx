@@ -1,85 +1,73 @@
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { LeadForm } from "@/components/LeadForm";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
-import { zeroOneAiCohorts, zeroOneAiTeam } from "@/data/fallbackContent";
+import { zeroOneAiCohorts, zeroOneAiTeamByLocale } from "@/data/fallbackContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
-
-const tracks = [
-  {
-    icon: "01",
-    label: "Skill",
-    title: "Eleven Labs: Professional ovozlantirish va dublyaj",
-    desc: "AI-ovozlashtirish, voice cloning, multitilli dublyaj, audio kitob va tijoriy ovozli kontent yaratish.",
-    meta: "20+ soat · Online · Novice",
-    url: "https://www.01ai.uz/skills/38",
-  },
-  {
-    icon: "02",
-    label: "Skill",
-    title: "Higgsfield: AI video va personajlar",
-    desc: "Video prompting, avatarlar, lip-sync, vizual effektlar, reklama roligi va animatsion kontent ishlab chiqarish.",
-    meta: "20+ soat · Online · Novice",
-    url: "https://www.01ai.uz/skills/37",
-  },
-  {
-    icon: "03",
-    label: "Skill",
-    title: "Sun'iy intellektni nimadan boshlash kerak?",
-    desc: "AI texnologiyalarining ishlash prinsiplari, turlari va kundalik hayotdagi amaliy foydasini sodda tilda o'rganish.",
-    meta: "10+ soat · Online · Novice",
-    url: "https://www.01ai.uz/skills/27",
-  },
-  {
-    icon: "04",
-    label: "Course",
-    title: "AI Startup",
-    desc: "AI yordamida birinchi startapingizni boshlang va g'oyani amaliy mahsulotga aylantirish yo'lini o'rganing.",
-    meta: "60+ soat · Online · Novice",
-    url: "https://www.01ai.uz/courses/25",
-  },
-  {
-    icon: "05",
-    label: "Course",
-    title: "AI Ijodkor",
-    desc: "Trendda bo'lgan video va rasmlarni AI orqali yarating, ijodiy kontentni tezroq va sifatliroq ishlab chiqing.",
-    meta: "40+ soat · Online · Novice",
-    url: "https://www.01ai.uz/courses/31",
-  },
-];
+import { useSiteCopy } from "@/lib/siteCopy";
 
 const galleryPhotos = Array.from({ length: 9 }, (_, index) => `/01ai/gallery/photo-${index + 1}.webp`);
 
 export function ZeroOneAiPage() {
+  const copy = useSiteCopy().zeroOneAi;
   const { i18n } = useTranslation();
   const locale = i18n.resolvedLanguage?.split("-")[0] ?? "ru";
+  const localizedTeam = zeroOneAiTeamByLocale[locale] ?? zeroOneAiTeamByLocale.ru;
+  const tracks = [
+    {
+      icon: "🎙️",
+      label: copy.skillLabel,
+      title: "ElevenLabs: Professional AI-ovozlashtirish",
+      desc: copy.tracks[0].desc,
+      url: "https://www.01ai.uz/skills/38",
+      banner: "/01ai/courses/course-1.webp",
+    },
+    {
+      icon: "🎬",
+      label: copy.skillLabel,
+      title: "Higgsfield AI: Video generatsiya qilish",
+      desc: copy.tracks[1].desc,
+      url: "https://www.01ai.uz/skills/37",
+      banner: "/01ai/courses/course-2.webp",
+    },
+    {
+      icon: "🤖",
+      label: copy.skillLabel,
+      title: "Sun'iy intellekt orqali rasm va videolar",
+      desc: copy.tracks[2].desc,
+      url: "https://www.01ai.uz/skills/27",
+      banner: "/01ai/courses/course-3.webp",
+    },
+    {
+      icon: "🚀",
+      label: copy.courseLabel,
+      title: "AI Startup",
+      desc: copy.tracks[3].desc,
+      url: "https://www.01ai.uz/courses/25",
+      banner: "/01ai/courses/course-4.webp",
+    },
+    {
+      icon: "✨",
+      label: copy.courseLabel,
+      title: "AI Ijodkor",
+      desc: copy.tracks[4].desc,
+      url: "https://www.01ai.uz/courses/31",
+      banner: "/01ai/courses/course-5.webp",
+    },
+  ];
 
-  usePageMeta(
-    "01AI - Raqamli Texnologiyalar Hamma Uchun",
-    "01AI platformasi: AI kurslar, skillar va amaliy ta'lim."
-  );
-
-  const tracksTitle = locale === "en" ? "Courses and skills" : "Kurslar va skillar";
-  const cohortsTitle = locale === "en" ? "Past cohorts" : "O'tgan potoklar";
-  const galleryTitle = locale === "en" ? "Photos from classes" : "Darslardan suratlar";
-  const teamTitle = locale === "en" ? "01AI team" : "01AI jamoasi";
-  const studentsLabel = locale === "en" ? "students" : "student";
-  const employedLabel = locale === "en" ? "employed" : "ishga joylashgan";
-  const worksAtLabel = locale === "en" ? "Where they work" : "Qayerda ishlashadi";
+  usePageMeta(`01AI - ${copy.heroTitle}`, copy.heroSubtitle);
 
   return (
     <>
       <section className="section-shell grid gap-12 py-16 lg:grid-cols-[1fr_0.92fr] lg:py-20">
         <SectionReveal>
           <p className="eyebrow">01AI · ML Community</p>
-          <h1 className="display-title">Raqamli Texnologiyalar Hamma Uchun</h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-text-secondary">
-            Sifatli Ta'lim. Hamjamiyat - Kuch. O'yna - Sotib Ol
-          </p>
+          <h1 className="display-title">{copy.heroTitle}</h1>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-text-secondary">{copy.heroSubtitle}</p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a href="https://01ai.uz" target="_blank" rel="noreferrer" className="button-primary">
-              Hoziroq boshlash
+              {copy.heroBtn}
               <ArrowRight size={18} />
             </a>
           </div>
@@ -99,23 +87,35 @@ export function ZeroOneAiPage() {
         <div className="section-shell section-space">
           <SectionReveal>
             <p className="eyebrow">01ai.uz</p>
-            <h2 className="section-title">{tracksTitle}</h2>
+            <h2 className="section-title">{copy.tracksTitle}</h2>
           </SectionReveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {tracks.map((track) => (
               <SectionReveal key={track.title}>
-                <article className="card-surface flex h-full flex-col p-6">
-                  <div className="font-mono text-4xl font-bold text-accent">{track.icon}</div>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                    {track.label}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-semibold text-text">{track.title}</h3>
-                  <p className="mt-3 text-base leading-7 text-text-secondary">{track.desc}</p>
-                  <p className="mt-4 text-sm font-semibold text-text-muted">{track.meta}</p>
-                  <a href={track.url} target="_blank" rel="noreferrer" className="button-ghost mt-auto pt-5">
-                    01ai.uz
-                    <ExternalLink size={14} />
-                  </a>
+                <article className="card-surface overflow-hidden transition duration-300 hover:-translate-y-1">
+                  <div className="relative aspect-[800/996] overflow-hidden bg-white/5">
+                    <img
+                      src={track.banner}
+                      alt={track.title}
+                      className="h-full w-full object-contain transition duration-500 hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                      {track.label}
+                    </p>
+                    <h3 className="mt-2 text-lg font-semibold leading-6 tracking-[-0.02em] text-white">
+                      {track.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-text-secondary">
+                      {track.desc}
+                    </p>
+                    <a href={track.url} target="_blank" rel="noreferrer" className="button-ghost mt-4 text-sm">
+                      {copy.learnMore} ↗
+                    </a>
+                  </div>
                 </article>
               </SectionReveal>
             ))}
@@ -126,7 +126,7 @@ export function ZeroOneAiPage() {
       <section className="section-divider bg-surface">
         <div className="section-shell section-space">
           <SectionReveal>
-            <h2 className="section-title">{cohortsTitle}</h2>
+            <h2 className="section-title">{copy.cohortsTitle}</h2>
           </SectionReveal>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {zeroOneAiCohorts.map((cohort) => (
@@ -151,19 +151,17 @@ export function ZeroOneAiPage() {
                     <div className="mt-4 flex gap-4">
                       <div>
                         <p className="font-mono text-2xl font-bold text-text">{cohort.graduates}</p>
-                        <p className="text-xs text-text-secondary">{studentsLabel}</p>
+                        <p className="text-xs text-text-secondary">{copy.cohortsGraduates}</p>
                       </div>
                       <div>
                         <p className="font-mono text-2xl font-bold text-accent">
                           {cohort.employedText ?? `${cohort.employed}%`}
                         </p>
-                        <p className="text-xs text-text-secondary">{employedLabel}</p>
+                        <p className="text-xs text-text-secondary">{copy.cohortsEmployed}</p>
                       </div>
                     </div>
                     {cohort.worksAt ? (
-                      <p className="mt-4 text-sm leading-6 text-text-muted">
-                        {worksAtLabel}: {cohort.worksAt}
-                      </p>
+                      <p className="mt-4 text-sm leading-6 text-text-muted">{cohort.worksAt}</p>
                     ) : null}
                   </div>
                 </article>
@@ -176,7 +174,7 @@ export function ZeroOneAiPage() {
       <section className="section-divider">
         <div className="section-shell section-space">
           <SectionReveal>
-            <h2 className="section-title">{galleryTitle}</h2>
+            <h2 className="section-title">{copy.galleryTitle}</h2>
           </SectionReveal>
           <div className="mt-10 columns-2 gap-3 md:columns-3 xl:columns-4">
             {galleryPhotos.map((src, index) => (
@@ -198,28 +196,14 @@ export function ZeroOneAiPage() {
       <section className="section-divider bg-surface">
         <div className="section-shell section-space">
           <SectionReveal>
-            <h2 className="section-title">{teamTitle}</h2>
+            <h2 className="section-title">{copy.teamTitle}</h2>
           </SectionReveal>
           <div className="mt-12">
-            <TeamGrid members={zeroOneAiTeam} dataSection="01ai-team" />
+            <TeamGrid members={localizedTeam} dataSection="01ai-team" />
           </div>
         </div>
       </section>
 
-      <section id="01ai-form" className="section-divider">
-        <div className="section-shell section-space">
-          <SectionReveal>
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="section-title">
-                {locale === "en" ? "Sign up for a course" : "Kursga yoziling"}
-              </h2>
-            </div>
-          </SectionReveal>
-          <div className="mx-auto mt-12 max-w-4xl">
-            <LeadForm leadType="b2c" sourcePage="/01ai" showMessage />
-          </div>
-        </div>
-      </section>
     </>
   );
 }

@@ -1,19 +1,59 @@
-import { ArrowRight, Building2, ClipboardCheck, Lightbulb, Presentation, Sparkles, Users2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Building2, ClipboardCheck, Lightbulb, Presentation, Sparkles, Users2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { FAQAccordion } from "@/components/FAQAccordion";
-import { LeadForm } from "@/components/LeadForm";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
 import { b2bCasesFallback, b2bMentors, b2bTotalTrained } from "@/data/fallbackContent";
 import { useB2bCases } from "@/hooks/useCMS";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { useSiteCopy } from "@/lib/siteCopy";
 
 const icons = [Lightbulb, Presentation, Sparkles, ClipboardCheck, Building2, Users2];
+
+const trainedCompanies = [
+  { name: "Biznesni Rivojlantirish Banki", shortName: "BRB", domain: "brb.uz", href: "https://brb.uz/" },
+  { name: "Navoi Mining and Metallurgical Company", shortName: "NGMK", domain: "ngmk.uz", href: "https://ngmk.uz/en/" },
+  {
+    name: "UNDP Uzbekistan",
+    shortName: "UNDP",
+    domain: "undp.org",
+    href: "https://www.undp.org/uzbekistan",
+    logoSrc: "/trained-companies/undp.svg"
+  },
+  {
+    name: "Akkermann Cement",
+    shortName: "Akkermann",
+    domain: "akkermann.ru",
+    href: "https://www.akkermann.ru/english/"
+  },
+  { name: "Exadel Poland", shortName: "Exadel Poland", domain: "exadel.com", href: "https://exadel.com/" },
+  { name: "Paynet", shortName: "Paynet", domain: "paynet.uz", href: "https://paynet.uz/ru" },
+  { name: "Ministry of Internal Affairs", shortName: "MIA", domain: "gov.uz", href: "https://gov.uz/ru/iiv" },
+  {
+    name: "Webster University in Tashkent",
+    shortName: "Webster",
+    domain: "webster.uz",
+    href: "https://www.webster.uz/"
+  }
+];
+
+const localLogoByDomain: Record<string, string> = {
+  "brb.uz": "/trained-companies/brb.png",
+  "ngmk.uz": "/trained-companies/ngmk.png",
+  "akkermann.ru": "/trained-companies/akkermann.png",
+  "exadel.com": "/trained-companies/exadel.png",
+  "paynet.uz": "/trained-companies/paynet.png",
+  "gov.uz": "/trained-companies/mvd.webp",
+  "webster.uz": "/trained-companies/webster.png"
+};
+
+const logoUrl = (domain: string) => localLogoByDomain[domain] ?? `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
 
 export function B2BPage() {
   const { t, i18n } = useTranslation();
   const locale = i18n.resolvedLanguage?.split("-")[0] ?? "ru";
   const page = t("b2b", { returnObjects: true }) as any;
+  const educationCopy = useSiteCopy().education;
   const { data: cases } = useB2bCases();
 
   const programs =
@@ -149,6 +189,55 @@ export function B2BPage() {
       <section className="section-divider">
         <div className="section-shell section-space">
           <SectionReveal>
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+              <div className="max-w-3xl">
+                <h2 className="section-title">{educationCopy.companiesTitle}</h2>
+                <p className="mt-5 text-lg leading-8 text-text-secondary">
+                  {educationCopy.companiesText}
+                </p>
+              </div>
+              <span className="w-fit rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-semibold text-text-secondary">
+                {educationCopy.partnersBadge}
+              </span>
+            </div>
+          </SectionReveal>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {trainedCompanies.map((company) => (
+              <SectionReveal key={company.name}>
+                <a
+                  href={company.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open website ${company.name}`}
+                  className="trained-company-card group flex min-h-[14rem] flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/10 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.07]"
+                >
+                  <ArrowUpRight className="trained-company-card__arrow" size={18} aria-hidden="true" />
+                  <div className="trained-company-card__logo flex h-24 w-24 items-center justify-center rounded-[1.7rem] p-4">
+                    <img
+                      src={company.logoSrc ?? logoUrl(company.domain)}
+                      alt={`${company.shortName} logo`}
+                      width="96"
+                      height="96"
+                      className="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div>
+                    <p className="mt-5 text-xl font-semibold tracking-[-0.03em] text-white">{company.shortName}</p>
+                    <p className="mt-2 text-sm leading-6 text-text-secondary">{company.name}</p>
+                  </div>
+                </a>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
             <p className="eyebrow">{page.programs.eyebrow}</p>
             <h2 className="section-title">{page.programs.title}</h2>
           </SectionReveal>
@@ -269,20 +358,6 @@ export function B2BPage() {
                 </div>
               </SectionReveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="b2b-form" className="section-divider">
-        <div className="section-shell section-space">
-          <SectionReveal>
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="eyebrow">{page.form.eyebrow}</p>
-              <h2 className="section-title">{page.form.title}</h2>
-            </div>
-          </SectionReveal>
-          <div className="mx-auto mt-12 max-w-4xl">
-            <LeadForm leadType="b2b" sourcePage="/b2b" showMessage />
           </div>
         </div>
       </section>

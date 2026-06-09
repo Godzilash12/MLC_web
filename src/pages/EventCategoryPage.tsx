@@ -39,7 +39,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   }, [value]);
 
   return (
-    <span className="font-mono text-4xl font-bold text-text">
+    <span className="font-mono text-3xl font-bold text-white">
       {count}
       {suffix}
     </span>
@@ -239,9 +239,23 @@ function EditionCard({
   );
 }
 
+const hackathonPeoplePhotos = [
+  "/events/hackathon-2024/mentor(1).webp",
+  "/events/hackathon-2024/mentor(2).webp",
+  "/events/hackathon-2024/mentor(3).webp",
+  "/events/hackathon-2024/mentor(4).webp",
+  "/events/hackathon-2024/mentor(5).webp",
+  "/events/hackathon-2024/mentor(6).webp",
+  "/events/hackathon-2024/mentor(7).webp",
+  "/events/hackathon-2024/speaker(1).webp",
+  "/events/hackathon-2024/speaker(2).webp",
+  "/events/hackathon-2024/speaker(3).webp",
+  "/events/hackathon-2024/speaker(4).webp",
+  "/events/hackathon-2024/speaker(5).webp",
+];
+
 function HackathonPage({
   edition,
-  onOpen,
 }: {
   edition: EventEdition;
   onOpen: (photos: string[], index: number) => void;
@@ -254,28 +268,30 @@ function HackathonPage({
 
   return (
     <>
-      <section className="section-shell section-space">
+      <section className="section-shell pt-4">
         <SectionReveal>
           <div
             className="overflow-hidden rounded-[2rem] p-8 lg:p-12"
             style={{
               background:
-                "radial-gradient(circle at 72% 18%, rgba(167,139,250,0.44), transparent 32%), linear-gradient(135deg, #0A0A1E, #1A0A3E)",
+                "radial-gradient(circle at 20% 50%, rgba(123,45,201,0.4), transparent 50%), radial-gradient(circle at 80% 20%, rgba(67,100,255,0.3), transparent 50%), linear-gradient(135deg, #0A0A1E, #1A0A3E)",
             }}
           >
-            <p className="eyebrow">⚡ Наш главный ивент</p>
+            <p className="w-fit rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/80">
+              ⚡ Главный ивент MLC
+            </p>
             <h1 className="display-title mt-5">AI Hackathon</h1>
             <p className="mt-6 max-w-2xl text-xl leading-8 text-text-secondary">
               Три дня. Команды. Реальные AI-продукты.
             </p>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              <div className="card-surface p-6">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <div className="glass-panel rounded-[1.4rem] px-6 py-4">
                 <AnimatedCounter value={400} suffix="+" />
-                <p className="mt-2 text-sm text-text-secondary">участников</p>
+                <p className="mt-2 text-xs text-text-secondary">участников</p>
               </div>
-              <div className="card-surface p-6">
+              <div className="glass-panel rounded-[1.4rem] px-6 py-4">
                 <AnimatedCounter value={100} suffix="M" />
-                <p className="mt-2 text-sm text-text-secondary">сум призовой фонд</p>
+                <p className="mt-2 text-xs text-text-secondary">сум призовой фонд</p>
               </div>
             </div>
           </div>
@@ -285,45 +301,105 @@ function HackathonPage({
       <section className="section-divider">
         <div className="section-shell section-space">
           <SectionReveal>
-            <article
-              className="card-surface overflow-hidden rounded-[2rem]"
-              style={{ borderColor: "#a78bfa", boxShadow: "0 0 52px rgba(167, 139, 250, 0.24)" }}
-            >
-              <div className="p-6 lg:p-8">
-                <h2
-                  className="text-4xl font-bold text-text lg:text-5xl"
-                  style={{
-                    background: "linear-gradient(90deg, #ffffff, #a78bfa, #43d8ff)",
-                    WebkitBackgroundClip: "text",
-                    color: "transparent",
-                  }}
-                >
-                  AI Hackathon 2024
-                </h2>
-              </div>
-
-              <button
-                type="button"
-                className="block w-full bg-surface"
-                onClick={() => onOpen(edition.photos, 0)}
+            <div className="overflow-hidden py-4">
+              <div
+                className="flex animate-marquee gap-3 hover:[animation-play-state:paused]"
+                style={{ animation: "marquee 80s linear infinite", width: "max-content" }}
               >
-                <img src={edition.coverImage} alt={edition.title} className="w-full object-cover" loading="lazy" />
-              </button>
-              <p className="px-6 pt-4 text-sm text-text-muted lg:px-8">Менторы и спикеры - информация на фото</p>
-
-              <div className="p-6 lg:p-8">
-                <div className="flex flex-wrap gap-3">
-                  {(edition.highlights ?? []).map((highlight) => (
-                    <span key={highlight} className="rounded-full bg-surface px-4 py-2 text-sm font-bold text-text">
-                      {highlight}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-6 text-base leading-8 text-text-secondary">{desc}</p>
-                <SourceButton sourceUrl={edition.sourceUrl} />
+                {[...edition.photos, ...edition.photos].map((src, index) => (
+                  <div key={`${src}-${index}`} className="h-64 w-96 shrink-0 overflow-hidden rounded-[1.2rem]">
+                    <img
+                      src={src}
+                      alt={`Hackathon photo ${index + 1}`}
+                      className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
               </div>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal>
+            <article className="card-surface mt-10 rounded-[2rem] p-8">
+              <p className="text-base leading-8 text-text-secondary">{desc}</p>
             </article>
           </SectionReveal>
+
+          <SectionReveal>
+            <div className="mt-14">
+              <h2 className="section-title">Победители</h2>
+              <div className="mt-8 grid gap-5 md:grid-cols-3">
+                <article className="card-surface rounded-[1.7rem] border border-yellow-500/30 bg-gradient-to-br from-yellow-500/5 to-transparent p-6 text-center">
+                  <div className="mb-3 text-5xl">🥇</div>
+                  <p className="text-xs uppercase tracking-widest text-text-muted">1 место</p>
+                  <h3 className="mt-2 text-xl font-bold text-white">Shifo AI</h3>
+                </article>
+                <article className="card-surface rounded-[1.7rem] border border-gray-400/30 p-6 text-center">
+                  <div className="mb-3 text-5xl">🥈</div>
+                  <p className="text-xs uppercase tracking-widest text-text-muted">2 место</p>
+                  <h3 className="mt-2 text-xl font-bold text-white">Data Dreamers</h3>
+                </article>
+                <article className="card-surface rounded-[1.7rem] border border-orange-700/30 p-6 text-center">
+                  <div className="mb-3 text-5xl">🥉</div>
+                  <p className="text-xs uppercase tracking-widest text-text-muted">3 место</p>
+                  <h3 className="mt-2 text-xl font-bold text-white">ICEMEDAI</h3>
+                </article>
+              </div>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal>
+            <div className="mt-14">
+              <h2 className="section-title">Менторы и спикеры</h2>
+              <p className="mt-4 text-lg text-text-secondary">Информация на фото ниже</p>
+              <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+                {hackathonPeoplePhotos.map((src, index) => (
+                  <article key={src} className="card-surface overflow-hidden rounded-[1.4rem] p-3">
+                    <img
+                      src={src}
+                      alt={`Hackathon mentor or speaker ${index + 1}`}
+                      className="w-full rounded-[1rem] object-contain"
+                      loading="lazy"
+                    />
+                  </article>
+                ))}
+              </div>
+              <p className="mt-3 text-center text-sm text-text-muted">
+                {"\u0412\u0441\u0435 \u043c\u0435\u043d\u0442\u043e\u0440\u044b \u0438 \u0441\u043f\u0438\u043a\u0435\u0440\u044b \u0445\u0430\u043a\u0430\u0442\u043e\u043d\u0430"}
+              </p>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal>
+            <div className="mt-14">
+              <h2 className="section-title">Партнёры и спонсоры</h2>
+              <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+                <article className="card-surface flex h-24 items-center justify-center rounded-[1.4rem] p-4 text-center">
+                  <span className="font-semibold text-text-secondary">New Uzbekistan University</span>
+                </article>
+                <article className="card-surface flex h-24 items-center justify-center rounded-[1.4rem] p-4">
+                  <img src="/logo.avif" alt="MLC logo" className="max-h-16 max-w-full object-contain" loading="lazy" />
+                </article>
+                <article className="card-surface flex h-24 items-center justify-center rounded-[1.4rem] p-4 text-center">
+                  <span className="font-semibold text-text-secondary">Партнёр</span>
+                </article>
+                <article className="card-surface flex h-24 items-center justify-center rounded-[1.4rem] p-4 text-center">
+                  <span className="font-semibold text-text-secondary">Спонсор</span>
+                </article>
+              </div>
+            </div>
+          </SectionReveal>
+
+          {edition.sourceUrl ? (
+            <SectionReveal>
+              <div className="mt-12 flex justify-center">
+                <a href={edition.sourceUrl} target="_blank" rel="noreferrer" className="button-ghost">
+                  Источник ↗
+                </a>
+              </div>
+            </SectionReveal>
+          ) : null}
         </div>
       </section>
     </>
@@ -440,17 +516,18 @@ function Lightbox({ lightbox, setLightbox }: { lightbox: LightboxState; setLight
 export function EventCategoryPage() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
+  const copy = useSiteCopy();
   const category = getCategoryById(categoryId ?? "");
   const [lightbox, setLightbox] = useState<LightboxState>(null);
 
   if (!category) {
     return (
-      <section className="section-shell section-space">
+      <section className="section-shell pt-6 pb-4">
         <button type="button" className="button-ghost" onClick={() => navigate("/community")}>
           <ArrowLeft size={18} aria-hidden="true" />
           Сообщество
         </button>
-        <h1 className="display-title mt-10">Мероприятие не найдено</h1>
+        <h1 className="display-title mt-3">Мероприятие не найдено</h1>
       </section>
     );
   }
@@ -461,6 +538,10 @@ export function EventCategoryPage() {
     .map(Number)
     .sort((first, second) => second - first);
   const totalEditions = sortedEditions.length;
+  const catKey = category.id.replace(/-/g, "_");
+  const eventCategoriesCopy = copy.eventCategories as Record<string, string> | undefined;
+  const catSubtitle = eventCategoriesCopy?.[`${catKey}_subtitle`] ?? category.subtitle;
+  const catDesc = eventCategoriesCopy?.[`${catKey}_desc`] ?? category.description;
 
   function openLightbox(photos: string[], index: number) {
     if (photos.length > 0) {
@@ -470,7 +551,7 @@ export function EventCategoryPage() {
 
   return (
     <>
-      <section className="section-shell section-space">
+      <section className="section-shell pt-6 pb-4">
         <SectionReveal>
           <button type="button" className="button-ghost" onClick={() => navigate("/community")}>
             <ArrowLeft size={18} aria-hidden="true" />
@@ -485,11 +566,23 @@ export function EventCategoryPage() {
         <>
           <section className="section-shell">
             <SectionReveal>
+              <div className="card-surface mb-8 rounded-[2rem] p-7">
               <p className="eyebrow">{category.meta}</p>
-              <h1 className="display-title mt-5">{category.title}</h1>
-              <p className="mt-5 text-lg text-text-secondary">
+              <h1 className="display-title">{category.title}</h1>
+              {catSubtitle ? (
+                <p className="mt-2 text-base font-semibold text-accent">
+                  {catSubtitle}
+                </p>
+              ) : null}
+              {catDesc ? (
+                <p className="mt-3 max-w-3xl text-base leading-7 text-text-secondary">
+                  {catDesc}
+                </p>
+              ) : null}
+              <p className="mt-4 text-sm text-text-muted">
                 {totalEditions} выпусков · {yearRange(sortedEditions)}
               </p>
+              </div>
             </SectionReveal>
           </section>
 

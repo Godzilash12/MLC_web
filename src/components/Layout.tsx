@@ -91,7 +91,7 @@ function PageLeadSection() {
   const copy = useSiteCopy();
 
   return (
-    <section className="section-divider">
+    <section id="b2b-form" className="section-divider">
       <div className="section-shell py-16 sm:py-20">
         <SectionReveal>
           <div className="mx-auto max-w-5xl text-center">

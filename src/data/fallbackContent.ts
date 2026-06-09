@@ -760,6 +760,37 @@ export const zeroOneAiTeam: TeamMember[] = [
   },
 ];
 
+export const zeroOneAiTeamByLocale: Record<string, typeof zeroOneAiTeam> = {
+  ru: zeroOneAiTeam,
+  uz: [
+    { id: "ai-t01", name: "Shahriyor Xudoyberdiyev", role_mlc: "Asoschisi & CEO", role_external: "Direktor · MLC Academy", photo_url: "/shakhriyor.avif", linkedin_url: "https://linkedin.com/in/shakhriyor-kh" },
+    { id: "ai-t02", name: "Shamsiddin Xudoyberdiyev", role_mlc: "Loyiha koordinatori", role_external: "", photo_url: "/01ai/team/shamsiddin.webp", linkedin_url: "https://www.linkedin.com/in/shamsiddin-khudoyberdiev/" },
+    { id: "ai-t03", name: "Abdulaziz Akbarov", role_mlc: "Backend Dasturchi", role_external: "", photo_url: "/01ai/team/abdulaziz-akbarov.webp", linkedin_url: "https://uz.linkedin.com/in/abdulaziz-akbarov-a3186b31a" },
+    { id: "ai-t04", name: "Jasurbek Xakimbekov", role_mlc: "Frontend Dasturchi", role_external: "", photo_url: "/01ai/team/jasurbek.webp", linkedin_url: "https://www.linkedin.com/in/khakimbekov/" },
+    { id: "ai-t05", name: "Yusuf Abdurakhimov", role_mlc: "Mentor", role_external: "", photo_url: "/01ai/team/yusuf.webp", linkedin_url: "https://www.linkedin.com/in/mrabdurakhimov/" },
+    { id: "ai-t06", name: "Nilufar Kiyamova", role_mlc: "Mentor", role_external: "", photo_url: "/01ai/team/nilufar.webp", linkedin_url: "https://www.linkedin.com/in/nilufar-kiyamova-54a628380/" },
+    { id: "ai-t07", name: "Abdulaziz Abduqaxxorov", role_mlc: "Video Muharrir", role_external: "", photo_url: "/01ai/team/abdulaziz-abduqaxxorov.webp", linkedin_url: "https://www.linkedin.com/in/abdulaziz-abduqaxxorov-600b33237/" },
+  ],
+  en: [
+    { id: "ai-t01", name: "Shakhriyor Khudoyberdiyev", role_mlc: "Founder & CEO", role_external: "Director · MLC Academy", photo_url: "/shakhriyor.avif", linkedin_url: "https://linkedin.com/in/shakhriyor-kh" },
+    { id: "ai-t02", name: "Shamsiddin Khudoyberdiyev", role_mlc: "Project Coordinator", role_external: "", photo_url: "/01ai/team/shamsiddin.webp", linkedin_url: "https://www.linkedin.com/in/shamsiddin-khudoyberdiev/" },
+    { id: "ai-t03", name: "Abdulaziz Akbarov", role_mlc: "Backend Developer", role_external: "", photo_url: "/01ai/team/abdulaziz-akbarov.webp", linkedin_url: "https://uz.linkedin.com/in/abdulaziz-akbarov-a3186b31a" },
+    { id: "ai-t04", name: "Jasurbek Xakimbekov", role_mlc: "Frontend Developer", role_external: "", photo_url: "/01ai/team/jasurbek.webp", linkedin_url: "https://www.linkedin.com/in/khakimbekov/" },
+    { id: "ai-t05", name: "Yusuf Abdurakhimov", role_mlc: "Mentor", role_external: "", photo_url: "/01ai/team/yusuf.webp", linkedin_url: "https://www.linkedin.com/in/mrabdurakhimov/" },
+    { id: "ai-t06", name: "Nilufar Kiyamova", role_mlc: "Mentor", role_external: "", photo_url: "/01ai/team/nilufar.webp", linkedin_url: "https://www.linkedin.com/in/nilufar-kiyamova-54a628380/" },
+    { id: "ai-t07", name: "Abdulaziz Abduqaxxorov", role_mlc: "Video Editor", role_external: "", photo_url: "/01ai/team/abdulaziz-abduqaxxorov.webp", linkedin_url: "https://www.linkedin.com/in/abdulaziz-abduqaxxorov-600b33237/" },
+  ],
+  zh: [
+    { id: "ai-t01", name: "Shakhriyor Khudoyberdiyev", role_mlc: "\u521b\u59cb\u4eba & CEO", role_external: "\u603b\u76d1 · MLC\u5b66\u9662", photo_url: "/shakhriyor.avif", linkedin_url: "https://linkedin.com/in/shakhriyor-kh" },
+    { id: "ai-t02", name: "Shamsiddin Khudoyberdiyev", role_mlc: "\u9879\u76ee\u534f\u8c03\u5458", role_external: "", photo_url: "/01ai/team/shamsiddin.webp", linkedin_url: "https://www.linkedin.com/in/shamsiddin-khudoyberdiev/" },
+    { id: "ai-t03", name: "Abdulaziz Akbarov", role_mlc: "\u540e\u7aef\u5f00\u53d1\u8005", role_external: "", photo_url: "/01ai/team/abdulaziz-akbarov.webp", linkedin_url: "https://uz.linkedin.com/in/abdulaziz-akbarov-a3186b31a" },
+    { id: "ai-t04", name: "Jasurbek Xakimbekov", role_mlc: "\u524d\u7aef\u5f00\u53d1\u8005", role_external: "", photo_url: "/01ai/team/jasurbek.webp", linkedin_url: "https://www.linkedin.com/in/khakimbekov/" },
+    { id: "ai-t05", name: "Yusuf Abdurakhimov", role_mlc: "\u5bfc\u5e08", role_external: "", photo_url: "/01ai/team/yusuf.webp", linkedin_url: "https://www.linkedin.com/in/mrabdurakhimov/" },
+    { id: "ai-t06", name: "Nilufar Kiyamova", role_mlc: "\u5bfc\u5e08", role_external: "", photo_url: "/01ai/team/nilufar.webp", linkedin_url: "https://www.linkedin.com/in/nilufar-kiyamova-54a628380/" },
+    { id: "ai-t07", name: "Abdulaziz Abduqaxxorov", role_mlc: "\u89c6\u9891\u526a\u8f91", role_external: "", photo_url: "/01ai/team/abdulaziz-abduqaxxorov.webp", linkedin_url: "https://www.linkedin.com/in/abdulaziz-abduqaxxorov-600b33237/" },
+  ],
+};
+
 export interface AiCohort {
   id: string;
   name: string;

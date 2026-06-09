@@ -86,8 +86,170 @@ const zhEvents = {
   event_contest_2026: "与 NewUU ML Club 在 NUU 联合举办的 Machine Learning Challenge，团队 Kaggle 竞赛。",
 } as const;
 
+const ruZeroOneAi = {
+  heroTitle: "Цифровые технологии для всех",
+  heroSubtitle: "Качественное обучение. Сообщество - сила. Учись и развивайся.",
+  heroBtn: "Начать сейчас",
+  tracksTitle: "Программы",
+  cohortsTitle: "Прошлые потоки",
+  cohortsGraduates: "выпускников",
+  cohortsEmployed: "трудоустроены",
+  galleryTitle: "Фотографии с уроков",
+  teamTitle: "Команда 01AI",
+  formTitle: "Записаться на курс",
+  platformBtn: "Перейти на платформу",
+  skillLabel: "Скилл",
+  courseLabel: "Курс",
+  profLabel: "Профессия",
+  learnMore: "Подробнее",
+  tracks: [
+    { icon: "🎙️", label: "Скилл", title: "Eleven Labs", desc: "Профессиональное озвучивание и дубляж с помощью AI. 20+ часов." },
+    { icon: "🎬", label: "Скилл", title: "Higgsfield", desc: "Генерация AI-видео и анимация персонажей. 20+ часов." },
+    { icon: "🤖", label: "Скилл", title: "С чего начать AI?", desc: "Простое и эффективное введение в мир искусственного интеллекта. 10+ часов." },
+    { icon: "🚀", label: "Курс", title: "AI Startup", desc: "Запусти свой первый стартап с помощью AI. 60+ часов." },
+    { icon: "✨", label: "Курс", title: "AI Ijodkor", desc: "Создавай трендовые видео и изображения с помощью AI. 40+ часов." },
+  ],
+} as const;
+
+const uzZeroOneAi = {
+  heroTitle: "Raqamli Texnologiyalar Hamma Uchun",
+  heroSubtitle: "Sifatli Ta'lim. Hamjamiyat - Kuch. O'yna - Sotib Ol.",
+  heroBtn: "Hoziroq boshlash",
+  tracksTitle: "Dasturlar",
+  cohortsTitle: "O'tgan potoklar",
+  cohortsGraduates: "bitiruvchi",
+  cohortsEmployed: "ishga joylashgan",
+  galleryTitle: "Darslardan suratlar",
+  teamTitle: "Jamoa",
+  formTitle: "Ro'yxatdan o'tish",
+  platformBtn: "Platformaga o'tish",
+  skillLabel: "Skill",
+  courseLabel: "Kurs",
+  profLabel: "Kasb",
+  learnMore: "Ko'proq",
+  tracks: [
+    { icon: "🎙️", label: "Skill", title: "Eleven Labs", desc: "Professional ovozlantirish va dublyaj. 20+ soat." },
+    { icon: "🎬", label: "Skill", title: "Higgsfield", desc: "AI video generatsiyasi va animatsiya. 20+ soat." },
+    { icon: "🤖", label: "Skill", title: "Sun'iy intellektni nimadan boshlash kerak?", desc: "AI texnologiyalariga kirish uchun sodda qo'llanma. 10+ soat." },
+    { icon: "🚀", label: "Kurs", title: "AI Startup", desc: "AI yordamida birinchi startapingizni boshlang. 60+ soat." },
+    { icon: "✨", label: "Kurs", title: "AI Ijodkor", desc: "Trendda bo'lgan video va rasmlarni AI orqali yarating. 40+ soat." },
+  ],
+} as const;
+
+const enZeroOneAi = {
+  heroTitle: "Digital Technologies for Everyone",
+  heroSubtitle: "Quality Education. Community is Power. Learn and Grow.",
+  heroBtn: "Start now",
+  tracksTitle: "Programs",
+  cohortsTitle: "Past cohorts",
+  cohortsGraduates: "graduates",
+  cohortsEmployed: "employed",
+  galleryTitle: "Photos from classes",
+  teamTitle: "01AI Team",
+  formTitle: "Sign up for a course",
+  platformBtn: "Go to platform",
+  skillLabel: "Skill",
+  courseLabel: "Course",
+  profLabel: "Profession",
+  learnMore: "Learn more",
+  tracks: [
+    { icon: "🎙️", label: "Skill", title: "Eleven Labs", desc: "Professional voiceover and dubbing with AI. 20+ hours." },
+    { icon: "🎬", label: "Skill", title: "Higgsfield", desc: "AI video generation and character animation. 20+ hours." },
+    { icon: "🤖", label: "Skill", title: "Where to start with AI?", desc: "A simple and effective introduction to artificial intelligence. 10+ hours." },
+    { icon: "🚀", label: "Course", title: "AI Startup", desc: "Launch your first startup with AI. 60+ hours." },
+    { icon: "✨", label: "Course", title: "AI Ijodkor", desc: "Create trending videos and images with AI. 40+ hours." },
+  ],
+} as const;
+
+const zhZeroOneAi = {
+  heroTitle: "面向所有人的数字技术",
+  heroSubtitle: "优质教育。社区即力量。学习与成长。",
+  heroBtn: "立即开始",
+  tracksTitle: "课程项目",
+  cohortsTitle: "往期班级",
+  cohortsGraduates: "名毕业生",
+  cohortsEmployed: "已就业",
+  galleryTitle: "课堂照片",
+  teamTitle: "01AI 团队",
+  formTitle: "报名课程",
+  platformBtn: "前往平台",
+  skillLabel: "技能",
+  courseLabel: "课程",
+  profLabel: "职业",
+  learnMore: "了解更多",
+  tracks: [
+    { icon: "🎙️", label: "技能", title: "Eleven Labs", desc: "专业 AI 配音与配乐。20+ 小时。" },
+    { icon: "🎬", label: "技能", title: "Higgsfield", desc: "AI 视频生成与角色动画。20+ 小时。" },
+    { icon: "🤖", label: "技能", title: "如何开始学 AI？", desc: "最简单有效的人工智能入门指南。10+ 小时。" },
+    { icon: "🚀", label: "课程", title: "AI Startup", desc: "借助 AI 启动你的第一个创业项目。60+ 小时。" },
+    { icon: "✨", label: "课程", title: "AI Ijodkor", desc: "用 AI 创作热门视频和图像。40+ 小时。" },
+  ],
+} as const;
+
+const ruEventCategories = {
+  "ai_rewind_subtitle": "Конференция и обзор AI-трендов",
+  "ai_rewind_desc": "AI Rewind — ежегодный итоговый ивент ML Community. Собираем лучших спикеров, разбираем главные тренды уходящего года в AI и смотрим, что ждёт нас дальше. Это не просто лекции — это живая дискуссия, нетворкинг и атмосфера, где AI-сообщество Узбекистана встречается вместе.",
+  "ml_gap_subtitle": "Лекции и разборы кейсов",
+  "ml_gap_desc": "ML Gap — формат глубоких погружений. Приглашаем экспертов из индустрии, которые разбирают реальные кейсы, делятся опытом и отвечают на живые вопросы. Не теория ради теории — только практические инсайты, которые можно применить уже сегодня.",
+  "ml_party_subtitle": "Нетворкинг и вечер сообщества",
+  "ml_party_desc": "ML Party — это вечер, где AI-сообщество собирается не ради слайдов, а ради людей. Неформальная атмосфера, живое общение, новые знакомства. Именно здесь завязываются проекты, находятся команды и появляются идеи, которые потом становятся реальностью.",
+  "office_visits_subtitle": "Мастер-классы у партнёров",
+  "office_visits_desc": "Студенты MLC посещают офисы компаний-партнёров — изнутри. Живые мастер-классы от специалистов, экскурсии по рабочим пространствам, прямые вопросы тем, кто уже работает в индустрии. Лучший способ понять, как устроена реальная работа в AI и tech-компаниях Узбекистана.",
+  "ai_hackathon_subtitle": "Разработка AI-решений за 48 часов",
+  "ai_hackathon_desc": "AI Hackathon — главное событие ML Community. Три дня интенсивной командной работы, менторы из индустрии, реальные задачи и призовой фонд. Команды строят работающие AI-продукты с нуля. Здесь рождаются стартапы, находятся партнёры и проверяются идеи на прочность.",
+  "ml_contest_subtitle": "Соревнование по ML-задачам",
+  "ml_contest_desc": "ML Contest — командное Kaggle-соревнование. Несколько часов, реальные датасеты, ограниченное время. Команды до трёх человек соревнуются в решении задач машинного обучения. Отличный способ проверить свои навыки, познакомиться с единомышленниками и получить обратную связь от экспертов."
+} as const;
+
+const uzEventCategories = {
+  "ai_rewind_subtitle": "Konferensiya va AI trendlari sharhi",
+  "ai_rewind_desc": "AI Rewind — ML Community'ning yillik yakuniy tadbiri. Eng yaxshi spikerlarni to'playmiz, o'tgan yilning asosiy AI trendlarini ko'rib chiqamiz va kelajakka nazar tashlaymiz. Bu shunchaki ma'ruzalar emas — bu jonli muhokama, networking va O'zbekiston AI hamjamiyati birgalikda uchrashuvining muhiti.",
+  "ml_gap_subtitle": "Ma'ruzalar va keys tahlillari",
+  "ml_gap_desc": "ML Gap — chuqur sho'ng'ish formati. Sanoatdan ekspertlarni taklif qilamiz, ular real keyslarni tahlil qiladi, tajriba ulashadi va jonli savollarga javob beradi. Nazariya uchun nazariya emas — faqat bugun qo'llash mumkin bo'lgan amaliy insight'lar.",
+  "ml_party_subtitle": "Networking va hamjamiyat kechasi",
+  "ml_party_desc": "ML Party — bu AI hamjamiyati slaydlar uchun emas, odamlar uchun yig'iladigan kecha. Norasmiy muhit, jonli muloqot, yangi tanishuvlar. Aynan shu yerda loyihalar boshlanadi, jamoalar topiladi va keyinchalik haqiqatga aylanadigan g'oyalar paydo bo'ladi.",
+  "office_visits_subtitle": "Hamkor kompaniyalarda master-klasslar",
+  "office_visits_desc": "MLC talabalari hamkor kompaniyalarning ofislarini ichkaridan ko'rish imkoniyatiga ega. Mutaxassislardan jonli master-klasslar, ish joylari bo'ylab ekskursiyalar, sanoatda allaqachon ishlaydigan odamlarga to'g'ridan-to'g'ri savollar. O'zbekiston AI va tech-kompaniyalarida real ish qanday tashkil etilganini tushunishning eng yaxshi usuli.",
+  "ai_hackathon_subtitle": "48 soat ichida AI yechimlarini ishlab chiqish",
+  "ai_hackathon_desc": "AI Hackathon — ML Community'ning asosiy tadbiri. Uch kunlik intensiv jamoa ishi, sanoatdan mentorlar, real vazifalar va mukofot fondi. Jamoalar noldan ishlaydigan AI mahsulotlarini quradi. Bu yerda startaplar tug'iladi, hamkorlar topiladi va g'oyalar sinovdan o'tkaziladi.",
+  "ml_contest_subtitle": "ML vazifalar bo'yicha musobaqa",
+  "ml_contest_desc": "ML Contest — jamoaviy Kaggle musobaqasi. Bir necha soat, real datasetlar, cheklangan vaqt. Uch kishigacha bo'lgan jamoalar mashinali o'rganish masalalarini yechishda musobaqa qiladi. O'z ko'nikmalarini sinab ko'rish, hamfikrlar bilan tanishish va ekspertlardan fikr-mulohaza olishning ajoyib usuli."
+} as const;
+
+const enEventCategories = {
+  "ai_rewind_subtitle": "Conference and AI trend review",
+  "ai_rewind_desc": "AI Rewind is ML Community's annual closing event. We bring together the best speakers, review the key AI trends of the year, and look ahead. This is not just lectures — it's a live discussion, networking, and an atmosphere where Uzbekistan's AI community comes together.",
+  "ml_gap_subtitle": "Lectures and case reviews",
+  "ml_gap_desc": "ML Gap is a deep-dive format. We invite industry experts who break down real cases, share their experience, and answer live questions. No theory for the sake of theory — only practical insights you can apply today.",
+  "ml_party_subtitle": "Networking and community evening",
+  "ml_party_desc": "ML Party is an evening where the AI community gathers not for slides but for people. Informal atmosphere, live conversations, new connections. This is where projects start, teams form, and ideas emerge that later become reality.",
+  "office_visits_subtitle": "Masterclasses at partner companies",
+  "office_visits_desc": "MLC students visit partner company offices from the inside. Live masterclasses from specialists, tours of workspaces, direct questions to people already working in the industry. The best way to understand how real work is organized in AI and tech companies in Uzbekistan.",
+  "ai_hackathon_subtitle": "Building AI solutions in 48 hours",
+  "ai_hackathon_desc": "AI Hackathon is ML Community's main event. Three days of intensive team work, industry mentors, real challenges, and a prize pool. Teams build working AI products from scratch. This is where startups are born, partners are found, and ideas are put to the test.",
+  "ml_contest_subtitle": "ML task competition",
+  "ml_contest_desc": "ML Contest is a team-based Kaggle competition. A few hours, real datasets, limited time. Teams of up to three compete in solving machine learning tasks. A great way to test your skills, meet like-minded people, and get feedback from experts."
+} as const;
+
+const zhEventCategories = {
+  "ai_rewind_subtitle": "AI趋势回顾与会议",
+  "ai_rewind_desc": "AI Rewind是ML Community的年度收官活动。我们汇聚最优秀的演讲者，回顾这一年的主要AI趋势，展望未来。这不仅仅是讲座——这是一场充满活力的讨论、社交活动，也是乌兹别克斯坦AI社区共聚一堂的时刻。",
+  "ml_gap_subtitle": "讲座与案例分析",
+  "ml_gap_desc": "ML Gap是一种深度学习格式。我们邀请行业专家分析真实案例，分享经验并回答现场提问。没有为了理论而理论——只有今天就能应用的实践洞见。",
+  "ml_party_subtitle": "社交活动与社区之夜",
+  "ml_party_desc": "ML Party是AI社区聚集的夜晚——不是为了幻灯片，而是为了人。轻松的氛围、真实的对话、新的相识。正是在这里，项目开始启动，团队开始组建，想法开始萌芽，最终变成现实。",
+  "office_visits_subtitle": "合作公司大师班",
+  "office_visits_desc": "MLC学生从内部参观合作公司的办公室。来自专家的现场大师班、工作空间参观、向已在行业工作的人提问。了解乌兹别克斯坦AI和科技公司真实工作方式的最佳途径。",
+  "ai_hackathon_subtitle": "48小时内开发AI解决方案",
+  "ai_hackathon_desc": "AI Hackathon是ML Community的主要活动。三天紧张的团队协作、来自行业的导师、真实挑战和奖金池。团队从零开始构建可运行的AI产品。这里诞生创业公司，找到合作伙伴，检验想法的可行性。",
+  "ml_contest_subtitle": "ML任务竞赛",
+  "ml_contest_desc": "ML Contest是一项团队制Kaggle竞赛。几个小时、真实数据集、有限时间。最多三人的团队竞相解决机器学习任务。这是检验技能、结识志同道合者并获得专家反馈的绝佳方式。"
+} as const;
+
 const ru = {
+  eventCategories: ruEventCategories,
   events: ruEvents,
+  zeroOneAi: ruZeroOneAi,
   nav: {
     about: "О нас",
     community: "Сообщество",
@@ -559,7 +721,9 @@ const ru = {
 } as const;
 
 const uz = {
+  eventCategories: uzEventCategories,
   events: uzEvents,
+  zeroOneAi: uzZeroOneAi,
   nav: {
     about: "Biz haqimizda",
     community: "Hamjamiyat",
@@ -831,7 +995,9 @@ const uz = {
 
 const en = {
   ...ru,
+  eventCategories: enEventCategories,
   events: enEvents,
+  zeroOneAi: enZeroOneAi,
   nav: { about: "About", community: "Community", educationGroup: "Education", productsGroup: "Products", education: "Education", b2b: "B2B", development: "Development", aiMedia: "AI for media", platform: "Platform", menu: "Open menu" },
   ticker: ["3500+ members", "Community", "50+ events", "Useful connections", "400+ graduates", "Internship", "70% employed", "Latest trends and news", "8+ trained companies", "The first and only AI community"],
   footer: { text: "The first and only AI community in Uzbekistan. Community, education, development, and AI media.", navigation: "Navigation", contacts: "Contacts", social: "Social media", home: "Home", slogan: "MLC. AI starts here.", confidential: "Confidential. For internal use only." },
@@ -957,7 +1123,9 @@ const en = {
 
 const zh = {
   ...en,
+  eventCategories: zhEventCategories,
   events: zhEvents,
+  zeroOneAi: zhZeroOneAi,
   nav: { about: "关于我们", community: "社区", educationGroup: "教育", productsGroup: "产品", education: "教育", b2b: "B2B", development: "开发", aiMedia: "AI 媒体", platform: "平台", menu: "打开菜单" },
   ticker: ["3500+ 成员", "社区", "50+ 活动", "有价值的连接", "400+ 毕业生", "实习", "70% 就业", "关注最新趋势与新闻", "8+ 企业培训", "第一个也是唯一的 AI 社区"],
   footer: { text: "乌兹别克斯坦第一个也是唯一的 AI 社区。社区、教育、开发和 AI 媒体。", navigation: "导航", contacts: "联系方式", social: "社交媒体", home: "首页", slogan: "MLC。AI 从这里开始。", confidential: "机密。仅供内部使用。" },

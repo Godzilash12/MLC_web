@@ -28,6 +28,8 @@ export interface EventCategory {
   emoji: string;
   color: string;
   coverImage: string;
+  subtitle?: string;
+  description?: string;
   editions: EventEdition[];
 }
 
@@ -48,6 +50,8 @@ export const EVENT_CATEGORIES: EventCategory[] = [
     emoji: "↺",
     color: "#ff7ad9",
     coverImage: "/events/rewind-2023/photo-1.webp",
+    subtitle: "Конференция и обзор AI-трендов",
+    description: "AI Rewind — ежегодный итоговый ивент ML Community. Собираем лучших спикеров, разбираем главные тренды уходящего года в AI и смотрим, что ждёт нас дальше. Это не просто лекции — это живая дискуссия, нетворкинг и атмосфера, где AI-сообщество Узбекистана встречается вместе.",
     editions: [
       {
         id: "rewind-2023",
@@ -87,6 +91,8 @@ export const EVENT_CATEGORIES: EventCategory[] = [
     emoji: "▣",
     color: "#43d8ff",
     coverImage: "/events/gap-2024-09/photo-1.webp",
+    subtitle: "Лекции и разборы кейсов",
+    description: "ML Gap — формат глубоких погружений. Приглашаем экспертов из индустрии, которые разбирают реальные кейсы, делятся опытом и отвечают на живые вопросы. Не теория ради теории — только практические инсайты, которые можно применить уже сегодня.",
     editions: [
       {
         id: "gap-2024-12",
@@ -237,6 +243,8 @@ export const EVENT_CATEGORIES: EventCategory[] = [
     emoji: "✦",
     color: "#a78bfa",
     coverImage: "/events/party-2022/photo-1.webp",
+    subtitle: "Нетворкинг и вечер сообщества",
+    description: "ML Party — это вечер, где AI-сообщество собирается не ради слайдов, а ради людей. Неформальная атмосфера, живое общение, новые знакомства. Именно здесь завязываются проекты, находятся команды и появляются идеи, которые потом становятся реальностью.",
     editions: [
       {
         id: "party-2025",
@@ -359,6 +367,8 @@ export const EVENT_CATEGORIES: EventCategory[] = [
     emoji: "⌂",
     color: "#fbbf24",
     coverImage: "/community-avif/Frame 4.avif",
+    subtitle: "Мастер-классы у партнёров",
+    description: "Студенты MLC посещают офисы компаний-партнёров — изнутри. Живые мастер-классы от специалистов, экскурсии по рабочим пространствам, прямые вопросы тем, кто уже работает в индустрии. Лучший способ понять, как устроена реальная работа в AI и tech-компаниях Узбекистана.",
     editions: [
       {
         id: "meetup-2026-05",
@@ -459,6 +469,8 @@ export const EVENT_CATEGORIES: EventCategory[] = [
     emoji: "⚡",
     color: "#a78bfa",
     coverImage: "/events/hackathon-2024/photo-info.webp",
+    subtitle: "Разработка AI-решений за 48 часов",
+    description: "AI Hackathon — главное событие ML Community. Три дня интенсивной командной работы, менторы из индустрии, реальные задачи и призовой фонд. Команды строят работающие AI-продукты с нуля. Здесь рождаются стартапы, находятся партнёры и проверяются идеи на прочность.",
     editions: [
       {
         id: "hackathon-2024",
@@ -473,7 +485,6 @@ export const EVENT_CATEGORIES: EventCategory[] = [
         sourceUrl: "https://t.me/mlc_uz/440",
         coverImage: "/events/hackathon-2024/photo-info.webp",
         photos: [
-          "/events/hackathon-2024/photo-info.webp",
           "/events/hackathon-2024/image117.webp",
           "/events/hackathon-2024/image118.webp",
           "/events/hackathon-2024/image119.webp",
@@ -496,18 +507,6 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           "/events/hackathon-2024/image136.webp",
           "/events/hackathon-2024/image137.webp",
           "/events/hackathon-2024/image138.webp",
-          "/events/hackathon-2024/mentors (1).webp",
-          "/events/hackathon-2024/mentors (2).webp",
-          "/events/hackathon-2024/mentors (3).webp",
-          "/events/hackathon-2024/mentors (4).webp",
-          "/events/hackathon-2024/mentors (5).webp",
-          "/events/hackathon-2024/mentors (6).webp",
-          "/events/hackathon-2024/mentors (7).webp",
-          "/events/hackathon-2024/speaker (1).webp",
-          "/events/hackathon-2024/speaker (2).webp",
-          "/events/hackathon-2024/speaker (3).webp",
-          "/events/hackathon-2024/speaker (4).webp",
-          "/events/hackathon-2024/speaker (5).webp",
         ],
         speakers: [],
         highlights: ["🥇 Shifo AI", "🥈 Data Dreamers", "🥉 ICEMEDAI", "Призовой фонд: 100 млн сум"],
@@ -521,6 +520,8 @@ export const EVENT_CATEGORIES: EventCategory[] = [
     emoji: "⌁",
     color: "#34d399",
     coverImage: "",
+    subtitle: "Соревнование по ML-задачам",
+    description: "ML Contest — командное Kaggle-соревнование. Несколько часов, реальные датасеты, ограниченное время. Команды до трёх человек соревнуются в решении задач машинного обучения. Отличный способ проверить свои навыки, познакомиться с единомышленниками и получить обратную связь от экспертов.",
     editions: [
       {
         id: "contest-2026",

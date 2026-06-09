@@ -1,0 +1,36 @@
+[2m3:58:28 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected '</', got 'jsx text'
+     ,-[C:/Users/Admin/Downloads/Telegram Desktop/mlc (2)/mlcommunity-uz/src/pages/EventCategoryPage.tsx:585:1]
+ 582 |                   <p className="mt-1 text-sm text-text-muted">
+ 583 |                     {totalEditions} выпусков · {yearRange(sortedEditions)}
+ 584 |                   </p>
+ 585 | ,->             </SectionReveal>
+ 586 | `->           </section>
+ 587 |     
+ 588 |               {years.map((year) => (
+ 589 |                 <section key={year} className="section-divider">
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/Admin/Downloads/Telegram Desktop/mlc (2)/mlcommunity-uz/src/pages/EventCategoryPage.tsx[39m
+  
+[2m3:58:34 PM[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected '</', got 'jsx text'
+     ,-[C:/Users/Admin/Downloads/Telegram Desktop/mlc (2)/mlcommunity-uz/src/pages/EventCategoryPage.tsx:585:1]
+ 582 |                   <p className="mt-4 text-sm text-text-muted">
+ 583 |                     {totalEditions} выпусков · {yearRange(sortedEditions)}
+ 584 |                   </p>
+ 585 | ,->             </SectionReveal>
+ 586 | `->           </section>
+ 587 |     
+ 588 |               {years.map((year) => (
+ 589 |                 <section key={year} className="section-divider">
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Users/Admin/Downloads/Telegram Desktop/mlc (2)/mlcommunity-uz/src/pages/EventCategoryPage.tsx[39m
+  
