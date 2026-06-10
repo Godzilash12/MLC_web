@@ -127,7 +127,7 @@ function SourceButton({ sourceUrl }: { sourceUrl?: string }) {
   );
 }
 
-function SpeakersList({ speakers }: { speakers: EventEdition["speakers"] }) {
+function SpeakersList({ speakers }: { speakers: Array<{ name: string; title: string; photo: string }> }) {
   if (speakers.length === 0) {
     return null;
   }
@@ -135,20 +135,20 @@ function SpeakersList({ speakers }: { speakers: EventEdition["speakers"] }) {
   return (
     <div className="border-t pt-6">
       <h3 className="text-xl font-bold text-text">Спикеры</h3>
-      <div className="mt-5 flex gap-4 overflow-x-auto pb-2">
-        {speakers.map((speaker) => {
-          return (
-            <article key={speaker.id} className="min-w-[180px]">
-              <div className="flex items-center gap-3">
-                <SpeakerAvatar name={speaker.name} photo={speaker.photo} />
-                <div>
-                  <p className="text-sm font-bold text-text">{speaker.name}</p>
-                  <p className="mt-1 text-xs text-text-muted">{speaker.title}</p>
-                </div>
-              </div>
-            </article>
-          );
-        })}
+      <div className="mt-5 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+        {speakers.map((sp, i) => (
+          <div key={i} className="flex items-center gap-3 min-w-0">
+            <img
+              src={sp.photo || '/shakhriyor.avif'}
+              alt={sp.name}
+              className="h-12 w-12 shrink-0 rounded-full object-cover"
+            />
+            <div className="min-w-0">
+              <p className="truncate text-sm font-semibold text-text">{sp.name}</p>
+              <p className="truncate text-xs text-text-muted">{sp.title}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -203,6 +203,65 @@ function EditionInfo({ categoryColor, edition }: { categoryColor: string; editio
   );
 }
 
+function EditionExtras({ edition }: { edition: EventEdition }) {
+  return (
+    <>
+      {edition.partners && edition.partners.length > 0 && (
+        <div className="mt-8">
+          <div className="mb-5">
+            <h3 className="text-lg font-semibold text-text">Партнёры</h3>
+          </div>
+          <div className="grid gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+            {edition.partners.map((p, i) => {
+              const cardClass = p.logo
+                ? "flex h-16 items-center justify-center rounded-[1.2rem] bg-white p-4 shadow-[0_2px_16px_rgba(0,0,0,0.12)] transition duration-300 hover:scale-[1.04] hover:shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
+                : "flex h-16 items-center justify-center rounded-[1.2rem] bg-white px-4 py-3 shadow-[0_2px_16px_rgba(0,0,0,0.12)]";
+
+              return (
+                <a
+                  key={i}
+                  href={p.url ?? '#'}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={cardClass}
+                >
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      className="max-h-9 w-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-center text-xs font-bold text-gray-700 leading-tight">
+                      {p.name}
+                    </span>
+                  )}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {edition.sources && edition.sources.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {edition.sources.map((s, i) => (
+            <a
+              key={i}
+              href={s.url}
+              target="_blank"
+              rel="noreferrer"
+              className="button-ghost text-sm"
+            >
+              {s.platform} ↗
+            </a>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
 function EditionCard({
   categoryColor,
   edition,
@@ -214,15 +273,24 @@ function EditionCard({
   emoji: string;
   onOpen: (photos: string[], index: number) => void;
 }) {
+  const allSpeakers = [
+    ...(edition.speakers ?? []),
+    ...(edition.additionalSpeakers ?? []),
+  ];
   const hasPhotos = edition.photos.length > 0 || Boolean(edition.coverImage);
-  const hasSpeakers = edition.speakers.length > 0;
+  const hasSpeakers = allSpeakers.length > 0;
   const infoOnly = !hasPhotos && !hasSpeakers;
 
   return (
     <SectionReveal>
       <article className="card-surface overflow-hidden rounded-[2rem]">
         {infoOnly ? (
-          <EditionInfo categoryColor={categoryColor} edition={edition} />
+          <>
+            <EditionInfo categoryColor={categoryColor} edition={edition} />
+            <div className="px-6 pb-6 lg:px-8 lg:pb-8">
+              <EditionExtras edition={edition} />
+            </div>
+          </>
         ) : (
           <>
             <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
@@ -230,7 +298,8 @@ function EditionCard({
               <EditionInfo categoryColor={categoryColor} edition={edition} />
             </div>
             <div className="px-6 pb-6 lg:px-8 lg:pb-8">
-              <SpeakersList speakers={edition.speakers} />
+              <SpeakersList speakers={allSpeakers} />
+              <EditionExtras edition={edition} />
             </div>
           </>
         )}
@@ -372,23 +441,42 @@ function HackathonPage({
           </SectionReveal>
 
           <SectionReveal>
-            <div className="mt-14">
-              <h2 className="section-title">Партнёры и спонсоры</h2>
-              <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-                <article className="card-surface flex h-24 items-center justify-center rounded-[1.4rem] p-4 text-center">
-                  <span className="font-semibold text-text-secondary">New Uzbekistan University</span>
-                </article>
-                <article className="card-surface flex h-24 items-center justify-center rounded-[1.4rem] p-4">
-                  <img src="/logo.avif" alt="MLC logo" className="max-h-16 max-w-full object-contain" loading="lazy" />
-                </article>
-                <article className="card-surface flex h-24 items-center justify-center rounded-[1.4rem] p-4 text-center">
-                  <span className="font-semibold text-text-secondary">Партнёр</span>
-                </article>
-                <article className="card-surface flex h-24 items-center justify-center rounded-[1.4rem] p-4 text-center">
-                  <span className="font-semibold text-text-secondary">Спонсор</span>
-                </article>
+            {edition.partners && edition.partners.length > 0 ? (
+              <div className="mt-14">
+                <div className="mb-5">
+                  <h3 className="text-lg font-semibold text-text">Партнёры</h3>
+                </div>
+                <div className="grid gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+                  {edition.partners.map((p, i) => {
+                    const cardClass = p.logo
+                      ? "flex h-16 items-center justify-center rounded-[1.2rem] bg-white p-4 shadow-[0_2px_16px_rgba(0,0,0,0.12)] transition duration-300 hover:scale-[1.04] hover:shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
+                      : "flex h-16 items-center justify-center rounded-[1.2rem] bg-white px-4 py-3 shadow-[0_2px_16px_rgba(0,0,0,0.12)]";
+
+                    return (
+                      <a
+                        key={i}
+                        href={p.url ?? '#'}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={cardClass}
+                      >
+                        {p.logo ? (
+                          <img
+                            src={p.logo}
+                            alt={p.name}
+                            className="max-h-9 w-full object-contain"
+                          />
+                        ) : (
+                          <span className="text-center text-xs font-bold text-gray-700 leading-tight">
+                            {p.name}
+                          </span>
+                        )}
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            ) : null}
           </SectionReveal>
 
           {edition.sourceUrl ? (

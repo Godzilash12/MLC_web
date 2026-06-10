@@ -18,6 +18,9 @@ export interface EventEdition {
   coverImage: string;
   photos: string[];
   speakers: Speaker[];
+  additionalSpeakers?: { name: string; title: string; photo: string }[];
+  partners?: { name: string; type: string; logo: string; url?: string }[];
+  sources?: { url: string; platform: string }[];
   highlights?: string[];
 }
 
@@ -80,6 +83,29 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           speaker("Bakhtiyor Khasanov", "CEO, UzbekVoice", "/events/speakers/bakhtiyor-khasanov.webp"),
           speaker("Vadim Zakharyan", "CTO & Co-founder, Billz", "/events/rewind-2023/speaker-vadim.webp"),
           speaker("Anvar Narzullaev", "CEO & Co-founder, Mohirdev", "/events/rewind-2023/speaker-anvar.webp"),
+        ],
+        additionalSpeakers: [
+          { name: 'Oleg Pekos', title: 'Первый замминистра цифровых технологий РУз', photo: '/events/rewind-2023/speaker-oleg.webp' },
+          { name: 'Aziz Atabekov', title: 'Vice Director, ZTE Uzbekistan', photo: '/events/rewind-2023/speaker-aziz.webp' },
+          { name: 'Sanjar Adilov', title: 'ML and Data Algorithms, EPAM', photo: '/events/rewind-2023/speaker-sanjar.webp' },
+          { name: 'Shavkat Karimov', title: 'Head of IT Community of Uzbekistan', photo: '/events/rewind-2023/speaker-shavkat.webp' },
+          { name: 'Munisa Rakhimjonova', title: 'Data Analyst, Beeline', photo: '/events/rewind-2023/speaker-munisa.webp' },
+          { name: 'Yuriy Gavrilin', title: 'CDO, Uzum Market', photo: '/events/rewind-2023/speaker-yuriy.webp' },
+          { name: 'Tahrirchi Founder', title: 'Founder & CEO, Tahrirchi', photo: '/events/rewind-2023/speaker-tahrirchi.webp' },
+          { name: 'Bogdan Pechenkin', title: 'Senior ML Engineer', photo: '/events/rewind-2023/speaker-bogdan.webp' },
+          { name: 'Makhmood Sadikov', title: 'ML Engineer, iTechart Group', photo: '/events/rewind-2023/speaker-makhmood.webp' },
+          { name: 'Bekhruz Tuychiev', title: 'Data Science Instructor, DataCamp', photo: '/events/rewind-2023/speaker-bekhruz-t.webp' },
+        ],
+        partners: [
+          { name: 'Alif Tech', type: 'Партнёр', logo: '/events/rewind-2023/partner-alif.webp', url: 'https://www.alif.uz/en/' },
+          { name: 'New Uzbekistan University', type: 'Партнёр', logo: '/events/rewind-2023/partner-newuu.webp', url: 'https://newuu.uz/' },
+          { name: 'Digital Generation', type: 'Партнёр', logo: '/events/rewind-2023/partner-digital-gen.webp', url: 'https://digitalgeneration.uz/en/' },
+          { name: 'Bellissimo Pizza', type: 'Партнёр', logo: '/events/rewind-2023/partner-belissimo.webp', url: 'https://bellissimo.uz/' },
+        ],
+        sources: [
+          { url: 'https://www.spot.uz/ru/2023/02/27/mlc-ai/', platform: 'Spot.uz' },
+          { url: 'https://t.me/mlc_uz/193', platform: 'Telegram' },
+          { url: 'https://youtube.com/playlist?list=PL3y4bvEfkQcnAyxUWYcFnOsg93UU_kdaK', platform: 'YouTube' },
         ],
       },
     ],
@@ -303,6 +329,10 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           speaker("Gennady Evstratov", "Head of Development, Yandex Uzbekistan", "/events/speakers/gennady-evstratov.webp"),
           speaker("Hikmatilla Ubaydullayev", "Executive Director, AICA", "/events/party-2024/speaker-hikmatilla.webp"),
         ],
+        partners: [
+          { name: 'Yandex Uzbekistan', type: 'Партнёр', logo: '/events/party-2024/partner-yandex-uz.webp', url: 'https://www.instagram.com/yandex__uzbekistan/' },
+          { name: 'Impact Hub', type: 'Партнёр', logo: '/events/party-2022/partner-impact-hub.webp', url: 'https://impactthub.uz/en/' },
+        ],
       },
       {
         id: "party-2023",
@@ -332,6 +362,16 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           speaker("Sanjar Adilov", "ML and Data Algorithms, EPAM", "/events/party-2023/speaker-sanjar.webp"),
           speaker("Bakhodir Akhmedov", "Rector, New Uzbekistan University", "/events/speakers/bahodir-ahmedov.webp"),
         ],
+        additionalSpeakers: [
+          { name: 'Aziz Atabekov', title: 'Vice Director, ZTE Uzbekistan', photo: '/events/rewind-2023/speaker-aziz.webp' },
+          { name: 'Rustam Alavutdinov', title: '', photo: '' },
+          { name: 'Sanjar Adilov', title: 'ML and Data Algorithms, EPAM', photo: '/events/rewind-2023/speaker-sanjar.webp' },
+          { name: 'Vladimir Norov', title: 'Chairman, AICA', photo: '/events/party-2023/speaker-vladimir.webp' },
+          { name: 'Bakhtiyor Khasanov', title: 'CEO, UzbekVoice', photo: '/events/rewind-2023/speaker-3.webp' },
+        ],
+        sources: [
+          { url: 'https://t.me/mlc_uz/240', platform: 'Telegram' },
+        ],
       },
       {
         id: "party-2022",
@@ -356,6 +396,16 @@ export const EVENT_CATEGORIES: EventCategory[] = [
         speakers: [
           speaker("Bahodir Ahmedov", "Rector, New Uzbekistan University", "/events/speakers/bahodir-ahmedov.webp"),
           speaker("Muhammadsaid Mamasaidov", "Tahrirchi, Founder", "/events/party-2022/speaker-muhammadsaid.webp"),
+        ],
+        additionalSpeakers: [
+          { name: "A'zam Qahramoni", title: 'Модератор', photo: '/events/party-2022/speaker-azam.webp' },
+        ],
+        partners: [
+          { name: 'Bellissimo Pizza', type: 'Партнёр', logo: '/events/party-2022/partner-belissimo.webp', url: 'https://bellissimo.uz/' },
+          { name: 'Impact Hub', type: 'Партнёр', logo: '/events/party-2022/partner-impact-hub.webp', url: 'https://impactthub.uz/en/' },
+        ],
+        sources: [
+          { url: 'https://t.me/mlc_uz/99', platform: 'Telegram' },
         ],
       },
     ],
@@ -510,6 +560,17 @@ export const EVENT_CATEGORIES: EventCategory[] = [
         ],
         speakers: [],
         highlights: ["🥇 Shifo AI", "🥈 Data Dreamers", "🥉 ICEMEDAI", "Призовой фонд: 100 млн сум"],
+        partners: [
+          { name: 'MohirAI', type: 'Партнёр', logo: '/events/hackathon-2024/partner-mohirai.webp', url: 'https://mohirdev.uz/' },
+          { name: 'New Uzbekistan University', type: 'Партнёр', logo: '/events/rewind-2023/partner-newuu.webp', url: 'https://newuu.uz/' },
+          { name: 'Digital Generation', type: 'Партнёр', logo: '/events/rewind-2023/partner-digital-gen.webp', url: 'https://digitalgeneration.uz/en/' },
+          { name: 'Maktabgacha va Maktab Ta\'limi Vazirligi', type: 'Партнёр', logo: '/events/hackathon-2024/partner-maktab.webp', url: 'https://gov.uz/uz/uzedu' },
+          { name: 'TBC Bank', type: 'Партнёр', logo: '/events/hackathon-2024/partner-tbc.webp', url: 'https://tbcbank.uz/' },
+          { name: 'C-Space', type: 'Партнёр', logo: '/events/hackathon-2024/partner-cspace.webp', url: 'https://cspace.uz/' },
+          { name: 'Sehriyo', type: 'Партнёр', logo: '/events/hackathon-2024/partner-sehriyo.webp', url: 'https://sehriyo.uz/' },
+          { name: 'Dodo Pizza', type: 'Партнёр', logo: '/events/hackathon-2024/partner-dodo.webp', url: 'https://dodobrands.io/' },
+          { name: 'Tehnikum', type: 'Партнёр', logo: '/events/hackathon-2024/partner-tehnikum.webp', url: 'https://tehnikum.school/' },
+        ],
       },
     ],
   },
