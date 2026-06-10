@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 import { MlcTimeline } from "@/components/MlcTimeline";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
-import { coreTeamByLocale } from "@/data/fallbackContent";
+import { coreTeamByLocale, zeroOneAiTeamByLocale } from "@/data/fallbackContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteCopy } from "@/lib/siteCopy";
 
@@ -82,7 +82,10 @@ export function AboutPage() {
   const siteCopy = useSiteCopy();
   const copy = siteCopy.about;
   const locale = i18n.resolvedLanguage?.split("-")[0] ?? "ru";
-  const localizedTeam = coreTeamByLocale[locale] ?? coreTeamByLocale.ru;
+  const localizedTeam = [
+    ...(coreTeamByLocale[locale] ?? coreTeamByLocale.ru),
+    ...(zeroOneAiTeamByLocale[locale] ?? zeroOneAiTeamByLocale.ru),
+  ];
   usePageMeta(copy.metaTitle, copy.metaDescription);
 
   return (

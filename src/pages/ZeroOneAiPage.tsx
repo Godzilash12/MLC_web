@@ -2,11 +2,9 @@ import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
-import { zeroOneAiCohorts, zeroOneAiTeamByLocale } from "@/data/fallbackContent";
+import { zeroOneAiTeamByLocale } from "@/data/fallbackContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteCopy } from "@/lib/siteCopy";
-
-const galleryPhotos = Array.from({ length: 9 }, (_, index) => `/01ai/gallery/photo-${index + 1}.webp`);
 
 export function ZeroOneAiPage() {
   const copy = useSiteCopy().zeroOneAi;
@@ -117,76 +115,6 @@ export function ZeroOneAiPage() {
                     </a>
                   </div>
                 </article>
-              </SectionReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-divider bg-surface">
-        <div className="section-shell section-space">
-          <SectionReveal>
-            <h2 className="section-title">{copy.cohortsTitle}</h2>
-          </SectionReveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {zeroOneAiCohorts.map((cohort) => (
-              <SectionReveal key={cohort.id}>
-                <article className="card-surface h-full overflow-hidden">
-                  <div className="h-48 overflow-hidden">
-                    <img
-                      src={cohort.photo}
-                      alt={cohort.name}
-                      className="h-full w-full object-cover transition duration-500 hover:scale-[1.04]"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="text-xl font-bold text-text">{cohort.name}</h3>
-                      <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-accent">
-                        {cohort.track}
-                      </span>
-                    </div>
-                    <p className="mt-2 text-sm text-text-secondary">{cohort.month}</p>
-                    <div className="mt-4 flex gap-4">
-                      <div>
-                        <p className="font-mono text-2xl font-bold text-text">{cohort.graduates}</p>
-                        <p className="text-xs text-text-secondary">{copy.cohortsGraduates}</p>
-                      </div>
-                      <div>
-                        <p className="font-mono text-2xl font-bold text-accent">
-                          {cohort.employedText ?? `${cohort.employed}%`}
-                        </p>
-                        <p className="text-xs text-text-secondary">{copy.cohortsEmployed}</p>
-                      </div>
-                    </div>
-                    {cohort.worksAt ? (
-                      <p className="mt-4 text-sm leading-6 text-text-muted">{cohort.worksAt}</p>
-                    ) : null}
-                  </div>
-                </article>
-              </SectionReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-divider">
-        <div className="section-shell section-space">
-          <SectionReveal>
-            <h2 className="section-title">{copy.galleryTitle}</h2>
-          </SectionReveal>
-          <div className="mt-10 columns-2 gap-3 md:columns-3 xl:columns-4">
-            {galleryPhotos.map((src, index) => (
-              <SectionReveal key={src}>
-                <div className="mb-3 overflow-hidden rounded-[1.2rem]" style={{ breakInside: "avoid" }}>
-                  <img
-                    src={src}
-                    alt={`01AI class photo ${index + 1}`}
-                    className="w-full object-cover transition duration-500 hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                </div>
               </SectionReveal>
             ))}
           </div>

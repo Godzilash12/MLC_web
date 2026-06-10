@@ -407,33 +407,63 @@ function HackathonPage({
 }
 
 function Lightbox({ lightbox, setLightbox }: { lightbox: LightboxState; setLightbox: (state: LightboxState) => void }) {
+  const thumbnailsRef = useRef<HTMLDivElement>(null);
+
+  function goToIndex(index: number) {
+    if (!lightbox) {
+      return;
+    }
+    setLightbox({ photos: lightbox.photos, index });
+  }
+
+  function goToPrevious() {
+    if (!lightbox) {
+      return;
+    }
+    setLightbox({
+      photos: lightbox.photos,
+      index: (lightbox.index - 1 + lightbox.photos.length) % lightbox.photos.length,
+    });
+  }
+
+  function goToNext() {
+    if (!lightbox) {
+      return;
+    }
+    setLightbox({
+      photos: lightbox.photos,
+      index: (lightbox.index + 1) % lightbox.photos.length,
+    });
+  }
+
   useEffect(() => {
     if (!lightbox) {
       return undefined;
     }
-    const currentLightbox = lightbox;
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setLightbox(null);
       }
       if (event.key === "ArrowLeft") {
-        setLightbox({
-          photos: currentLightbox.photos,
-          index: (currentLightbox.index - 1 + currentLightbox.photos.length) % currentLightbox.photos.length,
-        });
+        goToPrevious();
       }
       if (event.key === "ArrowRight") {
-        setLightbox({
-          photos: currentLightbox.photos,
-          index: (currentLightbox.index + 1) % currentLightbox.photos.length,
-        });
+        goToNext();
       }
     }
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [lightbox, setLightbox]);
+
+  useEffect(() => {
+    if (!lightbox || !thumbnailsRef.current) {
+      return;
+    }
+    const activeThumb = thumbnailsRef.current.children[lightbox.index] as HTMLElement | undefined;
+    activeThumb?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }, [lightbox?.index, lightbox?.photos.length]);
 
   if (!lightbox) {
     return null;
@@ -445,7 +475,7 @@ function Lightbox({ lightbox, setLightbox }: { lightbox: LightboxState; setLight
     <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90" onClick={() => setLightbox(null)}>
       <button
         type="button"
-        className="absolute right-5 top-5 rounded-full bg-surface p-3 text-text"
+        className="absolute right-5 top-5 z-10 rounded-full bg-surface p-3 text-text"
         onClick={(event) => {
           event.stopPropagation();
           setLightbox(null);
@@ -455,60 +485,62 @@ function Lightbox({ lightbox, setLightbox }: { lightbox: LightboxState; setLight
         <X size={22} />
       </button>
 
-      {canNavigate ? (
-        <button
-          type="button"
-          className="absolute left-5 top-1/2 rounded-full bg-surface p-3 text-text"
-          onClick={(event) => {
-            event.stopPropagation();
-            setLightbox({
-              photos: lightbox.photos,
-              index: (lightbox.index - 1 + lightbox.photos.length) % lightbox.photos.length,
-            });
-          }}
-          aria-label="Предыдущее фото"
-        >
-          <ChevronLeft size={28} />
-        </button>
-      ) : null}
-
-      <img
-        src={lightbox.photos[lightbox.index]}
-        alt=""
-        className="max-h-[85vh] max-w-[90vw] object-contain"
-        onClick={(event) => event.stopPropagation()}
-      />
-
-      {canNavigate ? (
-        <button
-          type="button"
-          className="absolute right-5 top-1/2 rounded-full bg-surface p-3 text-text"
-          onClick={(event) => {
-            event.stopPropagation();
-            setLightbox({ photos: lightbox.photos, index: (lightbox.index + 1) % lightbox.photos.length });
-          }}
-          aria-label="Следующее фото"
-        >
-          <ChevronRight size={28} />
-        </button>
-      ) : null}
-
-      {canNavigate ? (
-        <div className="absolute bottom-6 flex gap-2">
-          {lightbox.photos.map((photo, index) => (
+      <div className="flex max-h-[95vh] max-w-[95vw] flex-col items-center px-4" onClick={(event) => event.stopPropagation()}>
+        <div className="relative flex w-full items-center justify-center">
+          {canNavigate ? (
             <button
-              key={photo}
               type="button"
-              className={["h-2.5 w-2.5 rounded-full", index === lightbox.index ? "bg-surface" : "bg-surface/40"].join(" ")}
-              onClick={(event) => {
-                event.stopPropagation();
-                setLightbox({ photos: lightbox.photos, index });
-              }}
-              aria-label={`Фото ${index + 1}`}
-            />
-          ))}
+              className="absolute left-0 z-10 -translate-x-full rounded-full bg-surface p-3 text-text sm:static sm:mr-4 sm:translate-x-0"
+              onClick={goToPrevious}
+              aria-label="Предыдущее фото"
+            >
+              <ChevronLeft size={28} />
+            </button>
+          ) : null}
+
+          <img
+            src={lightbox.photos[lightbox.index]}
+            alt=""
+            className="max-h-[70vh] max-w-[min(90vw,72rem)] object-contain"
+          />
+
+          {canNavigate ? (
+            <button
+              type="button"
+              className="absolute right-0 z-10 translate-x-full rounded-full bg-surface p-3 text-text sm:static sm:ml-4 sm:translate-x-0"
+              onClick={goToNext}
+              aria-label="Следующее фото"
+            >
+              <ChevronRight size={28} />
+            </button>
+          ) : null}
         </div>
-      ) : null}
+
+        {canNavigate ? (
+          <div
+            ref={thumbnailsRef}
+            className="scrollbar-none flex w-full max-w-[min(90vw,72rem)] justify-center gap-2 overflow-x-auto py-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {lightbox.photos.map((photo, index) => (
+              <button
+                key={`${photo}-${index}`}
+                type="button"
+                onClick={() => goToIndex(index)}
+                aria-label={`Фото ${index + 1}`}
+                aria-current={index === lightbox.index}
+                className={[
+                  "h-16 w-16 shrink-0 cursor-pointer overflow-hidden rounded-lg transition-all duration-300 md:h-20 md:w-20",
+                  index === lightbox.index
+                    ? "scale-105 border-2 border-accent opacity-100"
+                    : "border-2 border-transparent opacity-40 hover:opacity-80",
+                ].join(" ")}
+              >
+                <img src={photo} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" />
+              </button>
+            ))}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
