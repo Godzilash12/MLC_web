@@ -85,31 +85,20 @@ function MilestonePopup({
 
 export function MlcTimeline() {
   const copy = useSiteCopy().timeline;
-  const [activeYear, setActiveYear] = useState<number | null>(null);
+  const [activeYear, setActiveYear] = useState<number>(
+    TIMELINE_YEARS[TIMELINE_YEARS.length - 1]
+  );
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const events = activeYear
-    ? TIMELINE_EVENTS.filter((event) => event.year === activeYear)
-    : TIMELINE_EVENTS;
+  const events = TIMELINE_EVENTS.filter((event) => event.year === activeYear);
 
   return (
     <div>
       <div className="mb-10 flex flex-wrap items-center gap-2">
-        <button
-          onClick={() => setActiveYear(null)}
-          className={[
-            "rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200",
-            activeYear === null
-              ? "bg-white text-[#0f0e1a]"
-              : "border border-white/15 text-text-secondary hover:border-white/30 hover:text-white",
-          ].join(" ")}
-        >
-          Все
-        </button>
         {TIMELINE_YEARS.map((year) => (
           <button
             key={year}
-            onClick={() => setActiveYear(year === activeYear ? null : year)}
+            onClick={() => setActiveYear(year)}
             className={[
               "rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200",
               activeYear === year

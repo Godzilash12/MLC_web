@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 import { MlcTimeline } from "@/components/MlcTimeline";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
-import { coreTeamByLocale, zeroOneAiTeamByLocale } from "@/data/fallbackContent";
+import { coreTeamByLocale, zeroOneAiTeamByLocale, b2bMentorsByLocale } from "@/data/fallbackContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteCopy } from "@/lib/siteCopy";
 
@@ -82,9 +82,13 @@ export function AboutPage() {
   const siteCopy = useSiteCopy();
   const copy = siteCopy.about;
   const locale = i18n.resolvedLanguage?.split("-")[0] ?? "ru";
-  const localizedTeam = [
-    ...(coreTeamByLocale[locale] ?? coreTeamByLocale.ru),
-    ...(zeroOneAiTeamByLocale[locale] ?? zeroOneAiTeamByLocale.ru),
+  const localizedTeam = [...(coreTeamByLocale[locale] ?? coreTeamByLocale.ru)];
+  const localizedB2b = b2bMentorsByLocale[locale] ?? b2bMentorsByLocale.ru;
+  const localizedAiTeam = zeroOneAiTeamByLocale[locale] ?? zeroOneAiTeamByLocale.ru;
+  const combinedTeam = [
+    ...localizedTeam.filter((m) => m.id !== 'core-11'),
+    ...localizedB2b.filter((m) => m.id !== 'b2b-01'),
+    ...localizedAiTeam.filter((m) => m.id !== 'ai-t01'),
   ];
   usePageMeta(copy.metaTitle, copy.metaDescription);
 
@@ -150,7 +154,7 @@ export function AboutPage() {
             <h2 className="section-title mb-10">{copy.teamTitle ?? "Core Team"}</h2>
           </SectionReveal>
           <SectionReveal>
-            <TeamGrid members={localizedTeam} dataSection="about-team" />
+            <TeamGrid members={combinedTeam} dataSection="about-team" />
           </SectionReveal>
         </div>
       </section>

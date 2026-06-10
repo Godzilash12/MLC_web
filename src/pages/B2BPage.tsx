@@ -3,8 +3,7 @@ import { useTranslation } from "react-i18next";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
-import { b2bCasesFallback, b2bMentors, b2bTotalTrained } from "@/data/fallbackContent";
-import { useB2bCases } from "@/hooks/useCMS";
+import { b2bMentorsByLocale } from "@/data/fallbackContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteCopy } from "@/lib/siteCopy";
 
@@ -54,7 +53,6 @@ export function B2BPage() {
   const locale = i18n.resolvedLanguage?.split("-")[0] ?? "ru";
   const page = t("b2b", { returnObjects: true }) as any;
   const educationCopy = useSiteCopy().education;
-  const { data: cases } = useB2bCases();
 
   const programs =
     locale === "uz"
@@ -84,26 +82,7 @@ export function B2BPage() {
             { title: "Кастомная программа", description: "Под отрасль, уровень команды и конкретный бизнес-контекст." }
           ];
 
-  const mentors =
-    locale === "uz"
-      ? b2bMentors.map((member, index) => ({
-          ...member,
-          ...[
-          { role_mlc: "AI Strategy Mentor", role_external: "10+ yil tajriba, ex-TBC" },
-          { role_mlc: "Data Analytics Mentor", role_external: "BI, SQL, dashboards" },
-          { role_mlc: "Automation Mentor", role_external: "LLM systems, integrations" }
-        ][index]
-        }))
-      : locale === "en"
-        ? b2bMentors.map((member, index) => ({
-            ...member,
-            ...[
-            { role_mlc: "AI Strategy Mentor", role_external: "10+ years of experience, ex-TBC" },
-            { role_mlc: "Data Analytics Mentor", role_external: "BI, SQL, dashboards" },
-            { role_mlc: "Automation Mentor", role_external: "LLM systems, integrations" }
-          ][index]
-          }))
-        : b2bMentors;
+  const mentors = b2bMentorsByLocale[locale] ?? b2bMentorsByLocale.ru;
 
   const processSteps =
     locale === "uz"
@@ -152,13 +131,6 @@ export function B2BPage() {
             { question: "Сколько длится программа?", answer: "От одного дня до трех месяцев. Зависит от целей, уровня команды и объема практики." }
           ];
 
-  const fallbackQuote =
-    locale === "uz"
-      ? { quote_text: "Jamoa AI vositalari bo'yicha amaliy tushunchaga ega bo'ldi va ularni tezda kundalik jarayonlarga olib kirdi.", quote_author: "HR Team, Ucell" }
-      : locale === "en"
-        ? { quote_text: "The team gained a practical understanding of AI tools and quickly transferred them into daily workflows.", quote_author: "HR Team, Ucell" }
-        : { quote_text: "Команда получила практическое понимание AI-инструментов и быстро перенесла их в ежедневные процессы.", quote_author: "HR Team, Ucell" };
-
   usePageMeta(page.metaTitle, page.metaDescription);
 
   return (
@@ -181,7 +153,11 @@ export function B2BPage() {
         <SectionReveal>
           <div className="relative overflow-hidden rounded-[32px] border border-border bg-surface p-5 shadow-soft">
             <div className="absolute inset-0 dot-pattern opacity-50" />
-            <img src="https://placehold.co/1000x850/F6F3FE/2D1B69?text=B2B+Training" alt="Corporate AI training" className="relative aspect-[5/4] w-full rounded-[26px] object-cover" />
+            <img
+              src="/b2b/hero.webp"
+              alt="Корпоративные курсы MLC"
+              className="relative aspect-[5/4] w-full rounded-[26px] object-cover"
+            />
           </div>
         </SectionReveal>
       </section>
@@ -266,78 +242,6 @@ export function B2BPage() {
           </SectionReveal>
           <div className="mt-12">
             <TeamGrid members={mentors} dataSection="b2b-mentors" />
-          </div>
-        </div>
-      </section>
-
-      <section className="section-divider">
-        <div className="section-shell section-space">
-          <SectionReveal>
-            <p className="eyebrow">{page.cases.eyebrow}</p>
-            <h2 className="section-title">{page.cases.title}</h2>
-          </SectionReveal>
-          <div className="mt-12 grid gap-5 xl:grid-cols-[0.95fr_1.05fr]">
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {(cases.length ? cases : b2bCasesFallback).map((item) => (
-                <SectionReveal key={item.id}>
-                  <div className="card-surface flex h-36 items-center justify-center p-6">
-                    {item.logo_url ? <img src={item.logo_url} alt={item.company_name} className="max-h-14 object-contain" /> : <p className="text-xl font-semibold text-text">{item.company_name}</p>}
-                  </div>
-                </SectionReveal>
-              ))}
-            </div>
-            <SectionReveal>
-              <blockquote className="rounded-[28px] bg-primary p-8 text-white shadow-soft">
-                <p className="text-2xl font-semibold leading-10 tracking-[-0.03em]">“{(cases[0] ?? fallbackQuote).quote_text}”</p>
-                <footer className="mt-6 text-sm uppercase tracking-[0.2em] text-white/70">{(cases[0] ?? fallbackQuote).quote_author}</footer>
-              </blockquote>
-            </SectionReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Фотографии с тренингов ── */}
-      <section className="section-divider bg-surface">
-        <div className="section-shell section-space">
-          <SectionReveal>
-            <div className="mb-10 flex flex-wrap items-end gap-6">
-              <div>
-                <p className="eyebrow">{page.gallery?.eyebrow ?? "Фотографии"}</p>
-                <h2 className="section-title">{page.gallery?.title ?? "Обучение в действии"}</h2>
-              </div>
-              <div className="rounded-2xl bg-primary px-6 py-4 text-white">
-                <p className="font-mono text-4xl font-bold">{b2bTotalTrained}+</p>
-                <p className="mt-1 text-sm text-white/70">
-                  {page.gallery?.trained ?? "обученных сотрудников"}
-                </p>
-              </div>
-            </div>
-          </SectionReveal>
-
-          <div className="columns-2 gap-3 md:columns-3 xl:columns-4" style={{ columnGap: "12px" }}>
-            {[
-              // TODO [IMAGE]: заменить на реальные фото с B2B тренингов
-              // Пока используем education-avif фото как заглушки
-              "/education-avif/Frame 2.avif",
-              "/education-avif/Frame 3.avif",
-              "/education-avif/Frame 4.avif",
-              "/education-avif/Frame 5.avif",
-              "/education-avif/Frame 6.avif",
-              "/education-avif/Frame 7.avif",
-              "/education-avif/Frame 2-1.avif",
-              "/education-avif/Frame 3-2.avif",
-            ].map((src, i) => (
-              <SectionReveal key={src}>
-                <div className="mb-3 overflow-hidden rounded-[1.2rem]" style={{ breakInside: "avoid" }}>
-                  <img
-                    src={src}
-                    alt={`B2B training photo ${i + 1}`}
-                    className="w-full object-cover transition duration-500 hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                </div>
-              </SectionReveal>
-            ))}
           </div>
         </div>
       </section>
