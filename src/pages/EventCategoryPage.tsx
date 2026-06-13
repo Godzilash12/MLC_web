@@ -127,29 +127,52 @@ function SourceButton({ sourceUrl }: { sourceUrl?: string }) {
   );
 }
 
-function SpeakersList({ speakers }: { speakers: Array<{ name: string; title: string; photo: string }> }) {
+function SpeakersCarousel({ speakers }: { speakers: { name: string; title: string; photo: string }[] }) {
   if (speakers.length === 0) {
     return null;
   }
 
   return (
-    <div className="border-t pt-6">
-      <h3 className="text-xl font-bold text-text">Спикеры</h3>
-      <div className="mt-5 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-        {speakers.map((sp, i) => (
-          <div key={i} className="flex items-center gap-3 min-w-0">
-            <img
-              src={sp.photo || '/shakhriyor.avif'}
-              alt={sp.name}
-              className="h-12 w-12 shrink-0 rounded-full object-cover"
-            />
-            <div className="min-w-0">
-              <p className="truncate text-sm font-semibold text-text">{sp.name}</p>
-              <p className="truncate text-xs text-text-muted">{sp.title}</p>
+    <div className="relative">
+      <div className="overflow-hidden py-2">
+        <div
+          className="flex gap-4"
+          style={{
+            animation: 'marquee 35s linear infinite',
+            width: 'max-content',
+          }}
+        >
+          {[...speakers, ...speakers].map((sp, i) => (
+            <div
+              key={i}
+              className="relative shrink-0 w-52 overflow-hidden rounded-[1.6rem] bg-surface"
+              style={{ aspectRatio: '3/4' }}
+            >
+              {sp.photo ? (
+                <img
+                  src={sp.photo}
+                  alt={sp.name}
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-surface flex items-center justify-center">
+                  <span className="text-4xl font-bold text-white/30">{sp.name.charAt(0)}</span>
+                </div>
+              )}
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="text-sm font-bold leading-5 text-white">{sp.name}</p>
+                <p className="mt-1 text-xs leading-4 text-white/60">{sp.title}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-background to-transparent" />
     </div>
   );
 }
@@ -244,18 +267,25 @@ function EditionExtras({ edition }: { edition: EventEdition }) {
       )}
 
       {edition.sources && edition.sources.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {edition.sources.map((s, i) => (
-            <a
-              key={i}
-              href={s.url}
-              target="_blank"
-              rel="noreferrer"
-              className="button-ghost text-sm"
-            >
-              {s.platform} ↗
-            </a>
-          ))}
+        <div className="mt-8">
+          <h3 className="mb-4 text-lg font-semibold text-text">Источники</h3>
+          <div className="flex flex-wrap gap-3">
+            {edition.sources.map((s, i) => (
+              <a
+                key={i}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-14 min-w-[120px] items-center justify-center rounded-[1.2rem] bg-white px-4 shadow-[0_2px_16px_rgba(0,0,0,0.12)] transition duration-300 hover:scale-[1.04]"
+              >
+                {s.logo ? (
+                  <img src={s.logo} alt={s.platform} className="max-h-7 max-w-[100px] object-contain" />
+                ) : (
+                  <span className="text-xs font-bold text-gray-700">{s.platform} ↗</span>
+                )}
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </>
@@ -298,7 +328,12 @@ function EditionCard({
               <EditionInfo categoryColor={categoryColor} edition={edition} />
             </div>
             <div className="px-6 pb-6 lg:px-8 lg:pb-8">
-              <SpeakersList speakers={allSpeakers} />
+              <div className="border-t pt-6">
+                <h3 className="text-xl font-bold text-text">Спикеры</h3>
+                <div className="mt-5">
+                  <SpeakersCarousel speakers={allSpeakers} />
+                </div>
+              </div>
               <EditionExtras edition={edition} />
             </div>
           </>
@@ -479,16 +514,204 @@ function HackathonPage({
             ) : null}
           </SectionReveal>
 
-          {edition.sourceUrl ? (
+          {edition.sources && edition.sources.length > 0 && (
             <SectionReveal>
-              <div className="mt-12 flex justify-center">
-                <a href={edition.sourceUrl} target="_blank" rel="noreferrer" className="button-ghost">
-                  Источник ↗
-                </a>
+              <div className="mt-14">
+                <h2 className="section-title">Источники</h2>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {edition.sources.map((s, i) => (
+                    <a
+                      key={i}
+                      href={s.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex h-14 min-w-[120px] items-center justify-center rounded-[1.2rem] bg-white px-4 shadow-[0_2px_16px_rgba(0,0,0,0.12)] transition duration-300 hover:scale-[1.04]"
+                    >
+                      {s.logo ? (
+                        <img
+                          src={s.logo}
+                          alt={s.platform}
+                          className="max-h-7 max-w-[100px] object-contain"
+                        />
+                      ) : (
+                        <span className="text-xs font-bold text-gray-700">
+                          {s.platform} ↗
+                        </span>
+                      )}
+                    </a>
+                  ))}
+                </div>
               </div>
             </SectionReveal>
-          ) : null}
+          )}
         </div>
+      </section>
+    </>
+  );
+}
+
+function RewindPage({
+  edition,
+  editionCount,
+  onOpen,
+}: {
+  edition: EventEdition;
+  editionCount: number;
+  onOpen: (photos: string[], index: number) => void;
+}) {
+  const copy = useSiteCopy();
+  const ar = copy.aiRewind;
+  const allSpeakers = [...(edition.speakers ?? []), ...(edition.additionalSpeakers ?? [])];
+
+  return (
+    <>
+      <section className="section-shell pt-4">
+        <SectionReveal>
+          <div className="relative overflow-hidden rounded-[2rem] p-10 md:p-14">
+            <img
+              src="/events/rewind-2023/hero-bg.webp"
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              style={{ filter: 'blur(3px)', transform: 'scale(1.06)' }}
+            />
+
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `
+                  radial-gradient(circle at 10% 60%,
+                    rgba(180,20,80,0.55), transparent 55%),
+                  radial-gradient(circle at 90% 20%,
+                    rgba(123,45,201,0.45), transparent 55%),
+                  linear-gradient(135deg,
+                    rgba(10,10,30,0.85), rgba(26,0,32,0.80))
+                `,
+              }}
+            />
+
+            <div className="relative z-10">
+              <p className="w-fit rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/80">
+                {ar.badge}
+              </p>
+              <h1 className="display-title mt-5">AI Rewind</h1>
+              <p className="mt-6 max-w-2xl text-xl leading-8 text-text-secondary">
+                {ar.subtitle}
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <div className="rounded-[1.4rem] bg-white/8 px-6 py-4">
+                  <p className="font-mono text-3xl font-bold text-white">{edition.participantCount}+</p>
+                  <p className="mt-2 text-xs text-white/50">{ar.statAttendees}</p>
+                </div>
+                <div className="rounded-[1.4rem] bg-white/8 px-6 py-4">
+                  <p className="font-mono text-3xl font-bold text-white">{allSpeakers.length}</p>
+                  <p className="mt-2 text-xs text-white/50">{ar.statSpeakers}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SectionReveal>
+      </section>
+
+      <section className="section-shell">
+        <SectionReveal>
+          <article className="card-surface mt-6 rounded-[2rem] p-8">
+            <p className="text-base leading-8 text-text-secondary">
+              {ar.desc}
+            </p>
+          </article>
+        </SectionReveal>
+
+        <SectionReveal>
+          <div className="overflow-hidden py-4 mt-2">
+            <div className="flex gap-3 animate-marquee" style={{ animation: 'marquee 45s linear infinite', width: 'max-content' }}>
+              {[...edition.photos, ...edition.photos].map((src, i) => (
+                <div key={i} className="h-56 w-80 shrink-0 overflow-hidden rounded-[1.2rem]">
+                  <img
+                    src={src}
+                    alt={`AI Rewind photo ${i + 1}`}
+                    className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal>
+          <div className="mt-14">
+            <h2 className="section-title">{ar.sectionSpeakers}</h2>
+            <div className="mt-5">
+              <SpeakersCarousel speakers={allSpeakers} />
+            </div>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal>
+          <div className="mt-14">
+            <h2 className="section-title">{ar.sectionPartners}</h2>
+            <div className="mt-5 grid gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+              {edition.partners?.map((p, i) => {
+                const cardClass = p.logo
+                  ? "flex h-16 items-center justify-center rounded-[1.2rem] bg-white p-4 shadow-[0_2px_16px_rgba(0,0,0,0.12)] transition duration-300 hover:scale-[1.04] hover:shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
+                  : "flex h-16 items-center justify-center rounded-[1.2rem] bg-white px-4 py-3 shadow-[0_2px_16px_rgba(0,0,0,0.12)]";
+
+                return (
+                  <a
+                    key={i}
+                    href={p.url ?? '#'}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={cardClass}
+                  >
+                    {p.logo ? (
+                      <img
+                        src={p.logo}
+                        alt={p.name}
+                        className="max-h-9 w-full object-contain"
+                      />
+                    ) : (
+                      <span className="text-center text-xs font-bold text-gray-700 leading-tight">
+                        {p.name}
+                      </span>
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal>
+          {edition.sources && edition.sources.length > 0 && (
+            <div className="mt-14">
+              <h2 className="section-title">Источники</h2>
+              <div className="mt-5 flex flex-wrap gap-3">
+                {edition.sources.map((s, i) => (
+                  <a
+                    key={i}
+                    href={s.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-14 min-w-[120px] items-center justify-center rounded-[1.2rem] bg-white px-4 shadow-[0_2px_16px_rgba(0,0,0,0.12)] transition duration-300 hover:scale-[1.04]"
+                  >
+                    {s.logo ? (
+                      <img
+                        src={s.logo}
+                        alt={s.platform}
+                        className="max-h-7 max-w-[100px] object-contain"
+                      />
+                    ) : (
+                      <span className="text-xs font-bold text-gray-700">
+                        {s.platform} ↗
+                      </span>
+                    )}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </SectionReveal>
       </section>
     </>
   );
@@ -682,6 +905,8 @@ export function EventCategoryPage() {
 
       {category.id === "ai-hackathon" ? (
         <HackathonPage edition={sortedEditions[0]} onOpen={openLightbox} />
+      ) : category.id === "ai-rewind" ? (
+        <RewindPage edition={sortedEditions[0]} editionCount={category.editions.length} onOpen={openLightbox} />
       ) : (
         <>
           <section className="section-shell">

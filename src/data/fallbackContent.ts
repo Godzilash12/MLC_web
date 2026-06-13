@@ -531,7 +531,7 @@ export const coreTeam: TeamMember[] = [
   {
     id: 'core-02',
     name: 'Бехруз Аъзам',
-    role_mlc: 'ML Instructor',
+    role_mlc: 'ML Development',
     role_external: 'ML Engineer · AlgoFrog',
     photo_url: '/team/behruz.webp',
     linkedin_url: 'https://uz.linkedin.com/in/behruz-azam',
@@ -539,7 +539,7 @@ export const coreTeam: TeamMember[] = [
   {
     id: 'core-03',
     name: 'Азимбек Исматуллаев',
-    role_mlc: 'Education Manager',
+    role_mlc: 'Community',
     role_external: 'Project Manager · Ipak Yuli Bank',
     photo_url: '/team/azimbek.webp',
     linkedin_url: 'https://www.linkedin.com/in/azimbek-ismatullaev-b24088207/',

@@ -4,7 +4,6 @@ import {
   Compass,
   Flag,
   GraduationCap,
-  Lightbulb,
   ShieldCheck,
   Sparkles,
   Target,
@@ -135,9 +134,6 @@ export function AboutPage() {
               </div>
 
               <div className="flex flex-col justify-center">
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-white">
-                  <Lightbulb size={32} strokeWidth={1.8} />
-                </div>
                 <h2 className="section-title">{copy.founderTitle}</h2>
                 <p className="mt-6 text-lg leading-9 text-text-secondary">
                   {copy.founderText}

@@ -20,7 +20,7 @@ export interface EventEdition {
   speakers: Speaker[];
   additionalSpeakers?: { name: string; title: string; photo: string }[];
   partners?: { name: string; type: string; logo: string; url?: string }[];
-  sources?: { url: string; platform: string }[];
+  sources?: { url: string; platform: string; logo?: string }[];
   highlights?: string[];
 }
 
@@ -95,6 +95,9 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           { name: 'Bogdan Pechenkin', title: 'Senior ML Engineer', photo: '/events/rewind-2023/speaker-bogdan.webp' },
           { name: 'Makhmood Sadikov', title: 'ML Engineer, iTechart Group', photo: '/events/rewind-2023/speaker-makhmood.webp' },
           { name: 'Bekhruz Tuychiev', title: 'Data Science Instructor, DataCamp', photo: '/events/rewind-2023/speaker-bekhruz-t.webp' },
+          { name: 'Bakhodir Akhmedov', title: 'Rector, New Uzbekistan University', photo: '/events/rewind-2023/speaker-bahodir-ahmedov.webp' },
+          { name: 'Bakhtiyor Yuldashev', title: 'Director, National Agency for Quality Assurance in Education', photo: '/events/rewind-2023/speaker-bakhtiyor-y.webp' },
+          { name: 'Ayubkhon Sultonov', title: 'First Deputy Minister of Digital Technologies', photo: '/events/rewind-2023/speaker-ayubkhon.webp' },
         ],
         partners: [
           { name: 'Alif Tech', type: 'Партнёр', logo: '/events/rewind-2023/partner-alif.webp', url: 'https://www.alif.uz/en/' },
@@ -103,9 +106,23 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           { name: 'Bellissimo Pizza', type: 'Партнёр', logo: '/events/rewind-2023/partner-belissimo.webp', url: 'https://bellissimo.uz/' },
         ],
         sources: [
-          { url: 'https://www.spot.uz/ru/2023/02/27/mlc-ai/', platform: 'Spot.uz' },
-          { url: 'https://t.me/mlc_uz/193', platform: 'Telegram' },
-          { url: 'https://youtube.com/playlist?list=PL3y4bvEfkQcnAyxUWYcFnOsg93UU_kdaK', platform: 'YouTube' },
+          {
+            url: 'https://www.instagram.com/reels/Co5BW_LDrxv/',
+            platform: 'Gorod24',
+            logo: '/events/rewind-2023/source-gorod24.webp',
+          },
+          {
+            url: 'https://www.spot.uz/ru/2023/02/27/mlc-ai/',
+            platform: 'Spot.uz',
+            logo: '/events/rewind-2023/source-spot.webp',
+          },
+          {
+            url: 'https://newuu.uz/en/news/ai-rewind-2022-artificial-intelligence-festival-9',
+            platform: 'NewUU Press',
+            logo: '/events/rewind-2023/source-newuu.webp',
+          },
+          { url: 'https://t.me/mlc_uz/193', platform: 'Telegram', logo: '/events/rewind-2023/source-tg.webp' },
+          { url: 'https://youtube.com/playlist?list=PL3y4bvEfkQcnAyxUWYcFnOsg93UU_kdaK', platform: 'YouTube', logo: '/events/rewind-2023/source-yt.webp' },
         ],
       },
     ],
@@ -570,6 +587,24 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           { name: 'Sehriyo', type: 'Партнёр', logo: '/events/hackathon-2024/partner-sehriyo.webp', url: 'https://sehriyo.uz/' },
           { name: 'Dodo Pizza', type: 'Партнёр', logo: '/events/hackathon-2024/partner-dodo.webp', url: 'https://dodobrands.io/' },
           { name: 'Tehnikum', type: 'Партнёр', logo: '/events/hackathon-2024/partner-tehnikum.webp', url: 'https://tehnikum.school/' },
+        ],
+        sources: [
+          {
+            url: 'https://thegulfobserver.com/new-uzbekistan-university-is-set-to-host-ai-hackathon-2024/',
+            platform: 'The Gulf Observer',
+            logo: '/events/hackathon-2024/source-gulf-observer.webp',
+          },
+          {
+            url: 'https://newuu.uz/en/news/the-ai-hackathon-2024-it-festival-has-been-started-at-new-uzbekistan-university-105',
+            platform: 'NewUU',
+            logo: '/events/hackathon-2024/source-newuu.webp',
+          },
+          {
+            url: "https://tuit.uz/en/post/yangi-ozbekiston-universitetidaai-hackathon-2024-it-festivali",
+            platform: 'TUIT',
+            logo: '/events/hackathon-2024/source-tuit.webp',
+          },
+          { url: 'https://t.me/mlc_uz/440', platform: 'Telegram', logo: '/events/rewind-2023/source-tg.webp' },
         ],
       },
     ],
