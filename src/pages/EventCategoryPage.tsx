@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, Users, ExternalLink, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
 import { EVENT_CATEGORIES, getCategoryById, type EventEdition } from "@/data/eventsData";
@@ -114,65 +115,67 @@ function PhotoPreview({
   );
 }
 
-function SourceButton({ sourceUrl }: { sourceUrl?: string }) {
+function SourceButton({ sourceUrl, label = 'Источник' }: { sourceUrl?: string; label?: string }) {
   if (!sourceUrl) {
     return null;
   }
 
   return (
     <a href={sourceUrl} target="_blank" rel="noreferrer" className="button-ghost mt-6">
-      Источник
+      {label}
       <ExternalLink size={16} aria-hidden="true" />
     </a>
   );
 }
 
-function SpeakersCarousel({ speakers }: { speakers: { name: string; title: string; photo: string }[] }) {
-  if (speakers.length === 0) {
-    return null;
-  }
+function SpeakersCarousel({ speakers }: {
+  speakers: { name: string; title: string; photo: string; title_uz?: string; title_en?: string; title_zh?: string }[]
+}) {
+  const { i18n } = useTranslation();
+  const locale = i18n.resolvedLanguage?.split('-')[0] ?? 'ru';
 
   return (
-    <div className="relative">
-      <div className="overflow-hidden py-2">
-        <div
-          className="flex gap-4"
-          style={{
-            animation: 'marquee 35s linear infinite',
-            width: 'max-content',
-          }}
-        >
-          {[...speakers, ...speakers].map((sp, i) => (
-            <div
-              key={i}
-              className="relative shrink-0 w-52 overflow-hidden rounded-[1.6rem] bg-surface"
-              style={{ aspectRatio: '3/4' }}
-            >
-              {sp.photo ? (
-                <img
-                  src={sp.photo}
-                  alt={sp.name}
-                  className="absolute inset-0 h-full w-full object-cover object-top"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-surface flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white/30">{sp.name.charAt(0)}</span>
-                </div>
-              )}
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-sm font-bold leading-5 text-white">{sp.name}</p>
-                <p className="mt-1 text-xs leading-4 text-white/60">{sp.title}</p>
+    <div className='flex flex-wrap gap-4'>
+      {speakers.map((sp, i) => {
+        const speakerTitle = locale === 'uz' ? (sp.title_uz ?? sp.title)
+          : locale === 'en' ? (sp.title_en ?? sp.title)
+          : locale === 'zh' ? (sp.title_zh ?? sp.title)
+          : sp.title;
+        return (
+          <div
+            key={`${sp.name}-${i}`}
+            className='relative w-40 shrink-0 overflow-hidden rounded-[1.4rem] bg-surface'
+            style={{ aspectRatio: '3/4' }}
+          >
+            {sp.photo ? (
+              <img
+                src={sp.photo}
+                alt={sp.name}
+                className='absolute inset-0 h-full w-full object-cover object-top'
+                loading='lazy'
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            ) : (
+              <div className='absolute inset-0 flex items-center justify-center bg-primary/20'>
+                <span className='text-3xl font-bold text-white/40'>
+                  {sp.name.charAt(0)}
+                </span>
               </div>
+            )}
+            <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent' />
+            <div className='absolute bottom-0 left-0 right-0 p-3'>
+              <p className='text-xs font-bold leading-4 text-white'>
+                {sp.name}
+              </p>
+              <p className='mt-0.5 text-[10px] leading-3 text-white/60'>
+                {speakerTitle}
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-background to-transparent" />
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -202,8 +205,12 @@ function SpeakerAvatar({ name, photo }: { name: string; photo: string }) {
   );
 }
 
-function EditionInfo({ categoryColor, edition }: { categoryColor: string; edition: EventEdition }) {
+function EditionInfo({ categoryColor, edition, categoryId }: { categoryColor: string; edition: EventEdition; categoryId?: string }) {
   const copy = useSiteCopy();
+  const catCopy = categoryId === 'office-visits' ? copy.partnerMeetups
+    : categoryId === 'ml-party' ? copy.mlParty
+    : categoryId === 'ml-contest' ? copy.mlContest
+    : copy.mlGap;
   const eventsCopy = copy.events as Record<string, string> | undefined;
   const desc = edition.descriptionKey
     ? (eventsCopy?.[edition.descriptionKey] ?? edition.description)
@@ -218,21 +225,26 @@ function EditionInfo({ categoryColor, edition }: { categoryColor: string; editio
       <p className="mt-3 text-base text-text-secondary">{edition.dateLabel}</p>
       <p className="mt-3 flex items-center gap-2 text-base text-text-secondary">
         <Users size={18} className="text-accent" aria-hidden="true" />
-        {edition.participantCount}+ участников
+        {edition.participantCount}+ {catCopy.attendees ?? 'участников'}
       </p>
       <p className="mt-5 text-base leading-8 text-text-secondary">{desc}</p>
-      <SourceButton sourceUrl={edition.sourceUrl} />
+      <SourceButton sourceUrl={edition.sourceUrl} label={catCopy.sourceLabel ?? 'Источник'} />
     </div>
   );
 }
 
-function EditionExtras({ edition }: { edition: EventEdition }) {
+function EditionExtras({ edition, categoryId }: { edition: EventEdition; categoryId?: string }) {
+  const copy = useSiteCopy();
+  const catCopy = categoryId === 'office-visits' ? copy.partnerMeetups
+    : categoryId === 'ml-party' ? copy.mlParty
+    : categoryId === 'ml-contest' ? copy.mlContest
+    : copy.mlGap;
   return (
     <>
       {edition.partners && edition.partners.length > 0 && (
         <div className="mt-8">
           <div className="mb-5">
-            <h3 className="text-lg font-semibold text-text">Партнёры</h3>
+            <h3 className="text-lg font-semibold text-text">{catCopy.sectionPartners ?? 'Партнёры'}</h3>
           </div>
           <div className="grid gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
             {edition.partners.map((p, i) => {
@@ -268,7 +280,7 @@ function EditionExtras({ edition }: { edition: EventEdition }) {
 
       {edition.sources && edition.sources.length > 0 && (
         <div className="mt-8">
-          <h3 className="mb-4 text-lg font-semibold text-text">Источники</h3>
+          <h3 className="mb-4 text-lg font-semibold text-text">{catCopy.sectionSources ?? 'Источники'}</h3>
           <div className="flex flex-wrap gap-3">
             {edition.sources.map((s, i) => (
               <a
@@ -297,16 +309,29 @@ function EditionCard({
   edition,
   emoji,
   onOpen,
+  categoryId,
 }: {
   categoryColor: string;
   edition: EventEdition;
   emoji: string;
   onOpen: (photos: string[], index: number) => void;
+  categoryId?: string;
 }) {
+  const copy = useSiteCopy();
+  const catCopy = categoryId === 'office-visits' ? copy.partnerMeetups
+    : categoryId === 'ml-party' ? copy.mlParty
+    : categoryId === 'ml-contest' ? copy.mlContest
+    : copy.mlGap;
+  const seen = new Set<string>();
   const allSpeakers = [
     ...(edition.speakers ?? []),
     ...(edition.additionalSpeakers ?? []),
-  ];
+  ].filter(sp => {
+    const key = sp.name.trim().toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
   const hasPhotos = edition.photos.length > 0 || Boolean(edition.coverImage);
   const hasSpeakers = allSpeakers.length > 0;
   const infoOnly = !hasPhotos && !hasSpeakers;
@@ -316,25 +341,25 @@ function EditionCard({
       <article className="card-surface overflow-hidden rounded-[2rem]">
         {infoOnly ? (
           <>
-            <EditionInfo categoryColor={categoryColor} edition={edition} />
+            <EditionInfo categoryColor={categoryColor} edition={edition} categoryId={categoryId} />
             <div className="px-6 pb-6 lg:px-8 lg:pb-8">
-              <EditionExtras edition={edition} />
+              <EditionExtras edition={edition} categoryId={categoryId} />
             </div>
           </>
         ) : (
           <>
             <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
               <PhotoPreview edition={edition} emoji={emoji} onOpen={onOpen} />
-              <EditionInfo categoryColor={categoryColor} edition={edition} />
+              <EditionInfo categoryColor={categoryColor} edition={edition} categoryId={categoryId} />
             </div>
             <div className="px-6 pb-6 lg:px-8 lg:pb-8">
               <div className="border-t pt-6">
-                <h3 className="text-xl font-bold text-text">Спикеры</h3>
+                <h3 className="text-xl font-bold text-text">{catCopy.sectionSpeakers ?? 'Спикеры'}</h3>
                 <div className="mt-5">
                   <SpeakersCarousel speakers={allSpeakers} />
                 </div>
               </div>
-              <EditionExtras edition={edition} />
+              <EditionExtras edition={edition} categoryId={categoryId} />
             </div>
           </>
         )}
@@ -365,6 +390,7 @@ function HackathonPage({
   onOpen: (photos: string[], index: number) => void;
 }) {
   const copy = useSiteCopy();
+  const ah = (copy as Record<string, unknown>).aiHackathon as Record<string, string> | undefined;
   const eventsCopy = copy.events as Record<string, string> | undefined;
   const desc = edition.descriptionKey
     ? (eventsCopy?.[edition.descriptionKey] ?? edition.description)
@@ -391,7 +417,7 @@ function HackathonPage({
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <div className="glass-panel rounded-[1.4rem] px-6 py-4">
                 <AnimatedCounter value={400} suffix="+" />
-                <p className="mt-2 text-xs text-text-secondary">участников</p>
+                <p className="mt-2 text-xs text-text-secondary">{ah?.statAttendees ?? copy.mlGap.attendees ?? 'участников'}</p>
               </div>
               <div className="glass-panel rounded-[1.4rem] px-6 py-4">
                 <AnimatedCounter value={100} suffix="M" />
@@ -479,7 +505,7 @@ function HackathonPage({
             {edition.partners && edition.partners.length > 0 ? (
               <div className="mt-14">
                 <div className="mb-5">
-                  <h3 className="text-lg font-semibold text-text">Партнёры</h3>
+                  <h3 className="text-lg font-semibold text-text">{ah?.sectionPartners ?? copy.mlGap.sectionPartners ?? 'Партнёры'}</h3>
                 </div>
                 <div className="grid gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
                   {edition.partners.map((p, i) => {
@@ -517,7 +543,7 @@ function HackathonPage({
           {edition.sources && edition.sources.length > 0 && (
             <SectionReveal>
               <div className="mt-14">
-                <h2 className="section-title">Источники</h2>
+                <h2 className="section-title">{ah?.sectionSources ?? copy.mlGap.sectionSources ?? 'Источники'}</h2>
                 <div className="mt-5 flex flex-wrap gap-3">
                   {edition.sources.map((s, i) => (
                     <a
@@ -561,7 +587,16 @@ function RewindPage({
 }) {
   const copy = useSiteCopy();
   const ar = copy.aiRewind;
-  const allSpeakers = [...(edition.speakers ?? []), ...(edition.additionalSpeakers ?? [])];
+  const seen = new Set<string>();
+  const allSpeakers = [
+    ...(edition.speakers ?? []),
+    ...(edition.additionalSpeakers ?? []),
+  ].filter(sp => {
+    const key = sp.name.trim().toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 
   return (
     <>
@@ -685,7 +720,7 @@ function RewindPage({
         <SectionReveal>
           {edition.sources && edition.sources.length > 0 && (
             <div className="mt-14">
-              <h2 className="section-title">Источники</h2>
+              <h2 className="section-title">{ar.sectionSources ?? 'Источники'}</h2>
               <div className="mt-5 flex flex-wrap gap-3">
                 {edition.sources.map((s, i) => (
                   <a
@@ -868,7 +903,7 @@ export function EventCategoryPage() {
       <section className="section-shell pt-6 pb-4">
         <button type="button" className="button-ghost" onClick={() => navigate("/community")}>
           <ArrowLeft size={18} aria-hidden="true" />
-          Сообщество
+          {copy.nav.community}
         </button>
         <h1 className="display-title mt-3">Мероприятие не найдено</h1>
       </section>
@@ -885,6 +920,10 @@ export function EventCategoryPage() {
   const eventCategoriesCopy = copy.eventCategories as Record<string, string> | undefined;
   const catSubtitle = eventCategoriesCopy?.[`${catKey}_subtitle`] ?? category.subtitle;
   const catDesc = eventCategoriesCopy?.[`${catKey}_desc`] ?? category.description;
+  const catCopy = category.id === 'office-visits' ? copy.partnerMeetups
+    : category.id === 'ml-party' ? copy.mlParty
+    : category.id === 'ml-contest' ? copy.mlContest
+    : copy.mlGap;
 
   function openLightbox(photos: string[], index: number) {
     if (photos.length > 0) {
@@ -898,7 +937,7 @@ export function EventCategoryPage() {
         <SectionReveal>
           <button type="button" className="button-ghost" onClick={() => navigate("/community")}>
             <ArrowLeft size={18} aria-hidden="true" />
-            Сообщество
+            {copy.nav.community}
           </button>
         </SectionReveal>
       </section>
@@ -925,7 +964,7 @@ export function EventCategoryPage() {
                 </p>
               ) : null}
               <p className="mt-4 text-sm text-text-muted">
-                {totalEditions} выпусков · {yearRange(sortedEditions)}
+                {totalEditions} {catCopy.editions ?? 'выпусков'} · {yearRange(sortedEditions)}
               </p>
               </div>
             </SectionReveal>
@@ -945,6 +984,7 @@ export function EventCategoryPage() {
                       edition={edition}
                       emoji={category.emoji}
                       onOpen={openLightbox}
+                      categoryId={category.id}
                     />
                   ))}
                 </div>

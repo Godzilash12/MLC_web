@@ -3,6 +3,9 @@ export interface Speaker {
   name: string;
   title: string;
   photo: string;
+  title_uz?: string;
+  title_en?: string;
+  title_zh?: string;
 }
 
 export interface EventEdition {
@@ -18,7 +21,7 @@ export interface EventEdition {
   coverImage: string;
   photos: string[];
   speakers: Speaker[];
-  additionalSpeakers?: { name: string; title: string; photo: string }[];
+  additionalSpeakers?: { name: string; title: string; photo: string; title_uz?: string; title_en?: string; title_zh?: string }[];
   partners?: { name: string; type: string; logo: string; url?: string }[];
   sources?: { url: string; platform: string; logo?: string }[];
   highlights?: string[];
@@ -178,8 +181,10 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           "/events/gap-2024-09/photo-5.webp",
         ],
         speakers: [
-          speaker("Alexander Krainov", "Director AI Technologies, Yandex", "/events/speakers/alexander-krainov.webp"),
-          speaker("Gennady Evstratov", "Head of Development, Yandex Uzbekistan", "/events/speakers/gennady-evstratov.webp"),
+          { ...speaker("Alexander Krainov", "Director AI Technologies, Yandex", "/events/speakers/alexander-krainov.webp"),
+            title_uz: "AI Texnologiyalar Direktori, Yandex", title_en: "Director AI Technologies, Yandex", title_zh: "AI技术总监，Yandex" },
+          { ...speaker("Gennady Evstratov", "Head of Development, Yandex Uzbekistan", "/events/speakers/gennady-evstratov.webp"),
+            title_uz: "Rivojlanish Boshlig'i, Yandex O'zbekiston", title_en: "Head of Development, Yandex Uzbekistan", title_zh: "开发负责人，Yandex乌兹别克斯坦" },
         ],
       },
       {
@@ -375,16 +380,21 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           "/events/party-2023/image66.webp",
         ],
         speakers: [
-          speaker("Viktor Sizov", "CEO, DataDep", "/events/party-2023/speaker-viktor.webp"),
-          speaker("Sanjar Adilov", "ML and Data Algorithms, EPAM", "/events/party-2023/speaker-sanjar.webp"),
-          speaker("Bakhodir Akhmedov", "Rector, New Uzbekistan University", "/events/speakers/bahodir-ahmedov.webp"),
+          { ...speaker("Viktor Sizov", "CEO, DataDep", "/events/party-2023/speaker-viktor.webp"),
+            title_uz: "Bosh direktor, DataDep", title_en: "CEO, DataDep", title_zh: "首席执行官，DataDep" },
+          { ...speaker("Sanjar Adilov", "ML and Data Algorithms, EPAM", "/events/party-2023/speaker-sanjar.webp"),
+            title_uz: "ML va Data Algoritmlar, EPAM", title_en: "ML and Data Algorithms, EPAM", title_zh: "ML和数据算法，EPAM" },
+          { ...speaker("Bakhodir Akhmedov", "Rector, New Uzbekistan University", "/events/speakers/bahodir-ahmedov.webp"),
+            title_uz: "Rektor, Yangi O'zbekiston Universiteti", title_en: "Rector, New Uzbekistan University", title_zh: "校长，新乌兹别克斯坦大学" },
         ],
         additionalSpeakers: [
-          { name: 'Aziz Atabekov', title: 'Vice Director, ZTE Uzbekistan', photo: '/events/rewind-2023/speaker-aziz.webp' },
-          { name: 'Rustam Alavutdinov', title: '', photo: '' },
-          { name: 'Sanjar Adilov', title: 'ML and Data Algorithms, EPAM', photo: '/events/rewind-2023/speaker-sanjar.webp' },
-          { name: 'Vladimir Norov', title: 'Chairman, AICA', photo: '/events/party-2023/speaker-vladimir.webp' },
-          { name: 'Bakhtiyor Khasanov', title: 'CEO, UzbekVoice', photo: '/events/rewind-2023/speaker-3.webp' },
+          { name: 'Aziz Atabekov', title: 'Vice Director, ZTE Uzbekistan', photo: '/events/rewind-2023/speaker-aziz.webp',
+            title_uz: "Vitse-direktor, ZTE O'zbekiston", title_en: "Vice Director, ZTE Uzbekistan", title_zh: "副总监，ZTE乌兹别克斯坦" },
+          { name: 'Rustam Alavutdinov', title: '', photo: '/events/rewind-2023/speaker-rustam.webp' },
+          { name: 'Vladimir Norov', title: 'Chairman, AICA', photo: '/events/party-2023/speaker-vladimir.webp',
+            title_uz: "Raisi, AICA", title_en: "Chairman, AICA", title_zh: "主席，AICA" },
+          { name: 'Bakhtiyor Khasanov', title: 'CEO, UzbekVoice', photo: '/events/rewind-2023/speaker-3.webp',
+            title_uz: "Bosh direktor, UzbekVoice", title_en: "CEO, UzbekVoice", title_zh: "首席执行官，UzbekVoice" },
         ],
         sources: [
           { url: 'https://t.me/mlc_uz/240', platform: 'Telegram' },
@@ -411,11 +421,14 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           "/events/party-2022/photo-6.webp",
         ],
         speakers: [
-          speaker("Bahodir Ahmedov", "Rector, New Uzbekistan University", "/events/speakers/bahodir-ahmedov.webp"),
-          speaker("Muhammadsaid Mamasaidov", "Tahrirchi, Founder", "/events/party-2022/speaker-muhammadsaid.webp"),
+          { ...speaker("Bahodir Ahmedov", "Ректор, Новый Университет Узбекистана", "/events/speakers/bahodir-ahmedov.webp"),
+            title_uz: "Rektor, Yangi O'zbekiston Universiteti", title_en: "Rector, New Uzbekistan University", title_zh: "校长，新乌兹别克斯坦大学" },
+          { ...speaker("Muhammadsaid Mamasaidov", "Tahrirchi, Founder", "/events/party-2022/speaker-muhammadsaid.webp"),
+            title_uz: "Muharrir, Tahrirchi Asoschisi", title_en: "Editor, Tahrirchi Founder", title_zh: "编辑，Tahrirchi创始人" },
         ],
         additionalSpeakers: [
-          { name: "A'zam Qahramoni", title: 'Модератор', photo: '/events/party-2022/speaker-azam.webp' },
+          { name: "A'zam Qahramoni", title: 'Модератор', photo: '/events/party-2022/speaker-azam.webp',
+            title_uz: "Moderator", title_en: "Moderator", title_zh: "主持人" },
         ],
         partners: [
           { name: 'Bellissimo Pizza', type: 'Партнёр', logo: '/events/party-2022/partner-belissimo.webp', url: 'https://bellissimo.uz/' },
@@ -458,8 +471,10 @@ export const EVENT_CATEGORIES: EventCategory[] = [
           "/events/meetup-2026-05/image109.webp",
         ],
         speakers: [
-          speaker("Viktoriya Plakida", "IT Recruiter, Click", "/events/meetup-2026-05/speaker-viktoriya.webp"),
-          speaker("Shokhjahon Nishonov", "Data Scientist, Click", "/events/meetup-2026-05/speaker-shokhjahon.webp"),
+          { ...speaker("Viktoriya Plakida", "IT Recruiter, Click", "/events/meetup-2026-05/speaker-viktoriya.webp"),
+            title_uz: "IT Recruiter, Click", title_en: "IT Recruiter, Click", title_zh: "IT招聘专员，Click" },
+          { ...speaker("Shokhjahon Nishonov", "Data Scientist, Click", "/events/meetup-2026-05/speaker-shokhjahon.webp"),
+            title_uz: "Data Scientist, Click", title_en: "Data Scientist, Click", title_zh: "数据科学家，Click" },
         ],
       },
       {
