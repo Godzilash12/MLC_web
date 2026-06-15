@@ -645,8 +645,8 @@ export const coreTeamByLocale: Record<string, typeof coreTeam> = {
   ],
   en: [
     { id: 'core-01', name: 'Shakhriyor Khudoyberdiyev', role_mlc: "Founder & CEO", role_external: "MLC Head | AICA Deputy Chairman", photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
-    { id: 'core-02', name: 'Behruz Azam', role_mlc: "ML Instructor", role_external: "ML Engineer · AlgoFrog", photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
-    { id: 'core-03', name: 'Azimbek Ismatullayev', role_mlc: "Education Manager", role_external: "Project Manager · Ipak Yuli Bank", photo_url: '/team/azimbek.webp', linkedin_url: 'https://www.linkedin.com/in/azimbek-ismatullaev-b24088207/' },
+    { id: 'core-02', name: 'Behruz Azam', role_mlc: "ML Development", role_external: "ML Engineer · AlgoFrog", photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+    { id: 'core-03', name: 'Azimbek Ismatullayev', role_mlc: "Community", role_external: "Project Manager · Ipak Yuli Bank", photo_url: '/team/azimbek.webp', linkedin_url: 'https://www.linkedin.com/in/azimbek-ismatullaev-b24088207/' },
     { id: 'core-04', name: 'Adam Saidov', role_mlc: 'Community', role_external: "Growth Product Manager · BirBir", photo_url: '/team/adam.webp', linkedin_url: 'https://www.linkedin.com/in/adam-saidov/' },
     { id: 'core-05', name: 'Jasurbek Mamurov', role_mlc: 'Community', role_external: "INHA University in Tashkent", photo_url: '/team/jasurbek.webp', linkedin_url: 'https://www.linkedin.com/in/jmamurov/' },
     { id: 'core-06', name: 'Kobiljon Kosimov', role_mlc: 'Head of ML Club NewUU', role_external: "COO · RepliUz", photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
@@ -768,7 +768,7 @@ export const b2bMentorsByLocale: Record<string, typeof b2bMentors> = {
   ru: [
     { id: 'b2b-01', name: 'Шахриёр Худойбердиев', role_mlc: 'AI Strategy', role_external: '10+ лет опыта, ex-TBC', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
     { id: 'b2b-02', name: 'Tokhir Khudoykulov', role_mlc: 'Data Analytics', role_external: 'BI, SQL, dashboards', photo_url: '/b2b/team/tokhir.webp', linkedin_url: 'https://www.linkedin.com/in/kh-tokhir/' },
-    { id: 'b2b-03', name: 'Mirkamol Mirkamilov', role_mlc: 'AI Strategy', role_external: 'Product Analytics Director', photo_url: '/b2b/team/mirkamol.webp', linkedin_url: 'https://www.linkedin.com/in/mirkamol-mirkamilov' },
+    //{ id: 'b2b-03', name: 'Mirkamol Mirkamilov', role_mlc: 'AI Strategy', role_external: 'Product Analytics Director', photo_url: '/b2b/team/mirkamol.webp', linkedin_url: 'https://www.linkedin.com/in/mirkamol-mirkamilov' },
     { id: 'b2b-04', name: 'Javlon Zokirov', role_mlc: 'Automation', role_external: 'LLM systems, integrations', photo_url: '/b2b/team/javlon.webp', linkedin_url: 'https://www.linkedin.com/in/javlon-zokirov-1782b4235/' },
     { id: 'b2b-05', name: 'Sardor Mamarasulov', role_mlc: 'Education', role_external: 'Computer Vision Engineer · PhD', photo_url: '/b2b/team/sardor.webp', linkedin_url: 'https://www.linkedin.com/in/sardor-mamarasulov-ph-d-454551110/' },
     { id: 'b2b-06', name: 'Shakhzod Dadabaev', role_mlc: 'Education', role_external: 'Data Science Specialist', photo_url: '/b2b/team/shakhzod.webp', linkedin_url: 'https://www.linkedin.com/in/shakhzod-dadabaev/' },
@@ -777,7 +777,7 @@ export const b2bMentorsByLocale: Record<string, typeof b2bMentors> = {
   uz: [
     { id: 'b2b-01', name: 'Шахриёр Худойбердиев', role_mlc: 'AI Strategiya', role_external: '10+ yil tajriba, ex-TBC', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
     { id: 'b2b-02', name: 'Tokhir Khudoykulov', role_mlc: 'Data Analytics', role_external: 'BI, SQL, dashboards', photo_url: '/b2b/team/tokhir.webp', linkedin_url: 'https://www.linkedin.com/in/kh-tokhir/' },
-    { id: 'b2b-03', name: 'Mirkamol Mirkamilov', role_mlc: 'AI Strategiya', role_external: 'Mahsulot Analytics Direktori', photo_url: '/b2b/team/mirkamol.webp', linkedin_url: 'https://www.linkedin.com/in/mirkamol-mirkamilov' },
+    //{ id: 'b2b-03', name: 'Mirkamol Mirkamilov', role_mlc: 'AI Strategiya', role_external: 'Mahsulot Analytics Direktori', photo_url: '/b2b/team/mirkamol.webp', linkedin_url: 'https://www.linkedin.com/in/mirkamol-mirkamilov' },
     { id: 'b2b-04', name: 'Javlon Zokirov', role_mlc: 'Automation', role_external: 'LLM tizimlari, integratsiyalar', photo_url: '/b2b/team/javlon.webp', linkedin_url: 'https://www.linkedin.com/in/javlon-zokirov-1782b4235/' },
     { id: 'b2b-05', name: 'Sardor Mamarasulov', role_mlc: 'Ta\'lim', role_external: 'Computer Vision Engineer · PhD', photo_url: '/b2b/team/sardor.webp', linkedin_url: 'https://www.linkedin.com/in/sardor-mamarasulov-ph-d-454551110/' },
     { id: 'b2b-06', name: 'Shakhzod Dadabaev', role_mlc: 'Ta\'lim', role_external: 'Data Science Specialist', photo_url: '/b2b/team/shakhzod.webp', linkedin_url: 'https://www.linkedin.com/in/shakhzod-dadabaev/' },
@@ -786,7 +786,7 @@ export const b2bMentorsByLocale: Record<string, typeof b2bMentors> = {
   en: [
     { id: 'b2b-01', name: 'Shakhriyor Khudoyberdiev', role_mlc: 'AI Strategy', role_external: '10+ years of experience, ex-TBC', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
     { id: 'b2b-02', name: 'Tokhir Khudoykulov', role_mlc: 'Data Analytics', role_external: 'BI, SQL, dashboards', photo_url: '/b2b/team/tokhir.webp', linkedin_url: 'https://www.linkedin.com/in/kh-tokhir/' },
-    { id: 'b2b-03', name: 'Mirkamol Mirkamilov', role_mlc: 'AI Strategy', role_external: 'Product Analytics Director', photo_url: '/b2b/team/mirkamol.webp', linkedin_url: 'https://www.linkedin.com/in/mirkamol-mirkamilov' },
+    //{ id: 'b2b-03', name: 'Mirkamol Mirkamilov', role_mlc: 'AI Strategy', role_external: 'Product Analytics Director', photo_url: '/b2b/team/mirkamol.webp', linkedin_url: 'https://www.linkedin.com/in/mirkamol-mirkamilov' },
     { id: 'b2b-04', name: 'Javlon Zokirov', role_mlc: 'Automation', role_external: 'LLM systems, integrations', photo_url: '/b2b/team/javlon.webp', linkedin_url: 'https://www.linkedin.com/in/javlon-zokirov-1782b4235/' },
     { id: 'b2b-05', name: 'Sardor Mamarasulov', role_mlc: 'Education', role_external: 'Computer Vision Engineer · PhD', photo_url: '/b2b/team/sardor.webp', linkedin_url: 'https://www.linkedin.com/in/sardor-mamarasulov-ph-d-454551110/' },
     { id: 'b2b-06', name: 'Shakhzod Dadabaev', role_mlc: 'Education', role_external: 'Data Science Specialist', photo_url: '/b2b/team/shakhzod.webp', linkedin_url: 'https://www.linkedin.com/in/shakhzod-dadabaev/' },
@@ -795,7 +795,7 @@ export const b2bMentorsByLocale: Record<string, typeof b2bMentors> = {
   zh: [
     { id: 'b2b-01', name: 'Shakhriyor Khudoyberdiev', role_mlc: 'AI 策略', role_external: '10+ 年经验，前 TBC', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
     { id: 'b2b-02', name: 'Tokhir Khudoykulov', role_mlc: '数据分析', role_external: 'BI、SQL、dashboards', photo_url: '/b2b/team/tokhir.webp', linkedin_url: 'https://www.linkedin.com/in/kh-tokhir/' },
-    { id: 'b2b-03', name: 'Mirkamol Mirkamilov', role_mlc: 'AI 策略', role_external: '产品分析总监', photo_url: '/b2b/team/mirkamol.webp', linkedin_url: 'https://www.linkedin.com/in/mirkamol-mirkamilov' },
+    //{ id: 'b2b-03', name: 'Mirkamol Mirkamilov', role_mlc: 'AI 策略', role_external: '产品分析总监', photo_url: '/b2b/team/mirkamol.webp', linkedin_url: 'https://www.linkedin.com/in/mirkamol-mirkamilov' },
     { id: 'b2b-04', name: 'Javlon Zokirov', role_mlc: '自动化', role_external: 'LLM 系统、集成', photo_url: '/b2b/team/javlon.webp', linkedin_url: 'https://www.linkedin.com/in/javlon-zokirov-1782b4235/' },
     { id: 'b2b-05', name: 'Sardor Mamarasulov', role_mlc: '教育', role_external: 'Computer Vision Engineer · PhD', photo_url: '/b2b/team/sardor.webp', linkedin_url: 'https://www.linkedin.com/in/sardor-mamarasulov-ph-d-454551110/' },
     { id: 'b2b-06', name: 'Shakhzod Dadabaev', role_mlc: '教育', role_external: 'Data Science Specialist', photo_url: '/b2b/team/shakhzod.webp', linkedin_url: 'https://www.linkedin.com/in/shakhzod-dadabaev/' },
