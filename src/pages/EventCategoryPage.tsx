@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft, Users, ExternalLink, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
@@ -128,7 +128,7 @@ function SourceButton({ sourceUrl, label = 'Источник' }: { sourceUrl?: s
   );
 }
 
-function SpeakersCarousel({ speakers }: {
+const SpeakersCarousel = memo(function SpeakersCarousel({ speakers }: {
   speakers: { name: string; title: string; photo: string; title_uz?: string; title_en?: string; title_zh?: string }[]
 }) {
   const { i18n } = useTranslation();
@@ -178,7 +178,7 @@ function SpeakersCarousel({ speakers }: {
       })}
     </div>
   );
-}
+});
 
 function SpeakerAvatar({ name, photo }: { name: string; photo: string }) {
   const [failed, setFailed] = useState(false);
@@ -233,7 +233,7 @@ function EditionInfo({ categoryColor, edition, categoryId }: { categoryColor: st
   );
 }
 
-function EditionExtras({ edition, categoryId }: { edition: EventEdition; categoryId?: string }) {
+const EditionExtras = memo(function EditionExtras({ edition, categoryId }: { edition: EventEdition; categoryId?: string }) {
   const copy = useSiteCopy();
   const catCopy = categoryId === 'office-visits' ? copy.partnerMeetups
     : categoryId === 'ml-party' ? copy.mlParty
@@ -302,7 +302,7 @@ function EditionExtras({ edition, categoryId }: { edition: EventEdition; categor
       )}
     </>
   );
-}
+});
 
 function EditionCard({
   categoryColor,
@@ -433,7 +433,7 @@ function HackathonPage({
           <SectionReveal>
             <div className="overflow-hidden py-4">
               <div
-                className="flex animate-marquee gap-3 hover:[animation-play-state:paused]"
+                className="flex animate-marquee gap-3 motion-reduce:animate-none hover:[animation-play-state:paused]"
                 style={{ animation: "marquee 80s linear infinite", width: "max-content" }}
               >
                 {[...edition.photos, ...edition.photos].map((src, index) => (
@@ -658,7 +658,7 @@ function RewindPage({
 
         <SectionReveal>
           <div className="overflow-hidden py-4 mt-2">
-            <div className="flex gap-3 animate-marquee" style={{ animation: 'marquee 45s linear infinite', width: 'max-content' }}>
+            <div className="flex gap-3 motion-reduce:animate-none hover:[animation-play-state:paused]" style={{ animation: 'marquee 45s linear infinite', width: 'max-content' }}>
               {[...edition.photos, ...edition.photos].map((src, i) => (
                 <div key={i} className="h-56 w-80 shrink-0 overflow-hidden rounded-[1.2rem]">
                   <img

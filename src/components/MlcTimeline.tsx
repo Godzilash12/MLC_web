@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { TIMELINE_EVENTS, TIMELINE_YEARS } from "@/data/timelineData";
@@ -90,7 +90,10 @@ export function MlcTimeline() {
   );
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const events = TIMELINE_EVENTS.filter((event) => event.year === activeYear);
+  const events = useMemo(
+    () => TIMELINE_EVENTS.filter((event) => event.year === activeYear),
+    [activeYear]
+  );
 
   return (
     <div>

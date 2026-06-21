@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { ExternalLink, Linkedin } from "lucide-react";
 import type { TeamMember } from "@/data/fallbackContent";
 
-export function TeamGrid({
+export const TeamGrid = memo(function TeamGrid({
   members,
   dataSection,
 }: {
@@ -54,4 +55,4 @@ export function TeamGrid({
       ))}
     </div>
   );
-}
+});
