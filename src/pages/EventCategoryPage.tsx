@@ -353,12 +353,14 @@ function EditionCard({
               <EditionInfo categoryColor={categoryColor} edition={edition} categoryId={categoryId} />
             </div>
             <div className="px-6 pb-6 lg:px-8 lg:pb-8">
-              <div className="border-t pt-6">
-                <h3 className="text-xl font-bold text-text">{catCopy.sectionSpeakers ?? 'Спикеры'}</h3>
-                <div className="mt-5">
-                  <SpeakersCarousel speakers={allSpeakers} />
+              {allSpeakers.length > 0 && (
+                <div className="border-t pt-6">
+                  <h3 className="text-xl font-bold text-text">{catCopy.sectionSpeakers ?? 'Спикеры'}</h3>
+                  <div className="mt-5">
+                    <SpeakersCarousel speakers={allSpeakers} />
+                  </div>
                 </div>
-              </div>
+              )}
               <EditionExtras edition={edition} categoryId={categoryId} />
             </div>
           </>
@@ -673,14 +675,16 @@ function RewindPage({
           </div>
         </SectionReveal>
 
-        <SectionReveal>
-          <div className="mt-14">
-            <h2 className="section-title">{ar.sectionSpeakers}</h2>
-            <div className="mt-5">
-              <SpeakersCarousel speakers={allSpeakers} />
+        {allSpeakers.length > 0 && (
+          <SectionReveal>
+            <div className="mt-14">
+              <h2 className="section-title">{ar.sectionSpeakers}</h2>
+              <div className="mt-5">
+                <SpeakersCarousel speakers={allSpeakers} />
+              </div>
             </div>
-          </div>
-        </SectionReveal>
+          </SectionReveal>
+        )}
 
         <SectionReveal>
           <div className="mt-14">
