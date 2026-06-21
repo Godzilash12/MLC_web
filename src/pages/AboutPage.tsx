@@ -149,9 +149,7 @@ export function AboutPage() {
           <SectionReveal>
             <h2 className="section-title mb-10">{copy.teamTitle ?? "Core Team"}</h2>
           </SectionReveal>
-          <SectionReveal>
-            <TeamGrid members={combinedTeam} dataSection="about-team" />
-          </SectionReveal>
+          <TeamGrid members={combinedTeam} dataSection="about-team" />
         </div>
       </section>
 
