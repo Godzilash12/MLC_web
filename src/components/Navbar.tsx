@@ -1,29 +1,33 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useSiteCopy } from "@/lib/siteCopy";
 
 const navItemClass = ({ isActive }: { isActive: boolean }) => `nav-link ${isActive ? "nav-link--active" : ""}`;
 
+const mobileLangs = [
+  { code: "ru", label: "RU" },
+  { code: "uz", label: "UZ" },
+  { code: "en", label: "EN" },
+  { code: "zh", label: "中文" },
+] as const;
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const location = useLocation();
   const copy = useSiteCopy();
-  const navLinks = [
-    { to: "/about", label: copy.nav.about },
-    { to: "/community", label: copy.nav.community },
-    { to: "/education", label: copy.nav.education },
-    { to: "/b2b", label: copy.nav.b2b },
-    { to: "/development", label: copy.nav.development },
-    { to: "/ai-media", label: copy.nav.aiMedia }
-  ];
+  const { i18n } = useTranslation();
+  const locale = i18n.resolvedLanguage?.split("-")[0] ?? "ru";
   const tickerLoop = [...copy.ticker, ...copy.ticker];
 
   useEffect(() => {
     setOpen(false);
+    setOpenMobileDropdown(null);
   }, [location.pathname]);
 
   return (
@@ -172,31 +176,154 @@ export function Navbar() {
         </div>
       </div>
 
-      {open ? (
-        <div className="site-mobile-nav-shell mx-3 mt-3 rounded-[1.5rem] border border-white/10 bg-[#120d1fea] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl xl:hidden">
-          <div className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-base font-semibold text-white"
+      {/* Mobile menu with max-height animation */}
+      <div
+        className="xl:hidden overflow-hidden"
+        style={{
+          maxHeight: open ? "600px" : "0px",
+          opacity: open ? 1 : 0,
+          transition: "max-height 300ms ease, opacity 300ms ease",
+        }}
+      >
+        <div className="site-mobile-nav-shell mx-3 mt-3 rounded-[1.5rem] border border-white/10 bg-[#120d1fea] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
+          <div className="flex flex-col gap-2">
+            <NavLink
+              to="/about"
+              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5 text-base font-semibold text-white"
+            >
+              {copy.nav.about}
+            </NavLink>
+
+            <NavLink
+              to="/community"
+              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5 text-base font-semibold text-white"
+            >
+              {copy.nav.community}
+            </NavLink>
+
+            {/* Образование dropdown */}
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <button
+                type="button"
+                onClick={() =>
+                  setOpenMobileDropdown(openMobileDropdown === "education" ? null : "education")
+                }
+                className="flex w-full items-center justify-between px-4 py-3.5 text-base font-semibold text-white"
               >
-                {link.label}
-              </NavLink>
-            ))}
+                {copy.nav.educationGroup}
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${
+                    openMobileDropdown === "education" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className="overflow-hidden"
+                style={{
+                  maxHeight: openMobileDropdown === "education" ? "200px" : "0px",
+                  transition: "max-height 300ms ease",
+                }}
+              >
+                <div className="flex flex-col gap-0.5 border-t border-white/10 p-2">
+                  <NavLink
+                    to="/education"
+                    className="rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
+                    onClick={() => setOpen(false)}
+                  >
+                    {copy.nav.individualEdu}
+                  </NavLink>
+                  <NavLink
+                    to="/b2b"
+                    className="rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
+                    onClick={() => setOpen(false)}
+                  >
+                    {copy.nav.corporateEdu}
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+
+            {/* Услуги dropdown */}
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <button
+                type="button"
+                onClick={() =>
+                  setOpenMobileDropdown(openMobileDropdown === "products" ? null : "products")
+                }
+                className="flex w-full items-center justify-between px-4 py-3.5 text-base font-semibold text-white"
+              >
+                {copy.nav.productsGroup}
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${
+                    openMobileDropdown === "products" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className="overflow-hidden"
+                style={{
+                  maxHeight: openMobileDropdown === "products" ? "200px" : "0px",
+                  transition: "max-height 300ms ease",
+                }}
+              >
+                <div className="flex flex-col gap-0.5 border-t border-white/10 p-2">
+                  <NavLink
+                    to="/development"
+                    className="rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
+                    onClick={() => setOpen(false)}
+                  >
+                    {copy.nav.development}
+                  </NavLink>
+                  <NavLink
+                    to="/ai-media"
+                    className="rounded-xl px-4 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-white/10 hover:text-white"
+                    onClick={() => setOpen(false)}
+                  >
+                    {copy.nav.aiMedia}
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+
             <NavLink
               to="/01ai"
-              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-base font-semibold text-white"
+              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5 text-base font-semibold text-white"
             >
               01AI
             </NavLink>
-            <a href="https://01ai.uz" target="_blank" rel="noreferrer" className="button-primary py-2 text-sm">
+
+            <a
+              href="https://01ai.uz"
+              target="_blank"
+              rel="noreferrer"
+              className="button-primary py-2 text-sm"
+            >
               {copy.nav.platform} ↗
             </a>
-            <LanguageSwitcher />
+
+            {/* Inline language switcher — горизонтальный ряд */}
+            <div className="flex gap-2 pt-1">
+              {mobileLangs.map((lang) => (
+                <button
+                  key={lang.code}
+                  type="button"
+                  onClick={() => void i18n.changeLanguage(lang.code)}
+                  className={[
+                    "flex-1 rounded-xl border py-2.5 text-sm font-semibold transition",
+                    locale === lang.code
+                      ? "border-white/30 bg-white/15 text-white"
+                      : "border-white/10 bg-white/5 text-text-secondary hover:bg-white/10 hover:text-white",
+                  ].join(" ")}
+                >
+                  {lang.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      ) : null}
+      </div>
     </header>
   );
 }
