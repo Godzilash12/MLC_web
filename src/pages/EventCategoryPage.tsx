@@ -135,7 +135,7 @@ function SpeakersCarousel({ speakers }: {
   const locale = i18n.resolvedLanguage?.split('-')[0] ?? 'ru';
 
   return (
-    <div className='flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory'>
+    <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
       {speakers.map((sp, i) => {
         const speakerTitle = locale === 'uz' ? (sp.title_uz ?? sp.title)
           : locale === 'en' ? (sp.title_en ?? sp.title)
@@ -144,7 +144,7 @@ function SpeakersCarousel({ speakers }: {
         return (
           <div
             key={`${sp.name}-${i}`}
-            className='relative w-40 shrink-0 snap-start overflow-hidden rounded-[1.4rem] bg-surface'
+            className='relative overflow-hidden rounded-[1.4rem] bg-surface'
             style={{ aspectRatio: '3/4' }}
           >
             {sp.photo ? (
