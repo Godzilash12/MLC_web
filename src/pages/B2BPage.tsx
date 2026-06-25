@@ -293,7 +293,7 @@ export function B2BPage() {
           <div className="mt-12">
             <TeamGrid members={mentors} dataSection="b2b-mentors" />
           </div>
-          <p className="mt-6 text-center text-sm font-semibold text-text-secondary">
+          <p className="mt-6 text-right text-base font-semibold bg-gradient-to-r from-[#9b6dff] to-[#ff65db] bg-clip-text text-transparent">
             {siteCopyData.b2b.moreMentors}
           </p>
         </div>
