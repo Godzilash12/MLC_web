@@ -808,7 +808,7 @@ export interface AiCohort {
   name: string;
   track: string;
   year: number;
-  month: string;
+  month: { ru: string; uz: string; en: string; zh: string };
   graduates: number;
   employed: number;
   employedText?: string;
@@ -822,7 +822,7 @@ export const zeroOneAiCohorts: AiCohort[] = [
     name: 'MLE-0',
     track: 'Machine Learning Engineering',
     year: 2024,
-    month: 'Июнь 2024 — Октябрь 2025',
+    month: { ru: 'Июнь 2024 — Октябрь 2025', uz: 'Iyun 2024 — Oktyabr 2025', en: 'June 2024 — October 2025', zh: '2024年6月 — 2025年10月' },
     graduates: 0,
     employed: 0,
     photo: '/01ai/cohorts/mle-3.webp',
@@ -832,7 +832,7 @@ export const zeroOneAiCohorts: AiCohort[] = [
     name: "MLE-1",
     track: "Machine Learning Engineering",
     year: 2025,
-    month: "September 2024 - January 2025",
+    month: { ru: 'Сентябрь 2024 — Январь 2025', uz: 'Sentabr 2024 — Yanvar 2025', en: 'September 2024 — January 2025', zh: '2024年9月 — 2025年1月' },
     graduates: 13,
     employed: 85,
     employedText: "11 of 13",
@@ -844,7 +844,7 @@ export const zeroOneAiCohorts: AiCohort[] = [
     name: "MLE-2",
     track: "Machine Learning Engineering",
     year: 2025,
-    month: "December 2024 - April 2025",
+    month: { ru: 'Декабрь 2024 — Апрель 2025', uz: 'Dekabr 2024 — Aprel 2025', en: 'December 2024 — April 2025', zh: '2024年12月 — 2025年4月' },
     graduates: 19,
     employed: 74,
     employedText: "14 of 19",
@@ -856,7 +856,7 @@ export const zeroOneAiCohorts: AiCohort[] = [
     name: "MLE-3",
     track: "Machine Learning Engineer",
     year: 2025,
-    month: "December 2025 - May 2025",
+    month: { ru: 'Декабрь 2024 — Май 2025', uz: 'Dekabr 2024 — May 2025', en: 'December 2024 — May 2025', zh: '2024年12月 — 2025年5月' },
     graduates: 24,
     employed: 88,
     employedText: "21 of 24",
@@ -867,7 +867,7 @@ export const zeroOneAiCohorts: AiCohort[] = [
     name: "DA-1",
     track: "Data Analytics",
     year: 2026,
-    month: "December 2025 - May 2026",
+    month: { ru: 'Декабрь 2025 — Май 2026', uz: 'Dekabr 2025 — May 2026', en: 'December 2025 — May 2026', zh: '2025年12月 — 2026年5月' },
     graduates: 9,
     employed: 56,
     employedText: "5 of 9",

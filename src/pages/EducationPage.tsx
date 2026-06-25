@@ -337,7 +337,7 @@ export function EducationPage() {
                         {cohort.track}
                       </span>
                     </div>
-                    <p className="mt-1 text-sm text-text-secondary">{cohort.month}</p>
+                    <p className="mt-1 text-sm text-text-secondary">{cohort.month[lang]}</p>
                   </div>
                 </article>
               </SectionReveal>
