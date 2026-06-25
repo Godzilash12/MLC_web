@@ -316,37 +316,6 @@ export function EducationPage() {
       <section className="section-divider">
         <div className="section-shell section-space">
           <SectionReveal>
-            <div className="max-w-4xl">
-              <h2 className="section-title">{copy.formatsTitle}</h2>
-            </div>
-          </SectionReveal>
-
-          <div className="mt-10 grid auto-rows-fr gap-5 lg:grid-cols-2">
-            {copy.formats.map((item, index) => {
-              const Icon = educationFormatIcons[index] ?? User;
-
-              return (
-                <SectionReveal key={item.title}>
-                  <article className="glass-panel group relative flex h-full min-h-[23rem] overflow-hidden rounded-[2rem] p-7 transition duration-300 hover:-translate-y-1">
-                    <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#ff65db]/20 blur-3xl transition duration-300 group-hover:bg-[#6d43ff]/25" />
-                    <div className="relative flex h-full flex-col">
-                      <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
-                        <Icon size={30} strokeWidth={1.8} />
-                      </div>
-                      <h3 className="text-3xl font-semibold tracking-[-0.04em] text-white">{item.title}</h3>
-                      <p className="mt-5 text-base leading-8 text-text-secondary">{item.text}</p>
-                    </div>
-                  </article>
-                </SectionReveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-divider">
-        <div className="section-shell section-space">
-          <SectionReveal>
             <h2 className="section-title">{copy.cohortsTitle ?? "Прошлые потоки"}</h2>
           </SectionReveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -395,6 +364,37 @@ export function EducationPage() {
                 </div>
               </SectionReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <div className="max-w-4xl">
+              <h2 className="section-title">{copy.formatsTitle}</h2>
+            </div>
+          </SectionReveal>
+
+          <div className="mt-10 grid auto-rows-fr gap-5 lg:grid-cols-2">
+            {copy.formats.map((item, index) => {
+              const Icon = educationFormatIcons[index] ?? User;
+
+              return (
+                <SectionReveal key={item.title}>
+                  <article className="glass-panel group relative flex h-full min-h-[23rem] overflow-hidden rounded-[2rem] p-7 transition duration-300 hover:-translate-y-1">
+                    <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#ff65db]/20 blur-3xl transition duration-300 group-hover:bg-[#6d43ff]/25" />
+                    <div className="relative flex h-full flex-col">
+                      <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
+                        <Icon size={30} strokeWidth={1.8} />
+                      </div>
+                      <h3 className="text-3xl font-semibold tracking-[-0.04em] text-white">{item.title}</h3>
+                      <p className="mt-5 text-base leading-8 text-text-secondary">{item.text}</p>
+                    </div>
+                  </article>
+                </SectionReveal>
+              );
+            })}
           </div>
         </div>
       </section>
