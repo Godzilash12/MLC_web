@@ -818,6 +818,16 @@ export interface AiCohort {
 
 export const zeroOneAiCohorts: AiCohort[] = [
   {
+    id: 'mle-0',
+    name: 'MLE-0',
+    track: 'Machine Learning Engineering',
+    year: 2024,
+    month: 'Июнь 2024 — Октябрь 2025',
+    graduates: 0,
+    employed: 0,
+    photo: '/01ai/cohorts/mle-3.webp',
+  },
+  {
     id: "mle-1",
     name: "MLE-1",
     track: "Machine Learning Engineering",

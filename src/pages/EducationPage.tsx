@@ -369,18 +369,6 @@ export function EducationPage() {
                       </span>
                     </div>
                     <p className="mt-1 text-sm text-text-secondary">{cohort.month}</p>
-                    {cohort.graduates > 0 && (
-                      <div className="mt-4 flex gap-4">
-                        <div>
-                          <p className="font-mono text-2xl font-bold text-text">{cohort.graduates}</p>
-                          <p className="text-xs text-text-secondary">{copy.cohortsGraduates ?? "выпускников"}</p>
-                        </div>
-                        <div>
-                          <p className="font-mono text-2xl font-bold text-accent">{cohort.employed}%</p>
-                          <p className="text-xs text-text-secondary">{copy.cohortsEmployed ?? "трудоустроены"}</p>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </article>
               </SectionReveal>

@@ -735,6 +735,7 @@ const ru = {
       "мотивация учиться, запускать проекты и расти в профессии",
       "связь между участниками, бизнесом, образованием и государственными инициативами"
     ],
+    teamTitle: 'Команда сообщества',
     joinTitle: "Как присоединиться",
     joinSteps: [
       ["01", "Следить за анонсами", "Подписывайтесь на MLC и выбирайте события, которые подходят по теме и уровню."],
@@ -742,6 +743,7 @@ const ru = {
       ["03", "Расти внутри AI-среды", "Используйте комьюнити как точку входа в обучение, проекты, карьеру и партнёрства."]
     ]
   },
+  b2b: { moreMentors: '+ ещё 30 менторов' },
   education: {
     metaTitle: "Образование | MLC",
     metaDescription: "AI-образование MLC: обучение, практика и карьерный рост.",
@@ -1241,6 +1243,7 @@ const uz = {
       "o'qish, loyiha boshlash va kasbda o'sish motivatsiyasi",
       "ishtirokchilar, biznes, ta'lim va davlat tashabbuslari o'rtasidagi aloqa"
     ],
+    teamTitle: "Jamiyat jamoasi",
     joinTitle: "Qanday qo'shilish mumkin",
     joinSteps: [
       ["01", "Anonslarni kuzatish", "MLC'ga obuna bo'ling va mavzu hamda darajangizga mos tadbirlarni tanlang."],
@@ -1248,6 +1251,7 @@ const uz = {
       ["03", "AI muhitida o'sish", "Hamjamiyatdan ta'lim, loyihalar, karyera va hamkorlikka kirish nuqtasi sifatida foydalaning."]
     ]
   },
+  b2b: { moreMentors: '+ yana 30 ta mentor' },
   education: {
     metaTitle: "Ta'lim | MLC",
     metaDescription: "MLC AI ta'limi: o'qish, amaliyot va karyera o'sishi.",
@@ -1475,9 +1479,11 @@ const en = {
     pastEvents: [{ title: "AI Rewind", meta: "Conference and AI trend review" }, { title: "ML Gap", meta: "Lectures and case reviews" }, { title: "ML Party", meta: "Networking and community evening" }, { title: "Partner Meetups", meta: "Office visits and masterclasses" }, { title: "AI Hackathon", meta: "Teams and real AI products" }, { title: "ML Contest", meta: "Kaggle challenges and competitions" }],
     valueTitle: "What a member gets",
     values: ["understanding of what is really happening in AI", "access to people, companies, mentors, and opportunities", "an environment where you can ask and quickly find direction", "motivation to learn, launch projects, and grow professionally", "connection between members, business, education, and government initiatives"],
+    teamTitle: "Community team",
     joinTitle: "How to join",
     joinSteps: [["01", "Follow announcements", "Subscribe to MLC and choose events that match your topic and level."], ["02", "Attend meetups", "Meet participants, ask questions, and join discussions."], ["03", "Grow inside the AI environment", "Use the community as an entry point into education, projects, career, and partnerships."]]
   },
+  b2b: { moreMentors: '+ 30 more mentors' },
   education: { ...ru.education, metaTitle: "Education | MLC", metaDescription: "MLC AI education: learning, practice, and career growth.", title: "AI Education", stats: [{ value: "400+", label: "graduates" }, { value: "70%", label: "employed" }, { value: "8+", label: "trained companies" }], companiesTitle: "+8 trained companies", companiesText: "We help teams bring AI into work: from first tools to practical scenarios for daily tasks.", partnersBadge: "and other partners", graduatesTitle: "+400 Graduates", internshipTitle: "Internship", formatsTitle: "What we provide in AI education", cohortsTitle: "Past cohorts", cohortsGraduates: "graduates", cohortsEmployed: "employed", galleryTitle: "Photos from classes", formats: [{ title: "Personal training", text: "An individual path for the student’s goal: we assess the current level, build a program, move at a comfortable pace, and bring skills to practical results." }, { title: "Group training for students", text: "Live lessons, internships, partner office visits, masterclasses, interview and CV preparation. Not just a course, but an environment where students grow faster." }, { title: "Corporate training", text: "Custom AI programs for teams: process automation, personal productivity, content, reporting, presentations, analytics, and other applied business scenarios." }, { title: "01AI platform", text: "Online learning for everyone who wants to learn AI flexibly: clear modules, practical tasks, and access to knowledge without being tied to place or schedule." }] },
   development: ru.development,
   aiMedia: ru.aiMedia,
@@ -1941,6 +1947,7 @@ const zhCommunity = {
   ],
   valueFlow: ["meet", "learn", "grow"],
   values: ["理解 AI 领域真实发生的事情", "接触人、公司、导师和机会", "可以提问并快速找到方向的环境", "学习、启动项目并职业成长的动力", "连接参与者、企业、教育和政府倡议"],
+  teamTitle: '社区团队',
   joinSteps: [
     ["01", "关注公告", "订阅 MLC，并选择适合主题和水平的活动。"],
     ["02", "参加见面会", "认识参与者、提出问题并加入讨论。"],
@@ -1962,7 +1969,7 @@ export const siteCopy = {
   ru,
   uz: { ...uz, development: uzDevelopment, aiMedia: uzAiMedia },
   en: { ...en, development: enDevelopment, aiMedia: enAiMedia },
-  zh: { ...zh, community: zhCommunity, education: zhEducation, development: zhDevelopment, aiMedia: zhAiMedia }
+  zh: { ...zh, community: zhCommunity, education: zhEducation, development: zhDevelopment, aiMedia: zhAiMedia, b2b: { moreMentors: '+ 还有30位导师' } }
 } as const;
 
 export function getSiteLanguage(language: string | undefined): SiteLanguage {

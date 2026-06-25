@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { SectionReveal } from "@/components/SectionReveal";
+import { TeamGrid } from "@/components/TeamGrid";
+import type { TeamMember } from "@/data/fallbackContent";
 import { useCountUpWhenActive } from "@/hooks/useCountUpWhenActive";
 import { useInViewOnce } from "@/hooks/useInViewOnce";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -48,6 +50,21 @@ const pastEvents = [
     categoryId: "ml-contest",
     image: "/events/contest-2026/image156.webp"
   }
+];
+
+const communityTeam: TeamMember[] = [
+  { id: 'ct-01', name: 'Шахриёр Худойбердиев', role_mlc: 'Основатель & CEO', role_external: 'MLC Head | AICA Deputy Chairman', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
+  { id: 'ct-02', name: 'Бехруз Аъзам', role_mlc: 'ML Development', role_external: 'ML Engineer · AlgoFrog', photo_url: '/team/bekhruz-azam.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+  { id: 'ct-03', name: 'Азимбек Исматуллаев', role_mlc: 'Community', role_external: 'Project Manager · Ipak Yuli Bank', photo_url: '/team/azimbek.webp', linkedin_url: 'https://linkedin.com/in/azimbek-ismatullaev-b24088207' },
+  { id: 'ct-04', name: 'Адам Саидов', role_mlc: 'Community', role_external: 'Growth Product Manager · BirBir', photo_url: '/team/adam.webp', linkedin_url: 'https://linkedin.com/in/adam-saidov' },
+  { id: 'ct-05', name: 'Жасурбек Мамуров', role_mlc: 'Community', role_external: 'INHA University in Tashkent', photo_url: '/team/jasurbek-mamurov.webp', linkedin_url: 'https://linkedin.com/in/jmamurov' },
+  { id: 'ct-06', name: 'Кобилжон Косимов', role_mlc: 'Head of ML Club NewUU', role_external: 'COO · RepliUz', photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
+  { id: 'ct-07', name: 'Амир Каримов', role_mlc: 'COO ML Course', role_external: 'Product Manager · LexoraAI', photo_url: '/team/amir-karimov.webp', linkedin_url: 'https://linkedin.com/in/amir-karimov-5ba2732a0' },
+  { id: 'ct-08', name: 'Исламбек Каримов', role_mlc: 'Community', role_external: 'UzVC', photo_url: '/team/islambek.webp', linkedin_url: 'https://linkedin.com/in/islambek-kadyrov-0461a4254' },
+  { id: 'ct-09', name: 'Камилла Жураева', role_mlc: 'Community', role_external: 'Data Scientist · Ucell', photo_url: '/team/kamilla-juraeva.webp', linkedin_url: 'https://linkedin.com/in/kamilla-juraeva-data-scientist' },
+  { id: 'ct-10', name: 'Малика Рустамова', role_mlc: 'Community', role_external: 'Product Manager · Uzum', photo_url: '/team/malika.webp', linkedin_url: 'https://linkedin.com/in/malika-rustamova-a213bb1a9' },
+  { id: 'ct-11', name: 'Назокатхон Шерматова', role_mlc: 'Community', role_external: 'Product Manager · KDB Bank Uzbekistan', photo_url: '/team/nazokat.webp', linkedin_url: 'https://linkedin.com/in/algonazokat' },
+  { id: 'ct-12', name: 'Убайдуллох Пулат', role_mlc: 'Community', role_external: 'BDC · C-Space', photo_url: '/team/ubaydulloh.webp' },
 ];
 
 function digitCount(value: string) {
@@ -147,6 +164,17 @@ export function CommunityPage() {
               </SectionReveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
+            <h2 className="section-title">{copy.teamTitle ?? 'Команда сообщества'}</h2>
+          </SectionReveal>
+          <div className="mt-10">
+            <TeamGrid members={communityTeam} dataSection="community-team" />
           </div>
         </div>
       </section>

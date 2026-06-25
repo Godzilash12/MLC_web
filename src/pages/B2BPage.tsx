@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
-import { b2bMentorsByLocale } from "@/data/fallbackContent";
+import { b2bMentorsByLocale, zeroOneAiCohorts } from "@/data/fallbackContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSiteCopy } from "@/lib/siteCopy";
 
@@ -52,7 +52,8 @@ export function B2BPage() {
   const { t, i18n } = useTranslation();
   const locale = i18n.resolvedLanguage?.split("-")[0] ?? "ru";
   const page = t("b2b", { returnObjects: true }) as any;
-  const educationCopy = useSiteCopy().education;
+  const siteCopyData = useSiteCopy();
+  const educationCopy = siteCopyData.education;
 
   const programs =
     locale === "uz"
@@ -214,6 +215,40 @@ export function B2BPage() {
       <section className="section-divider">
         <div className="section-shell section-space">
           <SectionReveal>
+            <h2 className="section-title">{educationCopy.cohortsTitle ?? 'Прошлые потоки'}</h2>
+          </SectionReveal>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {zeroOneAiCohorts.map((cohort) => (
+              <SectionReveal key={cohort.id}>
+                <article className="card-surface overflow-hidden">
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={cohort.photo}
+                      alt={cohort.name}
+                      className="h-full w-full object-cover transition duration-500 hover:scale-[1.04]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-bold text-text">{cohort.name}</h3>
+                      <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-accent">
+                        {cohort.track}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm text-text-secondary">{cohort.month}</p>
+                  </div>
+                </article>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider">
+        <div className="section-shell section-space">
+          <SectionReveal>
             <p className="eyebrow">{page.programs.eyebrow}</p>
             <h2 className="section-title">{page.programs.title}</h2>
           </SectionReveal>
@@ -243,6 +278,9 @@ export function B2BPage() {
           <div className="mt-12">
             <TeamGrid members={mentors} dataSection="b2b-mentors" />
           </div>
+          <p className="mt-6 text-center text-sm font-semibold text-text-secondary">
+            {siteCopyData.b2b.moreMentors}
+          </p>
         </div>
       </section>
 
