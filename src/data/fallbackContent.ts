@@ -803,6 +803,65 @@ export const b2bMentorsByLocale: Record<string, typeof b2bMentors> = {
   ],
 };
 
+export const communityTeamByLocale: Record<string, TeamMember[]> = {
+  ru: [
+    { id: 'ct-01', name: 'Шахриёр Худойбердиев', role_mlc: 'Основатель & CEO', role_external: 'MLC Head | AICA Deputy Chairman', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
+    { id: 'ct-02', name: 'Бехруз Аъзам', role_mlc: 'ML Development', role_external: 'ML Engineer · AlgoFrog', photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+    { id: 'ct-03', name: 'Азимбек Исматуллаев', role_mlc: 'Community', role_external: 'Менеджер проектов · Ipak Yuli Bank', photo_url: '/team/azimbek.webp', linkedin_url: 'https://linkedin.com/in/azimbek-ismatullaev-b24088207' },
+    { id: 'ct-04', name: 'Адам Саидов', role_mlc: 'Community', role_external: 'Продукт-менеджер роста · BirBir', photo_url: '/team/adam.webp', linkedin_url: 'https://linkedin.com/in/adam-saidov' },
+    { id: 'ct-05', name: 'Жасурбек Мамуров', role_mlc: 'Community', role_external: 'INHA University in Tashkent', photo_url: '/team/jasurbek.webp', linkedin_url: 'https://linkedin.com/in/jmamurov' },
+    { id: 'ct-06', name: 'Кобилжон Косимов', role_mlc: 'Head of ML Club NewUU', role_external: 'COO · RepliUz', photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
+    { id: 'ct-07', name: 'Амир Каримов', role_mlc: 'COO ML Course', role_external: 'Product Manager · LexoraAI', photo_url: '/team/amir.webp', linkedin_url: 'https://linkedin.com/in/amir-karimov-5ba2732a0' },
+    { id: 'ct-08', name: 'Исламбек Каримов', role_mlc: 'Community', role_external: 'UzVC', photo_url: '/team/islambek.webp', linkedin_url: 'https://linkedin.com/in/islambek-kadyrov-0461a4254' },
+    { id: 'ct-09', name: 'Камилла Жураева', role_mlc: 'Community', role_external: 'Data Scientist · Ucell', photo_url: '/team/kamilla.webp', linkedin_url: 'https://linkedin.com/in/kamilla-juraeva-data-scientist' },
+    { id: 'ct-10', name: 'Малика Рустамова', role_mlc: 'Community', role_external: 'Product Manager · Uzum', photo_url: '/team/malika.webp', linkedin_url: 'https://linkedin.com/in/malika-rustamova-a213bb1a9' },
+    { id: 'ct-11', name: 'Назокатхон Шерматова', role_mlc: 'Community', role_external: 'Product Manager · KDB Bank Uzbekistan', photo_url: '/team/nazokat.webp', linkedin_url: 'https://linkedin.com/in/algonazokat' },
+    { id: 'ct-12', name: 'Убайдуллох Пулат', role_mlc: 'Community', role_external: 'BDC · C-Space', photo_url: '/team/ubaydulloh.webp' },
+  ],
+  uz: [
+    { id: 'ct-01', name: 'Shahriyor Xudoyberdiyev', role_mlc: "Asoschisi & CEO", role_external: 'MLC Head | AICA Deputy Chairman', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
+    { id: 'ct-02', name: "Behruz A'zam", role_mlc: 'ML Development', role_external: 'ML Engineer · AlgoFrog', photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+    { id: 'ct-03', name: 'Azimbek Ismatullayev', role_mlc: 'Hamjamiyat', role_external: 'Loyiha menejeri · Ipak Yuli Bank', photo_url: '/team/azimbek.webp', linkedin_url: 'https://linkedin.com/in/azimbek-ismatullaev-b24088207' },
+    { id: 'ct-04', name: 'Adam Saidov', role_mlc: 'Hamjamiyat', role_external: "O'sish mahsulot menejeri · BirBir", photo_url: '/team/adam.webp', linkedin_url: 'https://linkedin.com/in/adam-saidov' },
+    { id: 'ct-05', name: 'Jasurbek Mamurov', role_mlc: 'Hamjamiyat', role_external: 'INHA University in Tashkent', photo_url: '/team/jasurbek.webp', linkedin_url: 'https://linkedin.com/in/jmamurov' },
+    { id: 'ct-06', name: 'Kobiljon Qosimov', role_mlc: 'ML Club NewUU rahbari', role_external: 'COO · RepliUz', photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
+    { id: 'ct-07', name: 'Amir Karimov', role_mlc: 'ML Course COO', role_external: 'Mahsulot menejeri · LexoraAI', photo_url: '/team/amir.webp', linkedin_url: 'https://linkedin.com/in/amir-karimov-5ba2732a0' },
+    { id: 'ct-08', name: 'Islambek Karimov', role_mlc: 'Hamjamiyat', role_external: 'UzVC', photo_url: '/team/islambek.webp', linkedin_url: 'https://linkedin.com/in/islambek-kadyrov-0461a4254' },
+    { id: 'ct-09', name: 'Kamilla Juraeva', role_mlc: 'Hamjamiyat', role_external: 'Data Scientist · Ucell', photo_url: '/team/kamilla.webp', linkedin_url: 'https://linkedin.com/in/kamilla-juraeva-data-scientist' },
+    { id: 'ct-10', name: 'Malika Rustamova', role_mlc: 'Hamjamiyat', role_external: 'Mahsulot menejeri · Uzum', photo_url: '/team/malika.webp', linkedin_url: 'https://linkedin.com/in/malika-rustamova-a213bb1a9' },
+    { id: 'ct-11', name: 'Nazokatxon Shermatova', role_mlc: 'Hamjamiyat', role_external: 'Mahsulot menejeri · KDB Bank Uzbekistan', photo_url: '/team/nazokat.webp', linkedin_url: 'https://linkedin.com/in/algonazokat' },
+    { id: 'ct-12', name: 'Ubaydulloh Pulat', role_mlc: 'Hamjamiyat', role_external: 'BDC · C-Space', photo_url: '/team/ubaydulloh.webp' },
+  ],
+  en: [
+    { id: 'ct-01', name: 'Shakhriyor Khudoyberdiyev', role_mlc: 'Founder & CEO', role_external: 'MLC Head | AICA Deputy Chairman', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
+    { id: 'ct-02', name: 'Behruz Azam', role_mlc: 'ML Development', role_external: 'ML Engineer · AlgoFrog', photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+    { id: 'ct-03', name: 'Azimbek Ismatullayev', role_mlc: 'Community', role_external: 'Project Manager · Ipak Yuli Bank', photo_url: '/team/azimbek.webp', linkedin_url: 'https://linkedin.com/in/azimbek-ismatullaev-b24088207' },
+    { id: 'ct-04', name: 'Adam Saidov', role_mlc: 'Community', role_external: 'Growth Product Manager · BirBir', photo_url: '/team/adam.webp', linkedin_url: 'https://linkedin.com/in/adam-saidov' },
+    { id: 'ct-05', name: 'Jasurbek Mamurov', role_mlc: 'Community', role_external: 'INHA University in Tashkent', photo_url: '/team/jasurbek.webp', linkedin_url: 'https://linkedin.com/in/jmamurov' },
+    { id: 'ct-06', name: 'Kobiljon Kosimov', role_mlc: 'Head of ML Club NewUU', role_external: 'COO · RepliUz', photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
+    { id: 'ct-07', name: 'Amir Karimov', role_mlc: 'COO ML Course', role_external: 'Product Manager · LexoraAI', photo_url: '/team/amir.webp', linkedin_url: 'https://linkedin.com/in/amir-karimov-5ba2732a0' },
+    { id: 'ct-08', name: 'Islambek Karimov', role_mlc: 'Community', role_external: 'UzVC', photo_url: '/team/islambek.webp', linkedin_url: 'https://linkedin.com/in/islambek-kadyrov-0461a4254' },
+    { id: 'ct-09', name: 'Kamilla Juraeva', role_mlc: 'Community', role_external: 'Data Scientist · Ucell', photo_url: '/team/kamilla.webp', linkedin_url: 'https://linkedin.com/in/kamilla-juraeva-data-scientist' },
+    { id: 'ct-10', name: 'Malika Rustamova', role_mlc: 'Community', role_external: 'Product Manager · Uzum', photo_url: '/team/malika.webp', linkedin_url: 'https://linkedin.com/in/malika-rustamova-a213bb1a9' },
+    { id: 'ct-11', name: 'Nazokatkhon Shermatova', role_mlc: 'Community', role_external: 'Product Manager · KDB Bank Uzbekistan', photo_url: '/team/nazokat.webp', linkedin_url: 'https://linkedin.com/in/algonazokat' },
+    { id: 'ct-12', name: 'Ubaydulloh Pulat', role_mlc: 'Community', role_external: 'BDC · C-Space', photo_url: '/team/ubaydulloh.webp' },
+  ],
+  zh: [
+    { id: 'ct-01', name: 'Shakhriyor Khudoyberdiyev', role_mlc: '创始人 & CEO', role_external: 'MLC Head | AICA Deputy Chairman', photo_url: '/shakhriyor.avif', linkedin_url: 'https://linkedin.com/in/shakhriyor-kh' },
+    { id: 'ct-02', name: 'Behruz Azam', role_mlc: 'ML 开发', role_external: 'ML 工程师 · AlgoFrog', photo_url: '/team/behruz.webp', linkedin_url: 'https://uz.linkedin.com/in/behruz-azam' },
+    { id: 'ct-03', name: 'Azimbek Ismatullayev', role_mlc: '社区', role_external: '项目经理 · Ipak Yuli Bank', photo_url: '/team/azimbek.webp', linkedin_url: 'https://linkedin.com/in/azimbek-ismatullaev-b24088207' },
+    { id: 'ct-04', name: 'Adam Saidov', role_mlc: '社区', role_external: '增长产品经理 · BirBir', photo_url: '/team/adam.webp', linkedin_url: 'https://linkedin.com/in/adam-saidov' },
+    { id: 'ct-05', name: 'Jasurbek Mamurov', role_mlc: '社区', role_external: '塔什干INHA大学', photo_url: '/team/jasurbek.webp', linkedin_url: 'https://linkedin.com/in/jmamurov' },
+    { id: 'ct-06', name: 'Kobiljon Kosimov', role_mlc: 'NewUU ML俱乐部负责人', role_external: 'COO · RepliUz', photo_url: '/team/kobiljon.webp', linkedin_url: 'https://uz.linkedin.com/in/kobiljon' },
+    { id: 'ct-07', name: 'Amir Karimov', role_mlc: 'ML课程COO', role_external: '产品经理 · LexoraAI', photo_url: '/team/amir.webp', linkedin_url: 'https://linkedin.com/in/amir-karimov-5ba2732a0' },
+    { id: 'ct-08', name: 'Islambek Karimov', role_mlc: '社区', role_external: 'UzVC', photo_url: '/team/islambek.webp', linkedin_url: 'https://linkedin.com/in/islambek-kadyrov-0461a4254' },
+    { id: 'ct-09', name: 'Kamilla Juraeva', role_mlc: '社区', role_external: '数据科学家 · Ucell', photo_url: '/team/kamilla.webp', linkedin_url: 'https://linkedin.com/in/kamilla-juraeva-data-scientist' },
+    { id: 'ct-10', name: 'Malika Rustamova', role_mlc: '社区', role_external: '产品经理 · Uzum', photo_url: '/team/malika.webp', linkedin_url: 'https://linkedin.com/in/malika-rustamova-a213bb1a9' },
+    { id: 'ct-11', name: 'Nazokatkhon Shermatova', role_mlc: '社区', role_external: '产品经理 · KDB Bank乌兹别克斯坦', photo_url: '/team/nazokat.webp', linkedin_url: 'https://linkedin.com/in/algonazokat' },
+    { id: 'ct-12', name: 'Ubaydulloh Pulat', role_mlc: '社区', role_external: 'BDC · C-Space', photo_url: '/team/ubaydulloh.webp' },
+  ],
+};
+
 export interface AiCohort {
   id: string;
   name: string;
