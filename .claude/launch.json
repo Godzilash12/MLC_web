@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nutrition-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "src/components", "-p", "5500", "--no-clipboard"],
+      "port": 5500
+    }
+  ]
+}
