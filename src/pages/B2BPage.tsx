@@ -1,11 +1,13 @@
 import { ArrowRight, ArrowUpRight, Building2, ClipboardCheck, Lightbulb, Presentation, Sparkles, Users2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { SectionReveal } from "@/components/SectionReveal";
 import { TeamGrid } from "@/components/TeamGrid";
-import { b2bMentorsByLocale, zeroOneAiCohorts } from "@/data/fallbackContent";
+import { b2bMentorsByLocale } from "@/data/fallbackContent";
+import { getGraduateStoriesLocalized } from "@/data/graduateContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { useSiteCopy } from "@/lib/siteCopy";
+import { getSiteLanguage, useSiteCopy } from "@/lib/siteCopy";
 
 const icons = [Lightbulb, Presentation, Sparkles, ClipboardCheck, Building2, Users2];
 
@@ -54,6 +56,8 @@ export function B2BPage() {
   const page = t("b2b", { returnObjects: true }) as any;
   const siteCopyData = useSiteCopy();
   const educationCopy = siteCopyData.education;
+  const graduateStories = getGraduateStoriesLocalized(getSiteLanguage(i18n.resolvedLanguage));
+  const graduateMarqueeItems = [...graduateStories, ...graduateStories];
 
   const programs =
     locale === "uz"
@@ -215,33 +219,44 @@ export function B2BPage() {
       <section className="section-divider">
         <div className="section-shell section-space">
           <SectionReveal>
-            <h2 className="section-title">{educationCopy.cohortsTitle ?? 'Прошлые потоки'}</h2>
+            <div className="max-w-4xl">
+              <h2 className="section-title">{educationCopy.graduatesTitle}</h2>
+            </div>
           </SectionReveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {zeroOneAiCohorts.map((cohort) => (
-              <SectionReveal key={cohort.id}>
-                <article className="card-surface overflow-hidden">
-                  <div className="h-48 overflow-hidden">
+
+          <div className="graduate-marquee mt-12">
+            <div className="graduate-marquee__track">
+              {graduateMarqueeItems.map((graduate, index) => (
+                <Link
+                  key={`${graduate.id}-${index}`}
+                  to={`/graduates/${graduate.id}`}
+                  className="group graduate-marquee__card relative isolate flex min-h-[30rem] w-[22rem] shrink-0 flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-[#15101f] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(0,0,0,0.3)] [transform:translateZ(0)]"
+                >
+                  <div className="absolute inset-0 overflow-hidden rounded-[inherit]">
                     <img
-                      src={cohort.photo}
-                      alt={cohort.name}
-                      className="h-full w-full object-cover transition duration-500 hover:scale-[1.04]"
+                      src={graduate.photo}
+                      alt={graduate.name}
+                      className="h-full w-full rounded-[inherit] object-cover transition duration-500 group-hover:scale-[1.035] [backface-visibility:hidden]"
                       loading="lazy"
                       decoding="async"
                     />
                   </div>
-                  <div className="p-5">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-bold text-text">{cohort.name}</h3>
-                      <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-accent">
-                        {cohort.track}
-                      </span>
-                    </div>
-                    <p className="mt-1 text-sm text-text-secondary">{cohort.month}</p>
+
+                  <div className="absolute inset-0 rounded-[inherit] bg-[linear-gradient(180deg,rgba(9,6,15,0.02),rgba(9,6,15,0.18)_42%,rgba(9,6,15,0.95)_100%)]" />
+
+                  <div className="relative z-10 mt-auto w-full p-6 pr-20">
+                    <h3 className="text-[1.95rem] font-semibold tracking-[-0.045em] leading-[0.96] text-white">
+                      {graduate.name}
+                    </h3>
+                    <p className="mt-4 text-[1.05rem] font-medium leading-snug text-white/88">{graduate.company}</p>
                   </div>
-                </article>
-              </SectionReveal>
-            ))}
+
+                  <span className="pointer-events-none absolute bottom-6 right-6 z-10 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/16 bg-white/6 text-white backdrop-blur-md transition group-hover:border-white/30 group-hover:bg-white/10">
+                    <ArrowUpRight size={20} />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
